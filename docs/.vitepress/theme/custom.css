@@ -1,0 +1,347 @@
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-list li { margin: 0 0 28px; }
+.post-list .post-date { color: var(--vp-c-text-2); font-size: 14px; }
+.post-list .post-title { display: block; font-size: 20px; font-weight: 600; margin: 2px 0 4px; }
+.post-list .post-desc { margin: 0; color: var(--vp-c-text-2); }
+.post-list .post-tags { margin-top: 6px; font-size: 13px; color: var(--vp-c-brand-1); }
+.post-list .post-year { font-size: 22px; font-weight: 600; margin: 32px 0 12px; border-top: 1px solid var(--vp-c-divider); padding-top: 16px; }
+
+
+/* ── Aus Payer übernommen: Container-Stile für markdown-it-extensible ── */
+
+/* Spezialregel für Tabellen ohne Kopfzeile (explizit via ::: no-header) */
+.vp-doc .no-header table thead {
+  display: none !important;
+}
+
+.vp-doc .no-header table {
+  border-top: 1px solid #94a3b8 !important;
+  margin-top: 0 !important;
+}
+
+.vp-doc td, .vp-doc th {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #94a3b8 !important;
+}
+
+/* Phonetic Tables (Lektion 1, etc.) */
+.vp-doc .custom-block.laut-table table td:first-child {
+  white-space: nowrap;
+  min-width: 9rem;
+  font-weight: 600;
+}
+
+/* Custom Blocks (Grammar, Media, etc.) */
+.vp-doc .custom-block.grammar-box {
+  background-color: #fefce8 !important; /* Light yellow parity with original */
+  border: none !important;
+  border-left: 5px solid #eab308 !important; /* Golden Yellow */
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-size: 1.1rem !important; /* Standardize font size for the whole box */
+  color: var(--vp-c-text-1) !important; /* Use primary ink color */
+}
+
+.dark .vp-doc .custom-block.grammar-box {
+  background-color: #241500 !important;
+  border-left-color: #eab308 !important;
+}
+
+/* Custom Block: Grammar-Box 2 (Orange background, bold styling) */
+.vp-doc .custom-block.grammar-box2 {
+  background-color: #ffedd5 !important; /* Light orange / warm peach parity with original #FFCC66 */
+  border: none !important;
+  border-left: 5px solid #ea580c !important; /* Deep Orange */
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-size: 1.1rem !important;
+  color: var(--vp-c-text-1) !important;
+  /* font-weight: 600 !important; Removed: Caused all Latin text to be falsely bold */
+}
+
+.dark .vp-doc .custom-block.grammar-box2 {
+  background-color: #361e04 !important;
+  border-left-color: #ea580c !important;
+}
+
+.vp-doc .custom-block.grammar-box2 .custom-block-title {
+  display: none;
+}
+
+.vp-doc .grammar-box2 blockquote {
+  border-left: none !important;
+  background-color: transparent !important;
+  padding-left: 2rem !important;
+  margin: 0.5rem 0 !important;
+  font-size: 1em !important;
+  color: inherit !important;
+}
+
+.vp-doc .grammar-box2 blockquote p {
+  font-weight: inherit !important;
+  font-size: 1em !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+
+/* Note Box (Minimalist scholarly asides) */
+.vp-doc .custom-block.note-box,
+.vp-doc .custom-block.tip {
+  background-color: rgba(72, 98, 110, 0.03) !important; /* Extremely subtle slate tint */
+  border: none !important;
+  border-left: 3px solid var(--vp-c-text-2) !important; /* Thinner Slate Grey border */
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0;
+  box-shadow: none !important;
+  font-size: 1.05rem !important;
+  color: var(--vp-c-text-2) !important; /* Slightly softer text color for notes */
+}
+
+.dark .vp-doc .custom-block.note-box,
+.dark .vp-doc .custom-block.tip {
+  background-color: rgba(232, 224, 211, 0.04) !important;
+  border-left-color: #64748b !important;
+}
+
+.vp-doc .custom-block.note-box .custom-block-title,
+.vp-doc .custom-block.tip .custom-block-title {
+  display: none !important;
+}
+
+.vp-doc .custom-block.grammar-box .custom-block-title {
+  display: none; /* We handle titles manually or leave them blank */
+}
+
+/* Suppress nested blockquote borders/backgrounds in grammar boxes for original parity */
+.vp-doc .grammar-box blockquote {
+  border-left: none !important;
+  background-color: transparent !important;
+  padding-left: 2rem !important;
+  margin: 0.5rem 0 !important;
+  font-size: 1em !important; /* Relative to the 1.1rem parent */
+  color: inherit !important;
+}
+
+.vp-doc .grammar-box blockquote p {
+  font-weight: 500;
+  font-size: 1em !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+
+/* Remove bottom margin from the last child inside any custom-block to avoid
+   extra whitespace (child margin + container padding stacking). */
+.vp-doc .custom-block > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Table-wrapper containers (center, no-header) nested directly inside a
+   grammar-box must not add their own margin/padding — the grammar-box
+   padding (1.25rem) already provides all the breathing room. */
+.vp-doc .grammar-box > .custom-block.center,
+.vp-doc .grammar-box > .custom-block.no-header {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* indent blocks nested directly inside a grammar-box: suppress the
+   negative margin-top (-0.7rem) that is designed for post-paragraph
+   context — here the grammar-box padding already handles spacing. */
+.vp-doc .grammar-box > .custom-block.indent {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Empty paragraphs created by blank lines around block-level children
+   inside a grammar-box contribute height without content — hide them. */
+.vp-doc .grammar-box > p:empty {
+  display: none;
+  margin: 0 !important;
+}
+
+/* Media & Image Alignment */
+.vp-doc .custom-block.media,
+.vp-doc .media {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 2.5rem 0 !important;
+  width: 100% !important;
+}
+
+.vp-doc img,
+.vp-doc .media img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0 !important; /* Force zero margin to close gap to caption */
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 4px;
+}
+
+.vp-doc img.inline-icon {
+  display: inline-block !important;
+  margin: 0 !important;
+  max-width: none !important;
+  height: 1.15em !important;
+  width: auto !important;
+  vertical-align: -0.15em !important;
+  border-radius: 0 !important;
+}
+
+.vp-doc .custom-block.media p,
+.vp-doc .media p {
+  text-align: center !important;
+  width: 100% !important;
+  margin-top: 0 !important; /* Zero margin for absolute proximity */
+  margin-bottom: 0 !important; /* Added: Zero margin to collapse gap between image-p and caption-p */
+  line-height: 1.3 !important;
+  font-size: 0.95rem !important;
+  color: var(--vp-c-text-2) !important;
+  font-style: normal !important;
+}
+
+/* Center Container (for Prayers, etc.) */
+.vp-doc .center,
+.vp-doc .custom-block.center {
+  width: 100% !important;
+  text-align: center !important;
+  margin: 2.5rem 0 !important;
+  display: block !important;
+}
+
+.vp-doc .center p,
+.vp-doc .custom-block.center p {
+  text-align: center !important;
+  white-space: pre-line !important;
+  display: block !important;
+  width: 100% !important;
+  margin: 0 auto 1.5rem auto !important;
+}
+
+.vp-doc .custom-block.center .custom-block-title {
+  display: none;
+}
+
+
+/* Important Box (Violet with Traffic Sign) */
+.vp-doc .custom-block.important {
+  background-color: #f5f3ff !important; /* Light violet */
+  border: none !important;
+  border-left: 5px solid #8b5cf6 !important; /* Violet */
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.25rem 1.25rem 4.5rem !important;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.dark .vp-doc .custom-block.important {
+  background-color: #1e1210 !important;
+  border-left-color: #a78bfa !important;
+  color: rgba(232, 224, 211, 0.85) !important;
+}
+
+.vp-doc .custom-block.important::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.8rem;
+  height: 2.8rem;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAuNDEzMzMgMTQwLjY3OTk5IiBoZWlnaHQ9IjE0MC42Nzk5OSIgd2lkdGg9IjE2MC40MTMzMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgaWQ9InN2ZzIiIHZlcnNpb249IjEuMSI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4zMzMzMzMzLDAsMCwtMS4zMzMzMzMzLDAsMTQwLjY4KSIgaWQ9ImcxMCI+PGcgdHJhbnNmb3JtPSJzY2FsZSgwLjEpIiBpZD0iZzEyIj48cGF0aCBpZD0icGF0aDE0IiBzdHlsZT0iZmlsbDojZWUyYzMwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBkPSJNIDQ5LjY4NzUsMCBIIDExNTMuNDQgdiAwIGMgMzguMiwwIDYyLjA3LDQxLjMyODEgNDIuOTksNzQuNDE0MSB2IDAgTCA2NDQuNTE2LDEwMzAuMjkgdiAwIGMgLTE5LjA4MiwzMy4wOCAtNjYuODMsMzMuMDggLTg1Ljk5LDAgdiAwIEwgNi43MDMxMyw3NC40MTQxIHYgMCBDIC0xMi4zNzg5LDQxLjMyODEgMTEuNDg4MywwIDQ5LjY4NzUsMCB2IDAiIC8+PHBhdGggaWQ9InBhdGgxNiIgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIgZD0iTSAxMzUuNTgyLDk5LjIxODggSCAxMDY3LjU1IEwgNjAxLjU2Niw5MDYuMjYyIDEzNS41ODIsOTkuMjE4OCIgLz48cGF0aCBpZD0icGF0aDE4IiBzdHlsZT0iZmlsbDojMjMxZjIwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBkPSJNIDY1OC4yMjcsNjQwLjIyNyA2MzAuMDQzLDMxOC4wOTggdiAwIGMgLTEuODc1LC03LjI3OCAtOC4yODEsLTE0LjU4MiAtMTUuMTU2LC0xOC4xMDYgLTkuNjg0LC0zLjc1IC0yMy40MzgsLTMuMDcgLTMwLjc4Miw0LjQ2MSAtMTIuMDU4LDE0LjU4MiAtOC41MzEsMzUuMjQ2IC0xMS41ODksNTQuMjg5IHYgMCBsIC0yNy43MTksMjg1LjIyMyB2IDAgYyAxLjY1MiwyMC40NDkgMTYuMTI1LDQwLjE3NiAzNi4yNSw0Ni43NjkgMzYuOTM3LDE0LjU3NiA3OS43NzcsLTEyLjcwNyA3Ny4xOCwtNTAuNTA3IHYgMCIgLz48cGF0aCBpZD0icGF0aDIwIiBzdHlsZT0iZmlsbDojMjMxZjIwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBkPSJtIDYwMS41NjYsMjY5LjMxNiBjIDMxLjMyMSwwIDU2LjcsLTI1LjQxOCA1Ni43LC01Ni42OTkgMCwtMzEuMjg5IC0yNS4zNzksLTU2LjY5OSAtNTYuNywtNTYuNjk5IC0zMS4yODUsMCAtNTYuNjk5LDI1LjQxIC01Ni42OTkgNTYuNjk5IDAsMzEuMjgxIDI1LjQxNCw1Ni42OTkgNTYuNjk5LDU2LjY5OSB2IDAiIC8+PC9nPjwvZz48L3N2Zz4=');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.dark .vp-doc .custom-block.important::before {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAuNDEzMzMgMTQwLjY3OTk5IiBoZWlnaHQ9IjE0MC42Nzk5OSIgd2lkdGg9IjE2MC40MTMzMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgaWQ9InN2ZzIiIHZlcnNpb249IjEuMSI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMS4zMzMzMzMzLDAsMCwtMS4zMzMzMzMzLDAsMTQwLjY4KSIgaWQ9ImcxMCI+PGcgdHJhbnNmb3JtPSJzY2FsZSgwLjEpIiBpZD0iZzEyIj48cGF0aCBpZD0icGF0aDE0IiBzdHlsZT0iZmlsbDojZWUyYzMwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBkPSJNIDQ5LjY4NzUsMCBIIDExNTMuNDQgdiAwIGMgMzguMiwwIDYyLjA3LDQxLjMyODEgNDIuOTksNzQuNDE0MSB2IDAgTCA2NDQuNTE2LDEwMzAuMjkgdiAwIGMgLTE5LjA4MiwzMy4wOCAtNjYuODMsMzMuMDggLTg1Ljk5LDAgdiAwIEwgNi43MDMxMyw3NC40MTQxIHYgMCBDIC0xMi4zNzg5LDQxLjMyODEgMTEuNDg4MywwIDQ5LjY4NzUsMCB2IDAiIC8+PHBhdGggaWQ9InBhdGgxNiIgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIgZD0iTSAxMzUuNTgyLDk5LjIxODggSCAxMDY3LjU1IEwgNjAxLjU2Niw5MDYuMjYyIDEzNS41ODIsOTkuMjE4OCIgLz48cGF0aCBpZD0icGF0aDE4IiBzdHlsZT0iZmlsbDojMjMxZjIwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBkPSJNIDY1OC4yMjcsNjQwLjIyNyA2MzAuMDQzLDMxOC4wOTggdiAwIGMgLTEuODc1LC03LjI3OCAtOC4yODEsLTE0LjU4MiAtMTUuMTU2LC0xOC4xMDYgLTkuNjg0LC0zLjc1IC0yMy40MzgsLTMuMDcgLTMwLjc4Miw0LjQ2MSAtMTIuMDU4LDE0LjU4MiAtOC41MzEsMzUuMjQ2IC0xMS41ODksNTQuMjg5IHYgMCBsIC0yNy43MTksMjg1LjIyMyB2IDAgYyAxLjY1MiwyMC40NDkgMTYuMTI1LDQwLjE3NiAzNi4yNSw0Ni43NjkgMzYuOTM3LDE0LjU3NiA3OS43NzcsLTEyLjcwNyA3Ny4xOCwtNTAuNTA3IHYgMCIgLz48cGF0aCBpZD0icGF0aDIwIiBzdHlsZT0iZmlsbDojMjMxZjIwO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lIiBkPSJtIDYwMS41NjYsMjY5LjMxNiBjIDMxLjMyMSwwIDU2LjcsLTI1LjQxOCA1Ni43LC01Ni42OTkgMCwtMzEuMjg5IC0yNS4zNzksLTU2LjY5OSAtNTYuNywtNTYuNjk5IC0zMS4yODUsMCAtNTYuNjk5LDI1LjQxIC01Ni42OTkgNTYuNjk5IDAsMzEuMjgxIDI1LjQxNCw1Ni42OTkgNTYuNjk5LDU2LjY5OSB2IDAiIC8+PC9nPjwvZz48L3N2Zz4=');
+}
+
+.vp-doc .custom-block.important .custom-block-title {
+  display: none;
+}
+
+
+/* Verstecke deleteme-box (Inhalt nur für Redaktion/QA relevant) */
+.vp-doc .custom-block.deleteme-box {
+  display: none !important;
+}
+
+/* Metrische Schemata (L16-Ref) */
+.vp-doc .metrik-schema {
+  font-family: var(--vp-font-family-mono) !important;
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  line-height: 1.8 !important;
+  margin: 1.5rem 0 !important;
+  text-align: left;
+  padding-left: 3rem;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.vp-doc .metrik-schema p {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.vp-doc .metrik-schema strong {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc .metrik-schema strong em,
+.vp-doc .metrik-schema em strong {
+  color: #b22222 !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: inherit !important;
+  font-family: var(--vp-font-family-mono) !important;
+}
+
+.dark .vp-doc .metrik-schema strong em,
+.dark .vp-doc .metrik-schema em strong {
+  color: #8b1a1a !important;
+}
+
+
+/* Indentation Tools */
+.vp-doc .custom-block.indent {
+  padding-left: 2.5rem !important;
+  margin: 0 !important;
+  margin-top: -0.7rem !important; /* Pull up to match line-height */
+}
+
+.vp-doc .custom-block.indent p {
+  margin: 0.25rem 0 !important;
+  line-height: 1.45 !important;
+}
+
+.indent-inline {
+  display: inline-block;
+  width: 2rem;
+}
+
+/* Compact line height custom block */
+.vp-doc .custom-block.compact {
+  line-height: 1.15 !important;
+  margin: 1rem 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.vp-doc .custom-block.compact p {
+  line-height: 1.15 !important;
+  margin: 0 !important;
+}
+
