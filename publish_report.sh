@@ -88,7 +88,12 @@ echo "Pushe Commit und Tags zu origin..."
 git push origin main
 git push origin "$TAG_NAME"
 
-# 6. Wiki-Repository-Prüfung (Birchville-Standard)
+# 6. Deployment in Traefik-Webroot auf Synology
+echo "Synchronisiere HTML-Build in Traefik-Webroot auf Synology (/volume1/docker/blog/dist)..."
+tar -czf - -C docs/.vitepress/dist . | ssh marco@synology.local "tar -xzf - -C /volume1/docker/blog/dist"
+echo "✓ Traefik-Webroot erfolgreich aktualisiert."
+
+# 7. Wiki-Repository-Prüfung (Birchville-Standard)
 WIKI_DIR="../birchville-blog.wiki"
 if [[ -d "$WIKI_DIR" ]]; then
   echo "Prüfe zugehöriges Wiki-Repository ($WIKI_DIR)..."
