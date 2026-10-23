@@ -5,7 +5,7 @@ series: "OIT vs AMT"
 period: "September 2026"
 description: "Monatlicher Forschungsbericht zu Zenodo-Preprints zur Punjabi-Genetik, syrischen Zahnfunden mit südasiatischen Mitogenomen sowie Burzahom-Neolithikum."
 tags: [OIT, AMT, Punjabi, Burzahom, aDNA, Mitogenome, Rakhigarhi]
-sourcesCount: 11
+sourcesCount: 14
 highlights:
   - "Zenodo-Preprint zur Punjabi-Genetik: Trennung von patrilinearen Markern (R1a) und ethnisch-sprachlicher Identität."
   - "Indus-Mesopotamien-Kontakt: Mitochondriale Haplogruppen M4b1, M49 und M61 in syrischen Zähnen (Tell Ashara)."
@@ -174,7 +174,7 @@ Die UZH führt Angelika Malinar als emeritierte Professorin für Indologie; ihre
 
 Für die Vorlesung besonders anschlussfähig sind drei Beobachtungen: Erstens sind „Hinduismus“, „Arya“, „Inder“, „Dravide“, „Brahmane“ und „Sarasvati-Sindhu“ keine zeitlosen, selbsterklärenden Einheiten, sondern müssen text-, institutions- und rezeptionsgeschichtlich kontextualisiert werden. Zweitens entstehen moderne Zivilisationsnarrative aus der Verbindung von Philologie, Archäologie, Kolonialwissen, Nationalismus und gegenwärtiger Politik. Drittens verlangt eine sachliche Darstellung, Kontinuität und Wandel gleichzeitig zu denken: genetische Kontinuität kann mit Migration, Sprachwechsel und religiöser Neubildung koexistieren. Genau diese analytische Trennung entspricht einer kritischen Konstruktion des Gegenstands „Hinduismus“, statt ihn als unveränderte biologische oder kulturelle Essenz vorauszusetzen ([Universität Zürich – Profil Angelika Malinar](https://www.aoi.uzh.ch/en/indologie/personen/emeriti/malinar.html)).
 
-## Vollständige Bibliographie
+## Ausgewertete Quellen & Bibliographie
 
 ### Peer-reviewte Studien und Primärquellen
 

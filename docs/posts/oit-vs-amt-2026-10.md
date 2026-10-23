@@ -5,7 +5,7 @@ series: "OIT vs AMT"
 period: "Oktober 2026"
 description: "Monatliche Synthese neuer Preprints und Veröffentlichungen zu aDNA-Befunden aus Süd- und Zentralasien sowie chronologischen Modellen der indoeuropäischen Sprachstufen."
 tags: [OIT, AMT, aDNA, Archäogenetik, Indogermanistik, Sintashta, IVC]
-sourcesCount: 14
+sourcesCount: 15
 highlights:
   - "Neue aDNA-Tiefensequenzierung spätbronzezeitlicher Proben aus Swat: Kein Hinweis auf R1a-Z93 vor 1600 v. Chr."
   - "Linguistische Re-Evaluation substratexotischer Lehnwörter im Ṛgveda versus dravidische/Munda-Morphologie."
@@ -148,7 +148,7 @@ In Bezug auf die OIT- vs. AMT-Debatte zeigt sich auch in den aktuellen Tagungsbe
 
 ---
 
-## 6. Bibliographie & Quellenverzeichnis
+## Ausgewertete Quellen & Bibliographie
 
 1. **South Asia Journal (September 2026):** *Deconstructing Competing Narratives in South Asian Population History via Archaeogenetics.*  
    URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-DtLkP3pp5ZBB4AQrxQqBvpAk2NM7h7Ars8R8pO-1sMMS2Bpq48uOeAW4-Uka8rDIYT0pRVwGH36G58VuyxEmhd2r2bFE9rwh5winB225464m9Z1GIXEVhvbEoZXF35TFW9S4t9AxgKdxrpNjPCW3_RkvXvcgs45pYtVbWqdfo5yiXBzK9SlPcqBEBh8AWJ6eOdENHUFXHg==

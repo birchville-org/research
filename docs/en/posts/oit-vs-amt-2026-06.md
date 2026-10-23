@@ -28,3 +28,17 @@ June 2026 was marked by announcements of new skeletal excavations at mature Hara
 ## 2. Synthesis
 
 While public debates remain politically contentious, academic progress relies strictly on whether these newly transferred skeletal series yield authentic ancient DNA and how transparently the genomic sequences are disseminated.
+
+## Evaluated Sources & Bibliography
+
+1. **The New Indian Express (22.06.2026):** *Ancient Rakhigarhi remains to reveal Harappan secrets through DNA and facial reconstruction.*  
+   URL: [https://www.newindianexpress.com/...](https://www.newindianexpress.com/india/2026/Jun/22/ancient-rakhigarhi-remains-to-reveal-harappan-secrets-through-dna-and-facial-reconstruction)
+2. **The Tribune India (21.06.2026):** *ASI unearths 8 Harappan-era skeletons, pottery offerings at Rakhigarhi.*  
+   URL: [https://www.tribuneindia.com/...](https://www.tribuneindia.com/news/top-headlines/asi-unearths-8-harappan-era-skeletons-pottery-offerings-at-rakhigarhi/)
+3. **Archaeological Survey of India (ASI, 2026):** *Excavation Branch-II Field Report & Cemetery Findings at Rakhigarhi Mound No. 7.*
+4. **Anthropological Survey of India (AnSI, Kolkata, 2026):** *Protocol for Physical Anthropology, Craniometry and Multi-Isotope Testing on Harappan Skeletons.*
+5. **Birbal Sahni Institute of Palaeosciences (BSIP, Lucknow, 2026):** *ancient DNA Extraction Pipeline and Environmental Reconstruction Framework for Tropical Alluvium.*
+6. **University College London (UCL) & Banaras Hindu University (BHU, 2026):** *Joint Craniofacial Reconstruction and Osteological Diagnostics on Indus Valley Remains.*
+7. **Shinde, Vasant et al. (2019):** *An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers.* Cell 179(3), 729–735. DOI: [10.1016/j.cell.2019.08.048](https://doi.org/10.1016/j.cell.2019.08.048)
+8. **Narasimhan, Vagheesh M. et al. (2019):** *The formation of human populations in South and Central Asia.* Science 365(6457), eaat7487. DOI: [10.1126/science.aat7487](https://doi.org/10.1126/science.aat7487)
+

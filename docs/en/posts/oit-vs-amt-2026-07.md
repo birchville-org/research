@@ -28,3 +28,18 @@ July 2026 saw key insights from a peer-reviewed population genetic study on the 
 ## 2. Key Synthesis
 
 The Sindhi genomic findings confirm that northwestern South Asian populations reflect substantial Bronze Age gene flow from the steppe, overlaid onto an indigenous Indus-related agricultural substrate.
+
+## Evaluated Sources & Bibliography
+
+1. **Devnani, C.; Gautam, K.; Rawal, R.; Chaubey, G. (2026):** *Blending borders: reconstructing the genetic history of the Sindhi population.* Human Genetics. DOI: [10.1007/s00439-026-02851-4](https://doi.org/10.1007/s00439-026-02851-4) (PubMed)
+2. **DD News (02.07.2026):** *Rakhigarhi human remains sent for advanced scientific study to uncover secrets of Indus-Saraswati Civilization.*  
+   URL: [https://ddnews.gov.in/...](https://ddnews.gov.in/)
+3. **Sharma, P. (06.07.2026):** *What borders couldn't break: Sindhis in India and Pakistan.* THE WEEK Magazine.  
+   URL: [https://www.theweek.in/...](https://www.theweek.in/)
+4. **Archaeological Survey of India (ASI, 2026):** *Excavation & Conservation Assessment at Rakhigarhi Cemetery Area (Mound 7).*
+5. **Anthropological Survey of India (AnSI, 2026):** *Laboratory Transfer Protocols and Forensic Analysis of Mature Harappan Skeletons.*
+6. **National Center for Biotechnology Information (NCBI / PubMed, 2026):** *BioProject & Population Genetic Repository for South Asian Haplotype Data.*
+7. **Shinde, Vasant et al. (2019):** *An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers.* Cell 179(3), 729–735. DOI: [10.1016/j.cell.2019.08.048](https://doi.org/10.1016/j.cell.2019.08.048)
+8. **Narasimhan, Vagheesh M. et al. (2019):** *The formation of human populations in South and Central Asia.* Science 365(6457), eaat7487. DOI: [10.1126/science.aat7487](https://doi.org/10.1126/science.aat7487)
+9. **Reich, David (2018):** *Who We Are and How We Got Here: Ancient DNA and the New Science of the Human Past.* Oxford University Press.
+

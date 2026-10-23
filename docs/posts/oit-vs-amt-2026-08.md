@@ -5,7 +5,7 @@ series: "OIT vs AMT"
 period: "August 2026"
 description: "Monatlicher Bericht zu den Ladakh-Genomen aus Science Advances, aDNA-Initiativen in Tamil Nadu (Keeladi/Adichanallur) sowie methodischen Grenzen der Populationsgenetik in Südasien."
 tags: [OIT, AMT, Ladakh, Keeladi, aDNA, Rajghat, BMAC]
-sourcesCount: 16
+sourcesCount: 20
 highlights:
   - "Science Advances: Zehn Genome aus der Old Lady Spider Cave in Ladakh belegen 50:50 tibetisch-nordindische Mischung vor ca. 2.800 Jahren."
   - "aDNA-Offensive in Tamil Nadu: Rund 75.000 vorläufige Marker aus Konthagai/Keeladi, Adichanallur und Sivagalai."
@@ -297,8 +297,9 @@ Sprachgeschichte, vedische Ritualtraditionen und moderner Hinduismus sind mitein
 verbundene, aber nicht identische historische Ebenen. Die politische Aufladung der Begriffe
 erklärt, warum dieselben Daten als „Kontinuität“ oder „Migration“ erzählt werden können.
 
-Vollständige Bibliographie
-Neue bzw. im Berichtsmonat rezipierte Quellen
+## Ausgewertete Quellen & Bibliographie
+
+### Neue bzw. im Berichtsmonat rezipierte Quellen
 1. Patterson, Nick; Mushrif-Tripathy, Veena; Devers, Quentin et al. (2026). “Ancient genomes
 from Ladakh reveal 2800-year-old admixture between Tibetans and South Asians.” Science
 Advances 12(30), eaeb3636. DOI: https://doi.org/10.1126/sciadv.aeb3636. Volltext: https://pmc.ncb
