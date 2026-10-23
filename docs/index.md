@@ -4,6 +4,8 @@ title: Beiträge
 aside: false
 ---
 
-# Beiträge
+# Forschungsberichte & Digests
+
+Regelmäßige Auswertung, Synthese und Kompression automatisierter Literatur- und Datenrecherchen.
 
 <PostList />
