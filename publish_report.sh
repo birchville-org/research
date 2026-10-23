@@ -60,7 +60,11 @@ fi
 
 echo "✓ Alle Produktionsregeln (DE/EN Parität, H2-Quellenverzeichnis, sourcesCount) erfüllt."
 
-# 3. Git-Status & Commit
+# 3. Statische Site bauen (VitePress)
+echo "Baue VitePress-Blog (docs:build)..."
+npm run docs:build
+
+# 4. Git-Status & Commit
 TAG_NAME="report/$PERIOD_CODE"
 
 if git status --porcelain | grep -qE "docs/(posts|en/posts)/"; then
