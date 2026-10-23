@@ -138,13 +138,32 @@ export default defineConfig({
     const postsDe = await createContentLoader('posts/*.md', { excerpt: true, render: true }).load()
     postsDe.sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
 
+    const oitExplanationDe = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>Hintergrund zur Forschungsreihe „OIT vs. AMT“:</strong>
+  <p style="margin:6px 0 4px;"><strong>OIT (Out of India Theory):</strong> Postuliert den Ursprung der indogermanischen Sprachfamilie auf dem indischen Subkontinent und deren Westausbreitung.</p>
+  <p style="margin:0;"><strong>AMT (Aryan Migration Theory / Steppen-Hypothese):</strong> Beschreibt das Standardmodell der Einwanderung indo-iranischer Sprechergruppen aus der eurasischen Steppe im 2. Jahrtausend v. Chr.</p>
+</div>
+`
+
+    const oitExplanationEn = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>Background on "OIT vs. AMT":</strong>
+  <p style="margin:6px 0 4px;"><strong>OIT (Out of India Theory):</strong> Proposes that the Indo-European language family originated within the Indian subcontinent and expanded westward.</p>
+  <p style="margin:0;"><strong>AMT (Aryan Migration Theory / Steppe Hypothesis):</strong> The linguistic and archaeogenetic consensus model positing that Indo-Iranian speakers migrated into South Asia from the Eurasian steppe in the 2nd millennium BCE.</p>
+</div>
+`
+
     for (const { url, frontmatter, excerpt, html } of postsDe) {
+      const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
+      const feedContent = isOit ? oitExplanationDe + html : html
+
       feedDe.addItem({
         title: frontmatter.title,
         id: `${SITE_URL}${url}`,
         link: `${SITE_URL}${url}`,
         description: frontmatter.description || excerpt,
-        content: html,
+        content: feedContent,
         date: new Date(frontmatter.date),
       })
     }
@@ -166,12 +185,15 @@ export default defineConfig({
     postsEn.sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
 
     for (const { url, frontmatter, excerpt, html } of postsEn) {
+      const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
+      const feedContent = isOit ? oitExplanationEn + html : html
+
       feedEn.addItem({
         title: frontmatter.title,
         id: `${SITE_URL}${url}`,
         link: `${SITE_URL}${url}`,
         description: frontmatter.description || excerpt,
-        content: html,
+        content: feedContent,
         date: new Date(frontmatter.date),
       })
     }
