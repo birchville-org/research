@@ -10,8 +10,20 @@ cd "$REPO_DIR"
 
 echo "=== Birchville Blog: Publikations-Prüfung (Modell A) ==="
 
-# 1. Ermitteln der neuesten Monatsbericht-Dateien
-LATEST_DE="$(ls -1 docs/posts/oit-vs-amt-[0-9][0-9][0-9][0-9]-[0-9][0-9].md 2>/dev/null | sort | tail -n 1 || true)"
+# 1. Ermitteln der Ziel-Monatsbericht-Dateien
+if [[ $# -ge 1 && -n "${1:-}" ]]; then
+  if [[ -f "$1" ]]; then
+    LATEST_DE="$1"
+  elif [[ -f "docs/posts/$1" ]]; then
+    LATEST_DE="docs/posts/$1"
+  else
+    echo "Fehler: Angegebene Datei nicht gefunden: $1"
+    exit 1
+  fi
+else
+  # Automatisch den neuesten Bericht über alle Serien (oit-vs-amt, ivc etc.) ermitteln
+  LATEST_DE="$(ls -1 docs/posts/*.md 2>/dev/null | sort | tail -n 1 || true)"
+fi
 
 if [[ -z "$LATEST_DE" ]]; then
   echo "Fehler: Keine Monatsberichte unter docs/posts/ gefunden."
@@ -19,12 +31,32 @@ if [[ -z "$LATEST_DE" ]]; then
 fi
 
 REPORT_FILE="$(basename "$LATEST_DE")"
-PERIOD_CODE="${REPORT_FILE#oit-vs-amt-}"
-PERIOD_CODE="${PERIOD_CODE%.md}"
+FILENAME_NO_EXT="${REPORT_FILE%.md}"
+
+# Serie und Periode aus Dateinamen extrahieren
+if [[ "$FILENAME_NO_EXT" =~ ^([a-zA-Z0-9_-]+)-([0-9]{4}-[0-9]{2})$ ]]; then
+  SERIES_PREFIX="${match[1]}"
+  PERIOD_CODE="${match[2]}"
+else
+  SERIES_PREFIX="report"
+  PERIOD_CODE="$FILENAME_NO_EXT"
+fi
+
 LATEST_EN="docs/en/posts/$REPORT_FILE"
 LATEST_HI="docs/hi/posts/$REPORT_FILE"
 
-echo "Neuester gefundener Monatsbericht: $PERIOD_CODE ($REPORT_FILE)"
+# Tag-Namenskonvention
+if [[ "$SERIES_PREFIX" == "oit-vs-amt" ]]; then
+  if git rev-parse "report/$PERIOD_CODE" >/dev/null 2>&1; then
+    TAG_NAME="report/$PERIOD_CODE"
+  else
+    TAG_NAME="report/$SERIES_PREFIX-$PERIOD_CODE"
+  fi
+else
+  TAG_NAME="report/$SERIES_PREFIX-$PERIOD_CODE"
+fi
+
+echo "Ziel-Monatsbericht: Serie='$SERIES_PREFIX', Periode='$PERIOD_CODE' ($REPORT_FILE)"
 
 # 2. Automatische Übersetzung falls Zielsprachen fehlen
 if [[ ! -f "$LATEST_EN" || ! -f "$LATEST_HI" ]]; then

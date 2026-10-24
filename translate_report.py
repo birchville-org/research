@@ -15,12 +15,20 @@ API_KEY = os.environ.get("GEMINI_API_KEY")
 MODEL = "gemini-2.5-flash"
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={API_KEY}"
 
-PROMPT_EN = """You are a specialized scientific translator in the fields of archaeogenetics, Indology, and historical linguistics.
+PROMPT_EN = """You are a specialized scientific translator in the fields of South Asian archaeology, Indology, archaeogenetics, and historical linguistics.
 Translate the following German monthly research report into English for the Birchville Blog.
 
 CRITICAL RULES:
 1. Translate the ENTIRE document from start to finish without summarizing, skipping, or abridging ANY section.
-2. Frontmatter: Translate title, description, period, highlights. Keep series as "OIT vs AMT". Keep date and sourcesCount unchanged.
+2. Frontmatter:
+   - title: Translate title accurately into English (e.g., 'OIT vs AMT: Monthly Report [Period]' or 'IVC: Monthly Report [Period]').
+   - date: Keep unchanged
+   - series: Keep series value unchanged from frontmatter (e.g., "OIT vs AMT" or "IVC").
+   - period: Translate into English (e.g., "October 2026")
+   - description: Translate into English
+   - tags: Keep technical tags intact or translate appropriately
+   - sourcesCount: Keep unchanged
+   - highlights: Translate each highlight bullet point into formal academic English
 3. Top Navigation Button:
    Translate '<a href="#vollstandiger-monatsbericht" class="quick-btn quick-btn-primary" style="text-decoration: none;">\\n    <span>📄</span> Vollständigen Monatsbericht lesen ↓\\n  </a>'
    to '<a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">\\n    <span>📄</span> Read full monthly report ↓\\n  </a>'
@@ -37,16 +45,16 @@ CRITICAL RULES:
 8. Return ONLY the complete valid Markdown document, without any enclosing markdown code block fences (no ```markdown at the start or ``` at the end).
 """
 
-PROMPT_HI = """You are a scholarly translator specializing in ancient Indian history, Indology, Sanskrit philology, and archaeogenetics.
+PROMPT_HI = """You are a scholarly translator specializing in ancient Indian history, South Asian archaeology, Indology, and archaeogenetics.
 Translate the following German monthly research report into formal, academic Hindi (in Devanagari script) for the Birchville Blog.
 
 CRITICAL RULES:
 1. Translate the ENTIRE document from start to finish without summarizing, skipping, or abridging ANY section into scholarly, formal Hindi (Devanagari script).
 2. Frontmatter:
-   - title: Translate into Hindi (e.g., 'OIT बनाम AMT: मासिक रिपोर्ट [माह वर्ष]')
+   - title: Translate into Hindi (e.g., 'OIT बनाम AMT: मासिक रिपोर्ट [माह वर्ष]' or 'IVC: मासिक रिपोर्ट [माह वर्ष]')
    - date: Keep unchanged
-   - series: Keep 'OIT vs AMT'
-   - period: Translate into Hindi (e.g., 'जून 2026', 'जुलाई 2026', 'अगस्त 2026', 'सितंबर 2026')
+   - series: Keep series value unchanged from frontmatter (e.g., "OIT vs AMT" or "IVC")
+   - period: Translate into Hindi (e.g., 'जून 2026', 'जुलाई 2026', 'अगस्त 2026', 'सितंबर 2026', 'अक्टूबर 2026')
    - description: Translate into formal Hindi
    - tags: Keep English technical tags or transcribe accurately
    - sourcesCount: Keep unchanged

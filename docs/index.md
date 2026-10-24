@@ -15,4 +15,11 @@ Regelmäßige Auswertung, Synthese und Kompression automatisierter Literatur- un
 - **AMT (Aryan Migration Theory / Steppen-Hypothese):** Beschreibt das linguistische und archäogenetische Standardmodell, demzufolge indo-iranische Sprechergruppen im 2. Jahrtausend v. Chr. aus der eurasischen Steppe über Zentralasien nach Nordwestindien eingewandert sind.
 :::
 
+::: details Was bedeutet „IVC“? (Indus-Valley-Culture / Harappa-Zivilisation)
+**IVC (Indus Valley Culture / Civilization)** bezeichnet die bronzezeitliche Indus-Zivilisation (ca. 3300–1300 v. Chr.) im Nordwesten Südasiens (u. a. Harappa, Mohenjo-daro, Dholavira, Rakhigarhi, Lothal):
+
+- **Fokus der Monatsberichte:** Fortlaufende Synthese neuer Grabungsergebnisse, Radiokarbondatierungen, archäogenetischer Proben (aDNA), paläoklimatischer Daten (Sedimentbohrkerne, Monsunverläufe) sowie Studien zu Handelsnetzwerken, Urbanistik und Deurbanisation.
+- **Kürzel:** In Beiträgen und Metadaten wird einheitlich das etablierte internationale Fachkürzel **IVC** verwendet.
+:::
+
 <PostList />

@@ -177,11 +177,25 @@ export default defineConfig({
 </div>
 `
 
+    const ivcExplanationDe = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>Hintergrund zur Forschungsreihe „IVC“ (Indus-Valley-Culture / Harappa-Zivilisation):</strong>
+  <p style="margin:6px 0 0;">Monatliche Synthese neuer archäologischer, paläoklimatischer, archäogenetischer und siedlungsgeographischer Befunde zur bronzezeitlichen Indus-Zivilisation (ca. 3300–1300 v. Chr.) sowie deren urbaner Reife-, Transformations- und Deurbanisationsphasen.</p>
+</div>
+`
+
     const oitExplanationEn = `
 <div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
   <strong>Background on "OIT vs. AMT":</strong>
   <p style="margin:6px 0 4px;"><strong>OIT (Out of India Theory):</strong> Proposes that the Indo-European language family originated within the Indian subcontinent and expanded westward.</p>
   <p style="margin:0;"><strong>AMT (Aryan Migration Theory / Steppe Hypothesis):</strong> The linguistic and archaeogenetic consensus model positing that Indo-Iranian speakers migrated into South Asia from the Eurasian steppe in the 2nd millennium BCE.</p>
+</div>
+`
+
+    const ivcExplanationEn = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>Background on "IVC" (Indus Valley Culture / Civilization):</strong>
+  <p style="margin:6px 0 0;">Monthly synthesis of emerging archaeological, paleoclimatic, archaeogenetic, and settlement-geographical evidence concerning the Bronze Age Indus Civilization (c. 3300–1300 BCE), its urban maturity, transformation, and deurbanization phases.</p>
 </div>
 `
 
@@ -193,9 +207,19 @@ export default defineConfig({
 </div>
 `
 
+    const ivcExplanationHi = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>"IVC" (सिंधु घाटी सभ्यता / हड़प्पा सभ्यता) अनुसंधान श्रृंखला की पृष्ठभूमि:</strong>
+  <p style="margin:6px 0 0;">कांस्य युगीन सिंधु सभ्यता (लगभग 3300-1300 ईसा पूर्व), इसके शहरी परिपक्वता काल, रूपांतरण और विसंगठन (डी-अर्बनाइजेशन) चरणों से संबंधित नए पुरातात्विक, पुरा-जलवायु, आनुवंशिक और भू-स्थानिक अध्ययनों का मासिक सार।</p>
+</div>
+`
+
     for (const { url, frontmatter, excerpt, html } of postsDe) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
-      const feedContent = isOit ? oitExplanationDe + html : html
+      const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
+      let feedContent = html
+      if (isOit) feedContent = oitExplanationDe + feedContent
+      else if (isIvc) feedContent = ivcExplanationDe + feedContent
 
       feedDe.addItem({
         title: frontmatter.title,
@@ -225,7 +249,10 @@ export default defineConfig({
 
     for (const { url, frontmatter, excerpt, html } of postsEn) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
-      const feedContent = isOit ? oitExplanationEn + html : html
+      const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
+      let feedContent = html
+      if (isOit) feedContent = oitExplanationEn + feedContent
+      else if (isIvc) feedContent = ivcExplanationEn + feedContent
 
       feedEn.addItem({
         title: frontmatter.title,
@@ -255,7 +282,10 @@ export default defineConfig({
 
     for (const { url, frontmatter, excerpt, html } of postsHi) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
-      const feedContent = isOit ? oitExplanationHi + html : html
+      const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
+      let feedContent = html
+      if (isOit) feedContent = oitExplanationHi + feedContent
+      else if (isIvc) feedContent = ivcExplanationHi + feedContent
 
       feedHi.addItem({
         title: frontmatter.title,

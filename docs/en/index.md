@@ -15,4 +15,11 @@ Systematic evaluation, synthesis, and compression of automated literature and da
 - **AMT (Aryan Migration Theory):** Represents the linguistic and archaeogenetic consensus model, positing that Indo-Iranian speakers migrated into northwestern South Asia from the Eurasian steppe via Central Asia during the 2nd millennium BCE.
 :::
 
+::: details What does "IVC" stand for? (Indus Valley Culture / Harappan Civilization)
+**IVC (Indus Valley Culture / Civilization)** refers to the Bronze Age Indus Civilization (c. 3300–1300 BCE) spanning northwestern South Asia (e.g. Harappa, Mohenjo-daro, Dholavira, Rakhigarhi, Lothal):
+
+- **Focus of Monthly Reports:** Continuous synthesis of emerging archaeological excavations, radiocarbon chronologies, ancient DNA (aDNA) samplings, paleoclimatic data (sediment cores, monsoon dynamics), as well as studies on trade networks, urbanism, and deurbanization.
+- **Abbreviation:** Across articles and metadata, the standard scholarly abbreviation **IVC** is uniformly used.
+:::
+
 <PostList />
