@@ -3,7 +3,10 @@
 Für alle automatisiert oder manuell generierten Monatsberichte und Blogbeiträge in diesem Repository gelten folgende verbindliche Standards:
 
 ## 1. Verbindliches Quellenverzeichnis (H2-Ebene)
-* **Pflichtabschnitt:** Jeder Monatsbericht MUSS am Ende einen eigenen Abschnitt auf H2-Ebene (`## Ausgewertete Quellen & Bibliographie` bzw. in der englischen Fassung `## Evaluated Sources & Bibliography`) besitzen.
+* **Pflichtabschnitt:** Jeder Monatsbericht MUSS am Ende einen eigenen Abschnitt auf H2-Ebene besitzen:
+  * Deutsch: `## Ausgewertete Quellen & Bibliographie`
+  * Englisch: `## Evaluated Sources & Bibliography`
+  * Hindi: `## मूल्यांकित स्रोत एवं संदर्भ`
 * **Überschriften-Hierarchie:** Dieser Abschnitt MUSS als echtes Markdown-H2 (`##`) deklariert sein, damit er:
   1. Automatisch im Inhaltsverzeichnis (Outline / Seitennavigation rechts) von VitePress erfasst wird.
   2. Direkt per Anker-Link ansteuerbar ist.
@@ -27,6 +30,7 @@ Für alle automatisiert oder manuell generierten Monatsberichte und Blogbeiträg
   ```
 * Die in `sourcesCount` angegebene Zahl MUSS exakt der Anzahl der nummerierten Einträge im Quellenverzeichnis entsprechen (wichtig für das Blog-Badge `📚 X Quellen ausgewertet` in der Beitragsliste).
 
-## 4. Zweisprachigkeit & Parität (i18n)
-* Jeder deutsche Beitrag unter `docs/posts/` muss ein synchrones englisches Äquivalent unter `docs/en/posts/` besitzen.
-* Das Quellenverzeichnis darf in der englischen Übersetzung NICHT weggelassen werden. Es wird vollständig mit englischen Abschnittsüberschriften (`## Evaluated Sources & Bibliography`) parallel geführt.
+## 4. Dreisprachigkeit & Parität (i18n: DE, EN, HI)
+* Jeder deutsche Beitrag unter `docs/posts/` muss synchrone Äquivalente unter `docs/en/posts/` (Englisch) und `docs/hi/posts/` (Hindi in Devanagari) besitzen.
+* Das Übersetzungs-Skript `translate_report.py` übersetzt neue Berichte automatisch via Gemini API in beide Zielsprachen.
+* Das Quellenverzeichnis darf in keiner Übersetzung weggelassen werden. Es wird in allen drei Sprachen mit identischer Quellenanzahl geführt.

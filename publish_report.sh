@@ -22,14 +22,26 @@ REPORT_FILE="$(basename "$LATEST_DE")"
 PERIOD_CODE="${REPORT_FILE#oit-vs-amt-}"
 PERIOD_CODE="${PERIOD_CODE%.md}"
 LATEST_EN="docs/en/posts/$REPORT_FILE"
+LATEST_HI="docs/hi/posts/$REPORT_FILE"
 
 echo "Neuester gefundener Monatsbericht: $PERIOD_CODE ($REPORT_FILE)"
 
-# 2. Validierung gegen Produktionsregeln (.gemini/rules/report-production.md)
+# 2. Automatische Übersetzung falls Zielsprachen fehlen
+if [[ ! -f "$LATEST_EN" || ! -f "$LATEST_HI" ]]; then
+  echo "Fehlende Übersetzungen erkannt. Starte automatische Übersetzung via translate_report.py..."
+  python3 translate_report.py "$LATEST_DE"
+fi
+
+# 3. Validierung gegen Produktionsregeln (.gemini/rules/report-production.md)
 echo "Prüfe Einhaltung der Produktionsregeln..."
 
 if [[ ! -f "$LATEST_EN" ]]; then
   echo "Fehler: Englisches Gegenstück fehlt: $LATEST_EN"
+  exit 1
+fi
+
+if [[ ! -f "$LATEST_HI" ]]; then
+  echo "Fehler: Hindi-Gegenstück fehlt: $LATEST_HI"
   exit 1
 fi
 
@@ -45,37 +57,44 @@ if ! grep -q "^## Evaluated Sources & Bibliography" "$LATEST_EN"; then
   exit 1
 fi
 
-# Prüfe sourcesCount im Frontmatter
-SOURCES_DE="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_DE" | awk '{print $2}' || true)"
-SOURCES_EN="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_EN" | awk '{print $2}' || true)"
-
-if [[ -z "$SOURCES_DE" || -z "$SOURCES_EN" ]]; then
-  echo "Fehler: 'sourcesCount' fehlt im Frontmatter von $LATEST_DE oder $LATEST_EN."
+# Prüfe H2-Quellenverzeichnis in HI
+if ! grep -q "^## मूल्यांकित स्रोत एवं संदर्भ" "$LATEST_HI"; then
+  echo "Fehler: Hindi-Quellenverzeichnis '## मूल्यांकित स्रोत एवं संदर्भ' fehlt in $LATEST_HI"
   exit 1
 fi
 
-if [[ "$SOURCES_DE" != "$SOURCES_EN" ]]; then
-  echo "Warnung: sourcesCount weicht ab (DE: $SOURCES_DE, EN: $SOURCES_EN)."
+# Prüfe sourcesCount im Frontmatter
+SOURCES_DE="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_DE" | awk '{print $2}' || true)"
+SOURCES_EN="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_EN" | awk '{print $2}' || true)"
+SOURCES_HI="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_HI" | awk '{print $2}' || true)"
+
+if [[ -z "$SOURCES_DE" || -z "$SOURCES_EN" || -z "$SOURCES_HI" ]]; then
+  echo "Fehler: 'sourcesCount' fehlt im Frontmatter von $LATEST_DE, $LATEST_EN oder $LATEST_HI."
+  exit 1
 fi
 
-echo "✓ Alle Produktionsregeln (DE/EN Parität, H2-Quellenverzeichnis, sourcesCount) erfüllt."
+if [[ "$SOURCES_DE" != "$SOURCES_EN" || "$SOURCES_DE" != "$SOURCES_HI" ]]; then
+  echo "Warnung: sourcesCount weicht ab (DE: $SOURCES_DE, EN: $SOURCES_EN, HI: $SOURCES_HI)."
+fi
 
-# 3. Statische Site bauen (VitePress)
+echo "✓ Alle Produktionsregeln (DE/EN/HI Parität, H2-Quellenverzeichnis, sourcesCount) erfüllt."
+
+# 4. Statische Site bauen (VitePress)
 echo "Baue VitePress-Blog (docs:build)..."
 npm run docs:build
 
-# 4. Git-Status & Commit
+# 5. Git-Status & Commit
 TAG_NAME="report/$PERIOD_CODE"
 
-if git status --porcelain | grep -qE "docs/(posts|en/posts)/"; then
+if git status --porcelain | grep -qE "docs/(posts|en/posts|hi/posts)/"; then
   echo "Nicht committete Änderungen an Berichten erkannt. Erstelle Commit..."
-  git add docs/posts/ docs/en/posts/
-  git commit -m "feat(report): Freigabe Monatsbericht $PERIOD_CODE"
+  git add docs/posts/ docs/en/posts/ docs/hi/posts/
+  git commit -m "feat(report): Freigabe Monatsbericht $PERIOD_CODE (DE/EN/HI)"
 else
   echo "Arbeitsverzeichnis für Berichte ist sauber."
 fi
 
-# 4. Redaktioneller Monats-Tag setzen
+# 6. Redaktioneller Monats-Tag setzen
 if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
   echo "Tag '$TAG_NAME' existiert bereits. Überspringe Tag-Erstellung."
 else
@@ -83,17 +102,17 @@ else
   git tag -a "$TAG_NAME" -m "Freigabe Monatsbericht $PERIOD_CODE"
 fi
 
-# 5. Push zu Origin
+# 7. Push zu Origin
 echo "Pushe Commit und Tags zu origin..."
 git push origin main
 git push origin "$TAG_NAME"
 
-# 6. Deployment in Traefik-Webroot auf Synology
+# 8. Deployment in Traefik-Webroot auf Synology
 echo "Synchronisiere HTML-Build in Traefik-Webroot auf Synology (/volume1/docker/blog/dist)..."
 tar -czf - -C docs/.vitepress/dist . | ssh marco@synology.local "tar -xzf - -C /volume1/docker/blog/dist"
 echo "✓ Traefik-Webroot erfolgreich aktualisiert."
 
-# 7. Wiki-Repository-Prüfung (Birchville-Standard)
+# 9. Wiki-Repository-Prüfung (Birchville-Standard)
 WIKI_DIR="../birchville-blog.wiki"
 if [[ -d "$WIKI_DIR" ]]; then
   echo "Prüfe zugehöriges Wiki-Repository ($WIKI_DIR)..."

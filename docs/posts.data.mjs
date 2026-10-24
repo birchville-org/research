@@ -16,6 +16,6 @@ function transformPosts(raw) {
     .sort((a, b) => +new Date(b.date) - +new Date(a.date))
 }
 
-export default createContentLoader(['posts/*.md', 'en/posts/*.md'], {
+export default createContentLoader(['posts/*.md', 'en/posts/*.md', 'hi/posts/*.md'], {
   transform: transformPosts,
 })

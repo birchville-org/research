@@ -10,16 +10,43 @@ const props = defineProps({
 })
 
 const route = useRoute()
-const isEn = computed(() => route.path.startsWith('/en/'))
+const currentLang = computed(() => {
+  if (route.path.startsWith('/hi/')) return 'hi'
+  if (route.path.startsWith('/en/')) return 'en'
+  return 'de'
+})
+
+const isEn = computed(() => currentLang.value === 'en')
 
 // Filter by current language based on URL prefix
 const langPosts = computed(() => {
   return allPosts.filter((p) => {
-    if (isEn.value) {
-      return p.url.startsWith('/en/')
-    }
-    return !p.url.startsWith('/en/')
+    if (currentLang.value === 'hi') return p.url.startsWith('/hi/')
+    if (currentLang.value === 'en') return p.url.startsWith('/en/')
+    return !p.url.startsWith('/en/') && !p.url.startsWith('/hi/')
   })
+})
+
+const labels = computed(() => {
+  if (currentLang.value === 'hi') {
+    return {
+      series: 'श्रृंखला:',
+      all: 'सभी',
+      sources: 'स्रोतों का मूल्यांकन',
+    }
+  }
+  if (currentLang.value === 'en') {
+    return {
+      series: 'Series:',
+      all: 'All',
+      sources: 'Sources evaluated',
+    }
+  }
+  return {
+    series: 'Reihe:',
+    all: 'Alle',
+    sources: 'Quellen ausgewertet',
+  }
 })
 
 const activeSeries = ref(props.selectedSeries || 'ALL')
@@ -42,8 +69,8 @@ const filtered = computed(() => {
 })
 
 const fmt = (d) => {
-  const locale = isEn.value ? 'en-US' : 'de-DE'
-  return new Date(d).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })
+  const localeMap = { hi: 'hi-IN', en: 'en-US', de: 'de-DE' }
+  return new Date(d).toLocaleDateString(localeMap[currentLang.value] || 'de-DE', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
 const groups = computed(() => {
@@ -60,13 +87,13 @@ const groups = computed(() => {
 
 <template>
   <div v-if="!selectedSeries && availableSeries.length > 0" class="filter-bar">
-    <span style="font-weight: 600; color: var(--text-2);">{{ isEn ? 'Series:' : 'Reihe:' }}</span>
+    <span style="font-weight: 600; color: var(--text-2);">{{ labels.series }}</span>
     <button
       class="filter-btn"
       :class="{ active: activeSeries === 'ALL' }"
       @click="activeSeries = 'ALL'"
     >
-      {{ isEn ? 'All' : 'Alle' }}
+      {{ labels.all }}
     </button>
     <button
       v-for="s in availableSeries"
@@ -102,7 +129,7 @@ const groups = computed(() => {
               <span v-for="t in p.tags" :key="t" class="post-tag">#{{ t }}</span>
             </div>
             <span v-if="p.sourcesCount" class="post-sources-badge">
-              📚 {{ p.sourcesCount }} {{ isEn ? 'Sources evaluated' : 'Quellen ausgewertet' }}
+              📚 {{ p.sourcesCount }} {{ labels.sources }}
             </span>
           </div>
         </li>
@@ -130,7 +157,7 @@ const groups = computed(() => {
           <span v-for="t in p.tags" :key="t" class="post-tag">#{{ t }}</span>
         </div>
         <span v-if="p.sourcesCount" class="post-sources-badge">
-          📚 {{ p.sourcesCount }} {{ isEn ? 'Sources evaluated' : 'Quellen ausgewertet' }}
+          📚 {{ p.sourcesCount }} {{ labels.sources }}
         </span>
       </div>
     </li>

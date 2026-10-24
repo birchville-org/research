@@ -14,6 +14,7 @@ const SITE_URL = process.env.SITE_URL || 'https://blog.birchville.org'
 const TITLE = 'Birchville Blog'
 const DESCRIPTION_DE = 'Kompression automatisierter Forschungs- & Rechercheergebnisse'
 const DESCRIPTION_EN = 'Synthesized and compressed automated research digests'
+const DESCRIPTION_HI = 'स्वचालित शोध एवं अनुसंधान परिणामों का संपीड़न'
 
 const blockContainers = [
   { name: 'grammar-box2', className: 'grammar-box2' },
@@ -61,6 +62,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:image', content: `${SITE_URL}/og-icon.png` }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: `${TITLE} (DE)`, href: '/feed.xml' }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: `${TITLE} (EN)`, href: '/feed-en.xml' }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: `${TITLE} (HI)`, href: '/feed-hi.xml' }],
   ],
 
   locales: {
@@ -100,6 +102,26 @@ export default defineConfig({
           options: {
             detailedView: true,
             locales: { en: { translations: { button: { buttonText: 'Search' } } } },
+          },
+        },
+      },
+    },
+    hi: {
+      label: 'हिन्दी',
+      lang: 'hi-IN',
+      description: DESCRIPTION_HI,
+      themeConfig: {
+        nav: [
+          { text: 'लेख', link: '/hi/' },
+          { text: 'अनुसंधान की स्थिति', link: '/hi/stand-der-forschung' },
+          { text: 'अभिलेखागार', link: '/hi/archiv' },
+          { text: 'RSS', link: '/feed-hi.xml', target: '_blank' },
+        ],
+        search: {
+          provider: 'local',
+          options: {
+            detailedView: true,
+            locales: { hi: { translations: { button: { buttonText: 'खोजें' } } } },
           },
         },
       },
@@ -163,6 +185,14 @@ export default defineConfig({
 </div>
 `
 
+    const oitExplanationHi = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>"OIT vs. AMT" अनुसंधान श्रृंखला की पृष्ठभूमि:</strong>
+  <p style="margin:6px 0 4px;"><strong>OIT (आउट ऑफ इंडिया थ्योरी):</strong> यह प्रस्ताव करती है कि भारोपीय (इंडो-यूरोपीय) भाषा परिवार की उत्पत्ति भारतीय उपमहाद्वीप में हुई और यहीं से इसका पश्चिम की ओर विस्तार हुआ।</p>
+  <p style="margin:0;"><strong>AMT (आर्य प्रवासन सिद्धांत / स्टेपी परिकल्पना):</strong> भाषावैज्ञानिक और पुरातत्व-आनुवंशिक सर्वसम्मत मॉडल, जिसके अनुसार दूसरी सहस्राब्दी ईसा पूर्व में यूरेशियाई स्टेपी से मध्य एशिया होते हुए इंडो-ईरानी भाषी दक्षिण एशिया पहुंचे।</p>
+</div>
+`
+
     for (const { url, frontmatter, excerpt, html } of postsDe) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
       const feedContent = isOit ? oitExplanationDe + html : html
@@ -207,5 +237,35 @@ export default defineConfig({
       })
     }
     fs.writeFileSync(path.join(siteConfig.outDir, 'feed-en.xml'), feedEn.rss2())
+
+    // Generate HI RSS Feed
+    const feedHi = new Feed({
+      title: `${TITLE} (HI)`,
+      description: DESCRIPTION_HI,
+      id: `${SITE_URL}/hi/`,
+      link: `${SITE_URL}/hi/`,
+      image: `${SITE_URL}/apple-touch-icon.png`,
+      favicon: `${SITE_URL}/favicon.ico`,
+      language: 'hi',
+      copyright: '',
+    })
+
+    const postsHi = await createContentLoader('hi/posts/*.md', { excerpt: true, render: true }).load()
+    postsHi.sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
+
+    for (const { url, frontmatter, excerpt, html } of postsHi) {
+      const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
+      const feedContent = isOit ? oitExplanationHi + html : html
+
+      feedHi.addItem({
+        title: frontmatter.title,
+        id: `${SITE_URL}${url}`,
+        link: `${SITE_URL}${url}`,
+        description: frontmatter.description || excerpt,
+        content: feedContent,
+        date: new Date(frontmatter.date),
+      })
+    }
+    fs.writeFileSync(path.join(siteConfig.outDir, 'feed-hi.xml'), feedHi.rss2())
   },
 })

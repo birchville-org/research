@@ -79,6 +79,23 @@ body {
   color: var(--vp-c-text-1);
 }
 
+/* ── Devanāgarī & IAST Typography (Birchville Scholarly Synthesis Standard) ── */
+:lang(hi),
+:lang(sa),
+.devanagari {
+  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Gentium Plus', 'Charis SIL', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:lang(hi) .vp-doc h1,
+:lang(hi) .vp-doc h2,
+:lang(hi) .vp-doc h3,
+:lang(hi) .vp-doc h4,
+:lang(hi) .post-card-title,
+:lang(hi) .post-year {
+  font-family: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Iowan Old Style', Palatino, Georgia, serif;
+  letter-spacing: normal;
+}
+
 /* Frosted Glass Header with hairline border */
 .VPNav {
   backdrop-filter: blur(14px) !important;
