@@ -7,6 +7,7 @@ Für alle automatisiert oder manuell generierten Monatsberichte und Blogbeiträg
   * Deutsch: `## Ausgewertete Quellen & Bibliographie`
   * Englisch: `## Evaluated Sources & Bibliography`
   * Hindi: `## मूल्यांकित स्रोत एवं संदर्भ`
+  * Sanskrit: `## मूल्याङ्कितानि स्रोतांसि ग्रन्थसूची च`
 * **Überschriften-Hierarchie:** Dieser Abschnitt MUSS als echtes Markdown-H2 (`##`) deklariert sein, damit er:
   1. Automatisch im Inhaltsverzeichnis (Outline / Seitennavigation rechts) von VitePress erfasst wird.
   2. Direkt per Anker-Link ansteuerbar ist.
@@ -42,10 +43,10 @@ Für alle automatisiert oder manuell generierten Monatsberichte und Blogbeiträg
   ```
 * Die in `sourcesCount` angegebene Zahl MUSS exakt der Anzahl der nummerierten Einträge im Quellenverzeichnis entsprechen (wichtig für das Blog-Badge `📚 X Quellen ausgewertet` in der Beitragsliste).
 
-## 4. Dreisprachigkeit & Parität (i18n: DE, EN, HI)
-* Jeder deutsche Beitrag unter `docs/posts/` muss synchrone Äquivalente unter `docs/en/posts/` (Englisch) und `docs/hi/posts/` (Hindi in Devanagari) besitzen.
-* Das Übersetzungs-Skript `translate_report.py` übersetzt neue Berichte automatisch via Gemini API in beide Zielsprachen.
-* Das Quellenverzeichnis darf in keiner Übersetzung weggelassen werden. Es wird in allen drei Sprachen mit identischer Quellenanzahl geführt.
+## 4. Viersprachigkeit & Parität (i18n: DE, EN, HI, SA)
+* Jeder deutsche Beitrag unter `docs/posts/` muss synchrone Äquivalente unter `docs/en/posts/` (Englisch), `docs/hi/posts/` (Hindi in Devanāgarī) und `docs/sa/posts/` (Sanskrit in Devanāgarī) besitzen.
+* Das Übersetzungs-Skript `translate_report.py` übersetzt neue Berichte automatisch via Gemini API in alle drei Zielsprachen.
+* Das Quellenverzeichnis darf in keiner Übersetzung weggelassen werden. Es wird in allen vier Sprachen mit identischer Quellenanzahl geführt.
 
 ## 5. Publikations-Workflow (Modell A)
 * Sobald die Automatisierung einen neuen Monatsbericht (z. B. `docs/posts/ivc-2026-10.md` oder `docs/posts/oit-vs-amt-2026-10.md`) ablegt, erfolgt die Freigabe und Bereitstellung per:

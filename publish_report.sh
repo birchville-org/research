@@ -44,6 +44,7 @@ fi
 
 LATEST_EN="docs/en/posts/$REPORT_FILE"
 LATEST_HI="docs/hi/posts/$REPORT_FILE"
+LATEST_SA="docs/sa/posts/$REPORT_FILE"
 
 # Tag-Namenskonvention
 if [[ "$SERIES_PREFIX" == "oit-vs-amt" ]]; then
@@ -59,7 +60,7 @@ fi
 echo "Ziel-Monatsbericht: Serie='$SERIES_PREFIX', Periode='$PERIOD_CODE' ($REPORT_FILE)"
 
 # 2. Automatische Übersetzung falls Zielsprachen fehlen
-if [[ ! -f "$LATEST_EN" || ! -f "$LATEST_HI" ]]; then
+if [[ ! -f "$LATEST_EN" || ! -f "$LATEST_HI" || ! -f "$LATEST_SA" ]]; then
   echo "Fehlende Übersetzungen erkannt. Starte automatische Übersetzung via translate_report.py..."
   python3 translate_report.py "$LATEST_DE"
 fi
@@ -74,6 +75,11 @@ fi
 
 if [[ ! -f "$LATEST_HI" ]]; then
   echo "Fehler: Hindi-Gegenstück fehlt: $LATEST_HI"
+  exit 1
+fi
+
+if [[ ! -f "$LATEST_SA" ]]; then
+  echo "Fehler: Sanskrit-Gegenstück fehlt: $LATEST_SA"
   exit 1
 fi
 
@@ -95,33 +101,38 @@ if ! grep -q "^## मूल्यांकित स्रोत एवं स�
   exit 1
 fi
 
+# Prüfe H2-Quellenverzeichnis in SA
+if ! grep -q "^## मूल्याङ्कितानि स्रोतांसि ग्रन्थसूची च" "$LATEST_SA"; then
+  echo "Fehler: Sanskrit-Quellenverzeichnis '## मूल्याङ्कितानि स्रोतांसि ग्रन्थसूची च' fehlt in $LATEST_SA"
+  exit 1
+fi
+
 # Prüfe sourcesCount im Frontmatter
 SOURCES_DE="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_DE" | awk '{print $2}' || true)"
 SOURCES_EN="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_EN" | awk '{print $2}' || true)"
 SOURCES_HI="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_HI" | awk '{print $2}' || true)"
+SOURCES_SA="$(grep -E "^sourcesCount:[[:space:]]*[0-9]+" "$LATEST_SA" | awk '{print $2}' || true)"
 
-if [[ -z "$SOURCES_DE" || -z "$SOURCES_EN" || -z "$SOURCES_HI" ]]; then
-  echo "Fehler: 'sourcesCount' fehlt im Frontmatter von $LATEST_DE, $LATEST_EN oder $LATEST_HI."
+if [[ -z "$SOURCES_DE" || -z "$SOURCES_EN" || -z "$SOURCES_HI" || -z "$SOURCES_SA" ]]; then
+  echo "Fehler: 'sourcesCount' fehlt im Frontmatter von $LATEST_DE, $LATEST_EN, $LATEST_HI oder $LATEST_SA."
   exit 1
 fi
 
-if [[ "$SOURCES_DE" != "$SOURCES_EN" || "$SOURCES_DE" != "$SOURCES_HI" ]]; then
-  echo "Warnung: sourcesCount weicht ab (DE: $SOURCES_DE, EN: $SOURCES_EN, HI: $SOURCES_HI)."
+if [[ "$SOURCES_DE" != "$SOURCES_EN" || "$SOURCES_DE" != "$SOURCES_HI" || "$SOURCES_DE" != "$SOURCES_SA" ]]; then
+  echo "Warnung: sourcesCount weicht ab (DE: $SOURCES_DE, EN: $SOURCES_EN, HI: $SOURCES_HI, SA: $SOURCES_SA)."
 fi
 
-echo "✓ Alle Produktionsregeln (DE/EN/HI Parität, H2-Quellenverzeichnis, sourcesCount) erfüllt."
+echo "✓ Alle Produktionsregeln (DE/EN/HI/SA Parität, H2-Quellenverzeichnis, sourcesCount) erfüllt."
 
 # 4. Statische Site bauen (VitePress)
 echo "Baue VitePress-Blog (docs:build)..."
 npm run docs:build
 
 # 5. Git-Status & Commit
-TAG_NAME="report/$PERIOD_CODE"
-
-if git status --porcelain | grep -qE "docs/(posts|en/posts|hi/posts)/"; then
+if git status --porcelain | grep -qE "docs/(posts|en/posts|hi/posts|sa/posts)/"; then
   echo "Nicht committete Änderungen an Berichten erkannt. Erstelle Commit..."
-  git add docs/posts/ docs/en/posts/ docs/hi/posts/
-  git commit -m "feat(report): Freigabe Monatsbericht $PERIOD_CODE (DE/EN/HI)"
+  git add docs/posts/ docs/en/posts/ docs/hi/posts/ docs/sa/posts/
+  git commit -m "feat(report): Freigabe Monatsbericht $PERIOD_CODE (DE/EN/HI/SA)"
 else
   echo "Arbeitsverzeichnis für Berichte ist sauber."
 fi

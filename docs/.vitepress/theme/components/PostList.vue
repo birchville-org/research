@@ -11,6 +11,7 @@ const props = defineProps({
 
 const route = useRoute()
 const currentLang = computed(() => {
+  if (route.path.startsWith('/sa/')) return 'sa'
   if (route.path.startsWith('/hi/')) return 'hi'
   if (route.path.startsWith('/en/')) return 'en'
   return 'de'
@@ -21,13 +22,21 @@ const isEn = computed(() => currentLang.value === 'en')
 // Filter by current language based on URL prefix
 const langPosts = computed(() => {
   return allPosts.filter((p) => {
+    if (currentLang.value === 'sa') return p.url.startsWith('/sa/')
     if (currentLang.value === 'hi') return p.url.startsWith('/hi/')
     if (currentLang.value === 'en') return p.url.startsWith('/en/')
-    return !p.url.startsWith('/en/') && !p.url.startsWith('/hi/')
+    return !p.url.startsWith('/en/') && !p.url.startsWith('/hi/') && !p.url.startsWith('/sa/')
   })
 })
 
 const labels = computed(() => {
+  if (currentLang.value === 'sa') {
+    return {
+      series: 'श्रेणी:',
+      all: 'सर्वाः',
+      sources: 'स्रोतांसि मूल्याङ्कितानि',
+    }
+  }
   if (currentLang.value === 'hi') {
     return {
       series: 'श्रृंखला:',
@@ -69,7 +78,7 @@ const filtered = computed(() => {
 })
 
 const fmt = (d) => {
-  const localeMap = { hi: 'hi-IN', en: 'en-US', de: 'de-DE' }
+  const localeMap = { sa: 'sa-IN', hi: 'hi-IN', en: 'en-US', de: 'de-DE' }
   return new Date(d).toLocaleDateString(localeMap[currentLang.value] || 'de-DE', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 

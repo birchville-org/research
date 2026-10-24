@@ -15,6 +15,7 @@ const TITLE = 'Birchville Blog'
 const DESCRIPTION_DE = 'Kompression automatisierter Forschungs- & Rechercheergebnisse'
 const DESCRIPTION_EN = 'Synthesized and compressed automated research digests'
 const DESCRIPTION_HI = 'स्वचालित शोध एवं अनुसंधान परिणामों का संपीड़न'
+const DESCRIPTION_SA = 'स्वचालित-अनुसन्धान-परिणामानां सङ्क्षेपः'
 
 const blockContainers = [
   { name: 'grammar-box2', className: 'grammar-box2' },
@@ -63,6 +64,7 @@ export default defineConfig({
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: `${TITLE} (DE)`, href: '/feed.xml' }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: `${TITLE} (EN)`, href: '/feed-en.xml' }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: `${TITLE} (HI)`, href: '/feed-hi.xml' }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: `${TITLE} (SA)`, href: '/feed-sa.xml' }],
   ],
 
   locales: {
@@ -122,6 +124,26 @@ export default defineConfig({
           options: {
             detailedView: true,
             locales: { hi: { translations: { button: { buttonText: 'खोजें' } } } },
+          },
+        },
+      },
+    },
+    sa: {
+      label: 'संस्कृतम्',
+      lang: 'sa-IN',
+      description: DESCRIPTION_SA,
+      themeConfig: {
+        nav: [
+          { text: 'लेखाः', link: '/sa/' },
+          { text: 'अनुसन्धानस्थितिः', link: '/sa/stand-der-forschung' },
+          { text: 'सङ्ग्रहः', link: '/sa/archiv' },
+          { text: 'RSS', link: '/feed-sa.xml', target: '_blank' },
+        ],
+        search: {
+          provider: 'local',
+          options: {
+            detailedView: true,
+            locales: { sa: { translations: { button: { buttonText: 'अन्वेषणम्' } } } },
           },
         },
       },
@@ -214,6 +236,21 @@ export default defineConfig({
 </div>
 `
 
+    const oitExplanationSa = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>"OIT vs. AMT" अनुसन्धान-मालायाः पृष्ठभूमिः:</strong>
+  <p style="margin:6px 0 4px;"><strong>OIT (आउट ऑफ इंडिया थ्योरी / भारत-मूल-सिद्धान्तः):</strong> भारोपीय-भाषापरिवारस्य मूलस्थानं भारतीयोपमहाद्वीपः आसीत्, तत एव तस्य पश्चिमाभिमुखी Central Asia दिशि च विस्तारः सञ्जातः इति प्रतिपादयति।</p>
+  <p style="margin:0;"><strong>AMT (आर्य-प्रवासन-सिद्धान्तः / स्टेपी-परिकल्पना):</strong> भाषावैज्ञानिकः पुराजनुवैज्ञानिकश्च सर्वसम्मतः सिद्धान्तः, येन द्वितीय-सहस्राब्द्यां ईसापूर्वे यूरेशिया-स्टेपी-प्रदेशात् मध्य-एशिया-मार्गेण हिन्द-ईरानी-भाषकाः दक्षिण-एशियाम् आगताः इति वर्ण्यते।</p>
+</div>
+`
+
+    const ivcExplanationSa = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>"IVC" (सिन्धु-उपत्यका-सभ्यता / हरप्पा-संस्कृतिः) अनुसन्धान-मालायाः पृष्ठभूमिः:</strong>
+  <p style="margin:6px 0 0;">कांस्ययुगीन-सिन्धुसभ्यतायाः (प्रायः ३३००–१३०० ईसापूर्वम्), तस्याः नागरिक-परिपक्वतायाः, रूपान्तरणस्य, वि-नगरीकरण-सोपानानां च विषये प्रत्यग्र-पुरातात्त्विक-भूवैज्ञानिक-पुराजनुवैज्ञानिक-शोधानां मासिकः सारसङ्क्षेपः।</p>
+</div>
+`
+
     for (const { url, frontmatter, excerpt, html } of postsDe) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
       const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
@@ -297,5 +334,38 @@ export default defineConfig({
       })
     }
     fs.writeFileSync(path.join(siteConfig.outDir, 'feed-hi.xml'), feedHi.rss2())
+
+    // Generate SA RSS Feed
+    const feedSa = new Feed({
+      title: `${TITLE} (SA)`,
+      description: DESCRIPTION_SA,
+      id: `${SITE_URL}/sa/`,
+      link: `${SITE_URL}/sa/`,
+      image: `${SITE_URL}/apple-touch-icon.png`,
+      favicon: `${SITE_URL}/favicon.ico`,
+      language: 'sa',
+      copyright: '',
+    })
+
+    const postsSa = await createContentLoader('sa/posts/*.md', { excerpt: true, render: true }).load()
+    postsSa.sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
+
+    for (const { url, frontmatter, excerpt, html } of postsSa) {
+      const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
+      const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
+      let feedContent = html
+      if (isOit) feedContent = oitExplanationSa + feedContent
+      else if (isIvc) feedContent = ivcExplanationSa + feedContent
+
+      feedSa.addItem({
+        title: frontmatter.title,
+        id: `${SITE_URL}${url}`,
+        link: `${SITE_URL}${url}`,
+        description: frontmatter.description || excerpt,
+        content: feedContent,
+        date: new Date(frontmatter.date),
+      })
+    }
+    fs.writeFileSync(path.join(siteConfig.outDir, 'feed-sa.xml'), feedSa.rss2())
   },
 })
