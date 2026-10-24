@@ -75,7 +75,14 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Beiträge', link: '/' },
-          { text: 'Stand der Forschung', link: '/stand-der-forschung' },
+          {
+            text: 'Stand der Forschung',
+            items: [
+              { text: 'Übersicht (Synthese-Dashboards)', link: '/stand-der-forschung/' },
+              { text: 'OIT vs. AMT', link: '/stand-der-forschung/oit-vs-amt' },
+              { text: 'Indus Valley Culture (IVC)', link: '/stand-der-forschung/ivc' },
+            ],
+          },
           { text: 'Archiv', link: '/archiv' },
           { text: 'RSS', link: '/feed.xml', target: '_blank' },
         ],
@@ -95,7 +102,14 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Posts', link: '/en/' },
-          { text: 'State of Research', link: '/en/stand-der-forschung' },
+          {
+            text: 'State of Research',
+            items: [
+              { text: 'Overview (Synthesis Dashboards)', link: '/en/stand-der-forschung/' },
+              { text: 'OIT vs. AMT', link: '/en/stand-der-forschung/oit-vs-amt' },
+              { text: 'Indus Valley Culture (IVC)', link: '/en/stand-der-forschung/ivc' },
+            ],
+          },
           { text: 'Archive', link: '/en/archiv' },
           { text: 'RSS', link: '/feed-en.xml', target: '_blank' },
         ],
@@ -115,7 +129,14 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'लेख', link: '/hi/' },
-          { text: 'अनुसंधान की स्थिति', link: '/hi/stand-der-forschung' },
+          {
+            text: 'अनुसंधान की स्थिति',
+            items: [
+              { text: 'अवलोकन (संश्लेषण डैशबोर्ड)', link: '/hi/stand-der-forschung/' },
+              { text: 'OIT बनाम AMT', link: '/hi/stand-der-forschung/oit-vs-amt' },
+              { text: 'सिंधु घाटी सभ्यता (IVC)', link: '/hi/stand-der-forschung/ivc' },
+            ],
+          },
           { text: 'अभिलेखागार', link: '/hi/archiv' },
           { text: 'RSS', link: '/feed-hi.xml', target: '_blank' },
         ],
@@ -135,7 +156,14 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'लेखाः', link: '/sa/' },
-          { text: 'अनुसन्धानस्थितिः', link: '/sa/stand-der-forschung' },
+          {
+            text: 'अनुसन्धानस्थितिः',
+            items: [
+              { text: 'अवलोकनम् (संश्लेषण-फलकानि)', link: '/sa/stand-der-forschung/' },
+              { text: 'OIT विरुद्धं AMT', link: '/sa/stand-der-forschung/oit-vs-amt' },
+              { text: 'सिन्धु-उपत्यका-सभ्यता (IVC)', link: '/sa/stand-der-forschung/ivc' },
+            ],
+          },
           { text: 'सङ्ग्रहः', link: '/sa/archiv' },
           { text: 'RSS', link: '/feed-sa.xml', target: '_blank' },
         ],
