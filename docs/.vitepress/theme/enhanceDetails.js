@@ -22,7 +22,7 @@ export function setupAutoOpenDetails() {
     }
 
     // If the hash is specifically pointing to the full report anchor, open child details
-    if (id === 'vollstandiger-monatsbericht' || id === 'full-monthly-report') {
+    if (id === 'vollstandiger-monatsbericht' || id === 'full-monthly-report' || id === 'sampurna-masik-report' || id.includes('monatsbericht') || id.includes('monthly-report')) {
       const nextDetails = target.nextElementSibling?.tagName === 'DETAILS'
         ? target.nextElementSibling
         : target.parentElement?.querySelector('details')
