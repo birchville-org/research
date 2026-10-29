@@ -139,7 +139,8 @@ fi
 
 # 6. Redaktioneller Monats-Tag setzen
 if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
-  echo "Tag '$TAG_NAME' existiert bereits. Überspringe Tag-Erstellung."
+  echo "Aktualisiere bestehenden Git-Tag: $TAG_NAME"
+  git tag -f -a "$TAG_NAME" -m "Freigabe Monatsbericht $PERIOD_CODE (aktualisiert)"
 else
   echo "Setze redaktionellen Git-Tag: $TAG_NAME"
   git tag -a "$TAG_NAME" -m "Freigabe Monatsbericht $PERIOD_CODE"
@@ -148,7 +149,7 @@ fi
 # 7. Push zu Origin
 echo "Pushe Commit und Tags zu origin..."
 git push origin main
-git push origin "$TAG_NAME"
+git push origin "$TAG_NAME" --force
 
 # 8. Deployment in Traefik-Webroot auf Synology
 echo "Synchronisiere HTML-Build in Traefik-Webroot auf Synology (/volume1/docker/blog/dist)..."

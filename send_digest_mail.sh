@@ -3,7 +3,7 @@ set -euo pipefail
 
 SUBJECT="${1:?Usage: send_digest_mail.sh <subject> <markdown_file_path>}"
 BODY_FILE="${2:?Usage: send_digest_mail.sh <subject> <markdown_file_path>}"
-RECIPIENT="mdemarmels@gmail.com"
+RECIPIENT="blogpost@birchville.org"
 SENDER="mdemarmels@gmail.com"
 
 open -g -a "Mail"

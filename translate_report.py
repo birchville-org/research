@@ -8,12 +8,12 @@ import sys
 import os
 import json
 import re
+import time
 import urllib.request
 import urllib.error
 
 API_KEY = os.environ.get("GEMINI_API_KEY")
-MODEL = "gemini-2.5-flash"
-API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={API_KEY}"
+MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite"]
 
 PROMPT_EN = """You are a specialized scientific translator in the fields of South Asian archaeology, Indology, archaeogenetics, and historical linguistics.
 Translate the following German monthly research report into English for the Birchville Blog.
@@ -134,29 +134,44 @@ def call_gemini(system_prompt: str, content: str) -> str:
         }
     }
 
-    req = urllib.request.Request(
-        API_URL,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json"}
-    )
+    for model in MODELS:
+        api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={API_KEY}"
+        req = urllib.request.Request(
+            api_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"}
+        )
 
-    with urllib.request.urlopen(req, timeout=180) as resp:
-        result = json.loads(resp.read().decode("utf-8"))
-        candidate = result["candidates"][0]
-        finish_reason = candidate.get("finishReason")
-        if finish_reason != "STOP":
-            raise RuntimeError(f"Gemini API did not finish normally (finishReason={finish_reason})")
+        max_retries = 2
+        for attempt in range(1, max_retries + 1):
+            try:
+                with urllib.request.urlopen(req, timeout=180) as resp:
+                    result = json.loads(resp.read().decode("utf-8"))
+                    candidate = result["candidates"][0]
+                    finish_reason = candidate.get("finishReason")
+                    if finish_reason != "STOP":
+                        raise RuntimeError(f"Gemini API did not finish normally (finishReason={finish_reason})")
 
-        candidate_text = candidate["content"]["parts"][0]["text"]
-        # Strip potential markdown fences if model outputs them
-        clean_text = candidate_text.strip()
-        if clean_text.startswith("```markdown"):
-            clean_text = clean_text[len("```markdown"):].strip()
-        elif clean_text.startswith("```"):
-            clean_text = clean_text[len("```"):].strip()
-        if clean_text.endswith("```"):
-            clean_text = clean_text[:-3].strip()
-        return clean_text
+                    candidate_text = candidate["content"]["parts"][0]["text"]
+                    # Strip potential markdown fences if model outputs them
+                    clean_text = candidate_text.strip()
+                    if clean_text.startswith("```markdown"):
+                        clean_text = clean_text[len("```markdown"):].strip()
+                    elif clean_text.startswith("```"):
+                        clean_text = clean_text[len("```"):].strip()
+                    if clean_text.endswith("```"):
+                        clean_text = clean_text[:-3].strip()
+                    return clean_text
+            except (urllib.error.HTTPError, urllib.error.URLError) as e:
+                print(f"API call to {model} failed ({e}).")
+                if attempt < max_retries:
+                    wait_sec = attempt * 3
+                    print(f"Retrying {model} in {wait_sec}s (attempt {attempt}/{max_retries})...")
+                    time.sleep(wait_sec)
+                else:
+                    print(f"Switching to fallback model if available...")
+                    break
+    raise RuntimeError("All Gemini models failed.")
 
 def main():
     if len(sys.argv) < 2:
