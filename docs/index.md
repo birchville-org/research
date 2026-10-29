@@ -6,7 +6,7 @@ aside: false
 
 # Forschungsberichte & Digests
 
-Regelmäßige Auswertung, Synthese und Kompression automatisierter Literatur- und Datenrecherchen.
+Regelmäßige Auswertung, Synthese und Kompression automatisierter Literatur- und Datenrecherchen. Automatisiert bedeutet, dass die Quellen zwar nach Qualitätskriterien ausgewählt, aber nicht weiter durch qualifizierte Personen gesichtet worden sind.
 
 ::: details Was bedeutet „OIT vs. AMT“? (Out of India vs. Aryan Migration Theory)
 **OIT vs. AMT** steht für den empirischen Vergleich zwischen zwei konkurrierenden Modellen zur Sprach- und Populationsgeschichte:

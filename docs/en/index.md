@@ -6,7 +6,7 @@ aside: false
 
 # Research Posts & Digests
 
-Systematic evaluation, synthesis, and compression of automated literature and data surveys.
+Systematic evaluation, synthesis, and compression of automated literature and data surveys. "Automated" signifies that sources are selected according to predefined quality criteria, but have not undergone further manual review or verification by qualified experts.
 
 ::: details What does "OIT vs. AMT" mean? (Out of India vs. Aryan Migration Theory)
 **OIT vs. AMT** compares the empirical models of the **Out of India Theory (OIT)** and the **Aryan Migration Theory (AMT / Steppe Hypothesis)**:
