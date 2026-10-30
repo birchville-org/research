@@ -12,7 +12,7 @@ Diese Vorlage enthält die vollständige Steuerungslogik (Datumsprüfung mit int
 * **Serien-Kürzel:** [SERIEN_KUERZEL] (z. B. "ivc" oder "oit-vs-amt")
 * **Projektordner (Google Drive/Lokal):** [PFAD_PROJEKTORDNER] (z. B. "/Users/marco/Library/CloudStorage/GoogleDrive-mdemarmels@gmail.com/Meine Ablage/[ORDNER]")
 * **Blog-Repository:** /Volumes/SanDisk1TB/proj/birchville-blog
-* **Empfänger E-Mail:** blogpost@birchville.org
+* **Empfänger E-Mail:** webmaster@birchville.org
 * **Recherchezeitraum:** Letzte 30 Tage ab heute
 * **Zielumfang:** 1000–1500 Wörter (Deutsch, reiner Unicode-Klartext, strikt KEINE LaTeX-Syntax)
 
