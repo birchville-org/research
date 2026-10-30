@@ -85,6 +85,7 @@ export default defineConfig({
             ],
           },
           { text: 'Archiv', link: '/archiv' },
+          { text: 'Impressum', link: '/impressum' },
           { text: 'RSS', link: '/feed.xml', target: '_blank' },
         ],
         search: {
@@ -113,6 +114,7 @@ export default defineConfig({
             ],
           },
           { text: 'Archive', link: '/en/archiv' },
+          { text: 'Imprint', link: '/en/impressum' },
           { text: 'RSS', link: '/feed-en.xml', target: '_blank' },
         ],
         search: {
@@ -141,6 +143,7 @@ export default defineConfig({
             ],
           },
           { text: 'अभिलेखागार', link: '/hi/archiv' },
+          { text: 'विधिक सूचना', link: '/hi/impressum' },
           { text: 'RSS', link: '/feed-hi.xml', target: '_blank' },
         ],
         search: {
@@ -169,6 +172,7 @@ export default defineConfig({
             ],
           },
           { text: 'सङ्ग्रहः', link: '/sa/archiv' },
+          { text: 'प्रकाशक-विवरणम्', link: '/sa/impressum' },
           { text: 'RSS', link: '/feed-sa.xml', target: '_blank' },
         ],
         search: {
