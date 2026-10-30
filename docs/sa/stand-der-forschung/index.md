@@ -42,4 +42,20 @@ aside: false
       </a>
     </div>
   </div>
+
+  <div class="quick-card">
+    <div>
+      <div class="quick-card-header">
+        <span>📜</span> यवनाः खरोष्ठी-लेखनी च
+      </div>
+      <div class="quick-card-body">
+        तक्षशिला-स्वात-मण्डले गान्धारी-बौद्ध-हस्तलेख-संस्कृतेः प्रादुर्भावे यवन-प्रशासकीय-प्रमुखानां खरोष्ठी-लेखन-परम्परायाः (प्रायः २ शताब्द्याः ई.पू. - २ शताब्द्याः ई. पर्यन्तम्) सञ्चितम् अनुसन्धानम्।
+      </div>
+    </div>
+    <div>
+      <a href="/sa/stand-der-forschung/yavanas" class="quick-btn quick-btn-primary">
+        यवन-फलकं पश्यतु →
+      </a>
+    </div>
+  </div>
 </div>

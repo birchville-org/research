@@ -9,7 +9,7 @@ Diese Vorlage enthält die vollständige Steuerungslogik (Datumsprüfung mit int
 
 ## 1. Parameter
 * **Themenbezeichnung:** [THEMA_NAME] (z. B. "Indus-Kultur (IVC): Archäologie und Chronologie")
-* **Serien-Kürzel:** [SERIEN_KUERZEL] (z. B. "ivc" oder "oit-vs-amt")
+* **Serien-Kürzel:** [SERIEN_KUERZEL] (z. B. "ivc", "oit-vs-amt" oder "yavanas")
 * **Projektordner (Google Drive/Lokal):** [PFAD_PROJEKTORDNER] (z. B. "/Users/marco/Library/CloudStorage/GoogleDrive-mdemarmels@gmail.com/Meine Ablage/[ORDNER]")
 * **Blog-Repository:** /Volumes/SanDisk1TB/proj/birchville-blog
 * **Empfänger E-Mail:** webmaster@birchville.org

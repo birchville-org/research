@@ -42,4 +42,20 @@ aside: false
       </a>
     </div>
   </div>
+
+  <div class="quick-card">
+    <div>
+      <div class="quick-card-header">
+        <span>📜</span> यवन और खरोष्ठी लिपि
+      </div>
+      <div class="quick-card-body">
+        तक्षशिला और स्वात में गांधारी बौद्ध पांडुलिपि संस्कृति के उद्भव पर यूनानी प्रशासनिक अभिजात वर्ग (यवनों) एवं उनकी लिपिकीय परंपरा (लगभग दूसरी शताब्दी ईसा पूर्व से दूसरी शताब्दी ईस्वी) का संचयी शोध।
+      </div>
+    </div>
+    <div>
+      <a href="/hi/stand-der-forschung/yavanas" class="quick-btn quick-btn-primary">
+        यवन डैशबोर्ड देखें →
+      </a>
+    </div>
+  </div>
 </div>

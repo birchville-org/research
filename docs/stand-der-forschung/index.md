@@ -42,4 +42,20 @@ Diese Übersichtsseite bündelt die **kumulativen Wissensstände** der im Birchv
       </a>
     </div>
   </div>
+
+  <div class="quick-card">
+    <div>
+      <div class="quick-card-header">
+        <span>📜</span> Yavanas mit Kharoṣṭhī-Feder
+      </div>
+      <div class="quick-card-body">
+        Griechische Verwaltungseliten, Kharoṣṭhī-Schreiberpraxis und der Übergang zur buddhistischen Gāndhārī-Manuskriptkultur in Taxila und Swat (ca. 2. Jh. v. Chr. – 2. Jh. n. Chr.).
+      </div>
+    </div>
+    <div>
+      <a href="/stand-der-forschung/yavanas" class="quick-btn quick-btn-primary">
+        Zum Yavanas Dashboard →
+      </a>
+    </div>
+  </div>
 </div>

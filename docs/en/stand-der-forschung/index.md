@@ -42,4 +42,20 @@ This overview page consolidates the **cumulative states of research** across the
       </a>
     </div>
   </div>
+
+  <div class="quick-card">
+    <div>
+      <div class="quick-card-header">
+        <span>📜</span> Yavanas with Kharoṣṭhī Pen
+      </div>
+      <div class="quick-card-body">
+        Greek administrative elites, Kharoṣṭhī chancery practice, and the transition to early Gāndhārī Buddhist manuscript culture across Taxila and Swat (c. 2nd cent. BCE – 2nd cent. CE).
+      </div>
+    </div>
+    <div>
+      <a href="/en/stand-der-forschung/yavanas" class="quick-btn quick-btn-primary">
+        Go to Yavanas Dashboard →
+      </a>
+    </div>
+  </div>
 </div>

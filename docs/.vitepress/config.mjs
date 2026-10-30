@@ -81,6 +81,7 @@ export default defineConfig({
               { text: 'Übersicht (Synthese-Dashboards)', link: '/stand-der-forschung/' },
               { text: 'OIT vs. AMT', link: '/stand-der-forschung/oit-vs-amt' },
               { text: 'Indus Valley Culture (IVC)', link: '/stand-der-forschung/ivc' },
+              { text: 'Yavanas mit Kharoṣṭhī-Feder', link: '/stand-der-forschung/yavanas' },
             ],
           },
           { text: 'Archiv', link: '/archiv' },
@@ -108,6 +109,7 @@ export default defineConfig({
               { text: 'Overview (Synthesis Dashboards)', link: '/en/stand-der-forschung/' },
               { text: 'OIT vs. AMT', link: '/en/stand-der-forschung/oit-vs-amt' },
               { text: 'Indus Valley Culture (IVC)', link: '/en/stand-der-forschung/ivc' },
+              { text: 'Yavanas with Kharoṣṭhī Pen', link: '/en/stand-der-forschung/yavanas' },
             ],
           },
           { text: 'Archive', link: '/en/archiv' },
@@ -135,6 +137,7 @@ export default defineConfig({
               { text: 'अवलोकन (संश्लेषण डैशबोर्ड)', link: '/hi/stand-der-forschung/' },
               { text: 'OIT बनाम AMT', link: '/hi/stand-der-forschung/oit-vs-amt' },
               { text: 'सिंधु घाटी सभ्यता (IVC)', link: '/hi/stand-der-forschung/ivc' },
+              { text: 'यवन और खरोष्ठी लिपि', link: '/hi/stand-der-forschung/yavanas' },
             ],
           },
           { text: 'अभिलेखागार', link: '/hi/archiv' },
@@ -162,6 +165,7 @@ export default defineConfig({
               { text: 'अवलोकनम् (संश्लेषण-फलकानि)', link: '/sa/stand-der-forschung/' },
               { text: 'OIT विरुद्धं AMT', link: '/sa/stand-der-forschung/oit-vs-amt' },
               { text: 'सिन्धु-उपत्यका-सभ्यता (IVC)', link: '/sa/stand-der-forschung/ivc' },
+              { text: 'यवनाः खरोष्ठी-लेखनी च', link: '/sa/stand-der-forschung/yavanas' },
             ],
           },
           { text: 'सङ्ग्रहः', link: '/sa/archiv' },
@@ -234,6 +238,13 @@ export default defineConfig({
 </div>
 `
 
+    const yavanasExplanationDe = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>Hintergrund zur Forschungsreihe „Yavanas mit Kharoṣṭhī-Feder“:</strong>
+  <p style="margin:6px 0 0;">Monatliche Synthese zum Einfluss griechischer Verwaltungseliten (Yavanas) und ihrer Kanzleipraxis (ca. 2. Jh. v. Chr. – 2. Jh. n. Chr.) auf die Entstehung der frühen buddhistischen Gāndhārī-Manuskript- und Inschriftenkultur in Taxila und Swat.</p>
+</div>
+`
+
     const oitExplanationEn = `
 <div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
   <strong>Background on "OIT vs. AMT":</strong>
@@ -246,6 +257,13 @@ export default defineConfig({
 <div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
   <strong>Background on "IVC" (Indus Valley Culture / Civilization):</strong>
   <p style="margin:6px 0 0;">Monthly synthesis of emerging archaeological, paleoclimatic, archaeogenetic, and settlement-geographical evidence concerning the Bronze Age Indus Civilization (c. 3300–1300 BCE), its urban maturity, transformation, and deurbanization phases.</p>
+</div>
+`
+
+    const yavanasExplanationEn = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>Background on "Yavanas with Kharoṣṭhī Pen":</strong>
+  <p style="margin:6px 0 0;">Monthly synthesis investigating the influence of Greek administrative elites (Yavanas) and chancery practices (c. 2nd cent. BCE – 2nd cent. CE) on the emergence of written Gāndhārī Buddhist manuscript culture across Taxila and Swat.</p>
 </div>
 `
 
@@ -264,6 +282,13 @@ export default defineConfig({
 </div>
 `
 
+    const yavanasExplanationHi = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>"यवन और खरोष्ठी लिपि" अनुसंधान श्रृंखला की पृष्ठभूमि:</strong>
+  <p style="margin:6px 0 0;">तक्षशिला-स्वात क्षेत्र में गांधारी बौद्ध पांडुलिपि संस्कृति के उद्भव और विकास पर यूनानी प्रशासनिक अभिजात वर्ग (यवनों) एवं उनकी लिपिकीय परंपरा (लगभग दूसरी शताब्दी ईसा पूर्व से दूसरी शताब्दी ईस्वी) के प्रभाव का मासिक सार।</p>
+</div>
+`
+
     const oitExplanationSa = `
 <div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
   <strong>"OIT vs. AMT" अनुसन्धान-मालायाः पृष्ठभूमिः:</strong>
@@ -279,12 +304,21 @@ export default defineConfig({
 </div>
 `
 
+    const yavanasExplanationSa = `
+<div style="background:#f1eee7; border-left:4px solid #b45309; padding:12px 16px; margin-bottom:20px; font-size:14px; border-radius:0 6px 6px 0;">
+  <strong>"यवनाः खरोष्ठी-लेखनी च" अनुसन्धान-मालायाः पृष्ठभूमिः:</strong>
+  <p style="margin:6px 0 0;">तक्षशिला-स्वात-मण्डले गांधारी-बौद्ध-हस्तलेख-संस्कृतेः प्रादुर्भावे यवन-प्रशासकीय-प्रमुखानां खरोष्ठी-लेखन-परम्परायाः (प्रायः २ शताब्द्याः ई.पू. - २ शताब्द्याः ई. पर्यन्तम्) प्रभावस्य मासिकः सारसङ्क्षेपः।</p>
+</div>
+`
+
     for (const { url, frontmatter, excerpt, html } of postsDe) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
       const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
+      const isYavanas = frontmatter.series === 'Yavanas' || (frontmatter.tags && frontmatter.tags.includes('Yavanas'))
       let feedContent = html
       if (isOit) feedContent = oitExplanationDe + feedContent
       else if (isIvc) feedContent = ivcExplanationDe + feedContent
+      else if (isYavanas) feedContent = yavanasExplanationDe + feedContent
 
       feedDe.addItem({
         title: frontmatter.title,
@@ -315,9 +349,11 @@ export default defineConfig({
     for (const { url, frontmatter, excerpt, html } of postsEn) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
       const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
+      const isYavanas = frontmatter.series === 'Yavanas' || (frontmatter.tags && frontmatter.tags.includes('Yavanas'))
       let feedContent = html
       if (isOit) feedContent = oitExplanationEn + feedContent
       else if (isIvc) feedContent = ivcExplanationEn + feedContent
+      else if (isYavanas) feedContent = yavanasExplanationEn + feedContent
 
       feedEn.addItem({
         title: frontmatter.title,
@@ -348,9 +384,11 @@ export default defineConfig({
     for (const { url, frontmatter, excerpt, html } of postsHi) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
       const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
+      const isYavanas = frontmatter.series === 'Yavanas' || (frontmatter.tags && frontmatter.tags.includes('Yavanas'))
       let feedContent = html
       if (isOit) feedContent = oitExplanationHi + feedContent
       else if (isIvc) feedContent = ivcExplanationHi + feedContent
+      else if (isYavanas) feedContent = yavanasExplanationHi + feedContent
 
       feedHi.addItem({
         title: frontmatter.title,
@@ -381,9 +419,11 @@ export default defineConfig({
     for (const { url, frontmatter, excerpt, html } of postsSa) {
       const isOit = frontmatter.series === 'OIT vs AMT' || (frontmatter.tags && frontmatter.tags.includes('OIT'))
       const isIvc = frontmatter.series === 'IVC' || (frontmatter.tags && frontmatter.tags.includes('IVC'))
+      const isYavanas = frontmatter.series === 'Yavanas' || (frontmatter.tags && frontmatter.tags.includes('Yavanas'))
       let feedContent = html
       if (isOit) feedContent = oitExplanationSa + feedContent
       else if (isIvc) feedContent = ivcExplanationSa + feedContent
+      else if (isYavanas) feedContent = yavanasExplanationSa + feedContent
 
       feedSa.addItem({
         title: frontmatter.title,

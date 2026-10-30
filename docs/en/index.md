@@ -22,4 +22,11 @@ Systematic evaluation, synthesis, and compression of automated literature and da
 - **Abbreviation:** Across articles and metadata, the standard scholarly abbreviation **IVC** is uniformly used.
 :::
 
+::: details What does "Yavanas with Kharoṣṭhī Pen" mean? (Greek Elites & Gāndhārī Scribal Culture)
+**Yavanas with Kharoṣṭhī Pen** investigates the intersection of Hellenistic administrative practice and Buddhist textual culture in northwestern South Asia (c. 2nd cent. BCE – 2nd cent. CE):
+
+- **Focus of Monthly Reports:** Continuous synthesis of newly discovered epigraphic records (Kharoṣṭhī and Greek inscriptions, relic dedications, Macedonian calendar months), philological and palaeographical analyses of early Gāndhārī birch bark scrolls, and archaeological field surveys across Taxila (Sirkap) and the Swat valley.
+- **Series Code:** In articles and metadata, the uniform series identifier **Yavanas** is applied.
+:::
+
 <PostList />

@@ -22,4 +22,11 @@ Regelmäßige Auswertung, Synthese und Kompression automatisierter Literatur- un
 - **Kürzel:** In Beiträgen und Metadaten wird einheitlich das etablierte internationale Fachkürzel **IVC** verwendet.
 :::
 
+::: details Was bedeutet „Yavanas mit Kharoṣṭhī-Feder“? (Griechische Eliten & Gāndhārī-Schreiberpraxis)
+**Yavanas mit Kharoṣṭhī-Feder** untersucht die Schnittstelle hellenistischer Verwaltung und buddhistischer Textkultur im Nordwesten Südasiens (ca. 2. Jh. v. Chr. – 2. Jh. n. Chr.):
+
+- **Fokus der Monatsberichte:** Fortlaufende Synthese epigraphischer Neufunde (Kharoṣṭhī- und griechische Inschriften, Reliquienstiftungen, makedonische Kalendermonate), philologischer und paläographischer Analysen früher Birkenrinden-Handschriften (Gāndhārī) sowie archäologischer Ausgrabungen im Raum Taxila (Sirkap) und im Swat-Tal.
+- **Kürzel:** In Beiträgen und Metadaten wird einheitlich die Serienbezeichnung **Yavanas** verwendet.
+:::
+
 <PostList />
