@@ -22,6 +22,7 @@ This inaugural report launches the third research series of the Birchville Blog.
   <a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> Read full monthly report ↓
   </a>
+  <TimelineModal series="yavanas" button-text="Chronological Timeline & Research Findings" />
 </div>
 
 ## 1. Disciplinary Evidence Matrix

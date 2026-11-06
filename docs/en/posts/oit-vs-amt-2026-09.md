@@ -22,6 +22,7 @@ During the reporting period of September 2026, no new peer-reviewed study was pu
   <a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> Read full monthly report ↓
   </a>
+  <TimelineModal series="oit-vs-amt" button-text="Chronological Timeline & Research Findings" />
 </div>
 
 

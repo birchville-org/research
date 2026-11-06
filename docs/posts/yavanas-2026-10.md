@@ -22,6 +22,7 @@ Dieser Auftaktbericht eröffnet die dritte Forschungsreihe des Birchville Blogs.
   <a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> Vollständigen Monatsbericht lesen ↓
   </a>
+  <TimelineModal series="yavanas" button-text="Chronologische Zeitleiste & Forschungsbefunde" />
 </div>
 
 ## 1. Evidenz-Matrix der Ausgangslage

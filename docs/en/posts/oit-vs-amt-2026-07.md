@@ -22,6 +22,7 @@ In the reporting month of July 2026, no major new aDNA datasets on the Bronze Ag
   <a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> Read full monthly report ↓
   </a>
+  <TimelineModal series="oit-vs-amt" button-text="Chronological Timeline & Research Findings" />
 </div>
 
 

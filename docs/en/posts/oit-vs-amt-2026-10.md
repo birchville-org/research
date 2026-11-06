@@ -22,6 +22,7 @@ In the reporting period of October 2026, the scientific consensus of the Steppe 
   <a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> Read full monthly report ↓
   </a>
+  <TimelineModal series="oit-vs-amt" button-text="Chronological Timeline & Research Findings" />
 </div>
 
 

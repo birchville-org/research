@@ -22,6 +22,7 @@ highlights:
   <a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> सम्पूर्णं मासिक-वृत्तान्तं पठतु ↓
   </a>
+  <TimelineModal series="oit-vs-amt" button-text="कालक्रमानुसारं कालरेखा अनुसन्धान-प्राप्तयश्च" />
 </div>
 
 

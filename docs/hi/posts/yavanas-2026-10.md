@@ -22,6 +22,7 @@ highlights:
   <a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> संपूर्ण मासिक रिपोर्ट पढ़ें ↓
   </a>
+  <TimelineModal series="yavanas" button-text="कालक्रमानुसार समयरेखा एवं शोध निष्कर्ष" />
 </div>
 
 ## 1. विषयवार साक्ष्य-मैट्रिक्स (Evidence Matrix)

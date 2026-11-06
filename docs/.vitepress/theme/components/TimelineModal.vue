@@ -235,23 +235,25 @@ const modalTitle = computed(() => {
 
 <style scoped>
 .timeline-trigger-wrapper {
-  margin: 1rem 0 1.5rem 0;
-  display: inline-block;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
 }
 
 .timeline-open-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 0.55rem 1.15rem;
-  font-size: 0.95rem;
-  border-radius: 6px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  border-radius: 4px;
   background-color: var(--accent) !important;
   color: #ffffff !important;
   border: 1px solid var(--accent) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   transition: all 0.15s ease;
 }
 

@@ -22,6 +22,7 @@ Im Berichtszeitraum Oktober 2026 stabilisiert sich der wissenschaftliche Konsens
   <a href="#vollstandiger-monatsbericht" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> Vollständigen Monatsbericht lesen ↓
   </a>
+  <TimelineModal series="oit-vs-amt" button-text="Chronologische Zeitleiste & Forschungsbefunde" />
 </div>
 
 

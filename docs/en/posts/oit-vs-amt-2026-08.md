@@ -22,6 +22,7 @@ The most important peer-reviewed finding in the current environment is the *Scie
   <a href="#full-monthly-report" class="quick-btn quick-btn-primary" style="text-decoration: none;">
     <span>📄</span> Read full monthly report ↓
   </a>
+  <TimelineModal series="oit-vs-amt" button-text="Chronological Timeline & Research Findings" />
 </div>
 
 
