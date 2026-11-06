@@ -10,6 +10,8 @@ aside: true
 Diese Seite dokumentiert den **kumulativen Stand der wissenschaftlichen Debatte** zwischen der *Out-of-India-Theorie (OIT)* und der *Aryan-Migration-Theorie (AMT / Steppenmodell)*. Sie wird nach jedem Monatsbericht aktualisiert und synthetisiert die Evidenz über alle vier Kerndisziplinen.
 :::
 
+<TimelineModal series="oit-vs-amt" button-text="Chronologische Zeitleiste & Forschungsbefunde" />
+
 ## 1. Disziplinäre Evidenz-Matrix
 
 | Disziplin | Wissenschaftlicher Konsens / Haupttrend | Status AMT | Status OIT | Evidenzgrad |

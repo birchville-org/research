@@ -10,6 +10,8 @@ aside: true
 This page documents the **cumulative state of scientific research** on the influence of Greek-speaking administrative elites (*Yavanas*) and their chancery practices (c. 2nd cent. BCE – 2nd cent. CE) on the emergence of early written Gāndhārī Buddhist manuscript and epigraphic culture in Taxila and Swat. It is updated monthly, synthesizing epigraphy, philology, palaeography, and archaeology.
 :::
 
+<TimelineModal series="yavanas" button-text="Chronological Timeline & Research Findings" />
+
 ## 1. Disciplinary Evidence Matrix
 
 | Discipline | Scientific Finding / Consensus | Relevance to Scribal Practice & Manuscript Culture | Evidence Grade |

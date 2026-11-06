@@ -75,6 +75,13 @@ Verfasse den Bericht auf Deutsch im Umfang von ca. 1000–1500 Wörtern mit folg
      `{"period": "YYYY-MM", "processed_at": "<ISO-Timestamp>", "primary_file": "<Dateiname>", "status": "completed", "notes": "..."}`
    * In `[PFAD_PROJEKTORDNER]/PROCESSING_LOG.md` (Markdown-Tabelle).
 
+3. **Chronologische Zeitleiste & Forschungsbefunde (Timeline-Artefakt) aktualisieren:**
+   * Extrahiere neu datierte Befunde, Inschriften, C14-Ergebnisse oder chronologische Verschiebungen aus der Monatsrecherche.
+   * Ergänze atomar `[PFAD_PROJEKTORDNER]/[SERIEN_KUERZEL]_timeline.json` (unter `events` mit Kennzeichnung `"added_in_period": "YYYY-MM"`).
+   * Spiegle die Datei nach `/Volumes/SanDisk1TB/proj/birchville-blog/docs/public/data/[SERIEN_KUERZEL]-timeline.json`.
+   * Aktualisiere die tabellarische Begleitdatei `[PFAD_PROJEKTORDNER]/[SERIEN_KUERZEL]_timeline.md`.
+   * Vermerke neue chronologische Fixpunkte in `docs/stand-der-forschung/[SERIEN_KUERZEL].md` unter Abschnitt *4. Historie der Monats-Updates*.
+
 ---
 
 ## 6. E-Mail-Digest & Blog-Bereitstellung

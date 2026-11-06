@@ -10,6 +10,8 @@ aside: true
 Diese Seite dokumentiert den **kumulativen Forschungsstand** zum Einfluss griechischsprachiger Verwaltungseliten (*Yavanas*) und ihrer Kanzleipraxis (ca. 2. Jh. v. Chr. – 2. Jh. n. Chr.) auf die Entstehung der frühen buddhistischen Gāndhārī-Manuskript- und Inschriftenkultur in Taxila und Swat. Sie wird monatlich aktualisiert und synthetisiert Epigraphik, Philologie, Paläographie und Archäologie.
 :::
 
+<TimelineModal series="yavanas" button-text="Chronologische Zeitleiste & Forschungsbefunde" />
+
 ## 1. Disziplinäre Evidenz-Matrix
 
 | Disziplin | Wissenschaftlicher Befund / Konsens | Relevanz für Schreiberpraxis & Manuskriptkultur | Evidenzgrad |

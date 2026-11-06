@@ -3,3 +3,21 @@ docs/.vitepress/dist
 docs/.vitepress/cache
 .DS_Store
 *.log
+
+# ── Birchville Security: Secret & Credential Guards ──
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.token
+*.credentials
+credentials.json
+client_secrets*.json
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+secrets.json

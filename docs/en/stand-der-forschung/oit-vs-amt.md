@@ -10,6 +10,8 @@ aside: true
 This page tracks the **cumulative scientific consensus and ongoing debates** between the *Out-of-India Theory (OIT)* and the *Aryan Migration Theory (AMT / Steppe model)*. It is synthesized continuously after each monthly research digest.
 :::
 
+<TimelineModal series="oit-vs-amt" button-text="Chronological Timeline & Research Findings" />
+
 ## 1. Disciplinary Evidence Matrix
 
 | Discipline | Scientific Consensus & Trends | AMT Status | OIT Status | Confidence |

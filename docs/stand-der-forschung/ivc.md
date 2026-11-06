@@ -10,6 +10,8 @@ aside: true
 Diese Seite dokumentiert den **kumulativen Stand der wissenschaftlichen Erforschung** der bronzezeitlichen Indus-Zivilisation (*Indus Valley Culture / Harappa-Zivilisation*, ca. 3300–1300 v. Chr.). Sie wird nach jedem Monatsbericht aktualisiert und synthetisiert die Befunde über Archäologie, Archäogenetik, Epigraphik und Paläoklimatologie.
 :::
 
+<TimelineModal series="ivc" button-text="Chronologische Zeitleiste & Forschungsbefunde" />
+
 ## 1. Disziplinäre Evidenz-Matrix
 
 | Disziplin | Wissenschaftlicher Konsens / Haupttrend | Forschungsstatus | Evidenzgrad |

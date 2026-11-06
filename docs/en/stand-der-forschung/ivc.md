@@ -10,6 +10,8 @@ aside: true
 This page documents the **cumulative state of scientific research** on the Bronze Age Indus Civilization (*Indus Valley Culture / Harappan Civilization*, c. 3300–1300 BCE). Updated following each monthly report, it synthesizes empirical findings across archaeology, archaeogenetics, epigraphy, and paleoclimatology.
 :::
 
+<TimelineModal series="ivc" button-text="Chronological Timeline & Research Findings" />
+
 ## 1. Disciplinary Evidence Matrix
 
 | Research Domain | Scholarly Consensus / Prevailing Trend | Research Status | Confidence Level |

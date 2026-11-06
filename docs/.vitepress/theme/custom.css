@@ -463,6 +463,28 @@ button.quick-btn {
   transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
 }
 
+button.quick-btn.quick-btn-primary {
+  background-color: var(--accent);
+  color: #ffffff !important;
+  border: 1px solid var(--accent);
+}
+
+button.quick-btn.quick-btn-primary:hover {
+  background-color: #92400e;
+  border-color: #92400e;
+}
+
+.dark button.quick-btn.quick-btn-primary {
+  background-color: var(--accent);
+  color: #0a1628 !important;
+  border: 1px solid var(--accent);
+}
+
+.dark button.quick-btn.quick-btn-primary:hover {
+  background-color: #facc15;
+  border-color: #facc15;
+}
+
 button.quick-btn:hover {
   background-color: var(--vp-c-brand-soft);
 }
