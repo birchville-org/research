@@ -146,12 +146,14 @@ else
   git tag -a "$TAG_NAME" -m "Freigabe Monatsbericht $PERIOD_CODE"
 fi
 
-# 7. Push zu Origin
-echo "Pushe Commit und Tags zu origin..."
+# 7. Push zu Origin und Synology
+echo "Pushe Commit und Tags zu origin (GitHub) und synology..."
 git push origin main
 git push origin "$TAG_NAME" --force
+git push synology main 2>/dev/null || true
+git push synology "$TAG_NAME" --force 2>/dev/null || true
 
-# 8. Deployment in Traefik-Webroot auf Synology
+# 8. Deployment in Traefik-Webroot auf Synology (Legacy & Fallback)
 echo "Synchronisiere HTML-Build in Traefik-Webroot auf Synology (/volume1/docker/blog/dist)..."
 tar -czf - -C docs/.vitepress/dist . | ssh marco@synology.local "tar -xzf - -C /volume1/docker/blog/dist"
 echo "✓ Traefik-Webroot erfolgreich aktualisiert."
@@ -177,4 +179,4 @@ echo ""
 echo "=== Erfolgreich publiziert! ==="
 echo "Monatsbericht: $PERIOD_CODE"
 echo "Git-Tag:       $TAG_NAME"
-echo "Status:        Zu origin gepusht -> Live auf blog.birchville.org"
+echo "Status:        Zu origin gepusht -> Live auf docs.birchville.org/research/"

@@ -10,8 +10,8 @@ import deflist from 'markdown-it-deflist'
 import extensiblePlugin from 'markdown-it-extensible'
 const multimd_table = require('markdown-it-multimd-table')
 
-const SITE_URL = process.env.SITE_URL || 'https://blog.birchville.org'
-const TITLE = 'Birchville Blog'
+const SITE_URL = process.env.SITE_URL || 'https://docs.birchville.org/research'
+const TITLE = 'Birchville Research'
 const DESCRIPTION_DE = 'Kompression automatisierter Forschungs- & Rechercheergebnisse'
 const DESCRIPTION_EN = 'Synthesized and compressed automated research digests'
 const DESCRIPTION_HI = 'स्वचालित शोध एवं अनुसंधान परिणामों का संपीड़न'
@@ -44,13 +44,13 @@ const blockContainers = [
 
 export default defineConfig({
   title: TITLE,
-  base: '/',
+  base: '/research/',
   cleanUrls: true,
   lastUpdated: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/favicon-32x32.png' }],
-    ['link', { rel: 'apple-touch-icon', href: '/og-icon.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/research/favicon-32x32.png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/research/og-icon.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: TITLE }],
     ['meta', { property: 'og:description', content: DESCRIPTION_DE }],

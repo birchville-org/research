@@ -1,8 +1,8 @@
 {
-  "name": "birchville-blog",
+  "name": "birchville-research",
   "version": "0.1.0",
   "private": true,
-  "description": "Blog für private Forschungsergebnisse",
+  "description": "Birchville Research: Living Synthesis Dashboards, Monatsberichte & Zeitleisten",
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
