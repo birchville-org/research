@@ -128,6 +128,15 @@ echo "✓ Alle Produktionsregeln (DE/EN/HI/SA Parität, H2-Quellenverzeichnis, s
 echo "Baue VitePress-Blog (docs:build)..."
 npm run docs:build
 
+# 4b. Link-Integrität & Base-Konsistenz prüfen
+echo "Prüfe Verlinkungen und Base-Konsistenz (check:links)..."
+npm run check:links
+if [[ $? -ne 0 ]]; then
+  echo "Fehler: Link-Integritätsprüfung fehlgeschlagen. Abbruch vor Veröffentlichung!"
+  exit 1
+fi
+echo "✓ Link-Integritätsprüfung erfolgreich."
+
 # 5. Git-Status & Commit
 if git status --porcelain | grep -qE "docs/(posts|en/posts|hi/posts|sa/posts)/"; then
   echo "Nicht committete Änderungen an Berichten erkannt. Erstelle Commit..."
