@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 import { data as allPosts } from '../../../posts.data.mjs'
 
 const props = defineProps({
@@ -126,7 +126,7 @@ const groups = computed(() => {
             <span class="post-card-date">{{ fmt(p.date) }}</span>
           </div>
 
-          <a class="post-card-title" :href="p.url">{{ p.title }}</a>
+          <a class="post-card-title" :href="withBase(p.url)">{{ p.title }}</a>
           <p v-if="p.description" class="post-card-desc">{{ p.description }}</p>
 
           <ul v-if="p.highlights && p.highlights.length" class="post-card-highlights">
@@ -154,7 +154,7 @@ const groups = computed(() => {
         <span class="post-card-date">{{ fmt(p.date) }}</span>
       </div>
 
-      <a class="post-card-title" :href="p.url">{{ p.title }}</a>
+      <a class="post-card-title" :href="withBase(p.url)">{{ p.title }}</a>
       <p v-if="p.description" class="post-card-desc">{{ p.description }}</p>
 
       <ul v-if="p.highlights && p.highlights.length" class="post-card-highlights">

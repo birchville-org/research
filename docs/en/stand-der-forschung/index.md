@@ -21,7 +21,7 @@ This overview page consolidates the **cumulative states of research** across the
       </div>
     </div>
     <div>
-      <a href="/en/stand-der-forschung/oit-vs-amt" class="quick-btn quick-btn-primary">
+      <a href="./oit-vs-amt" class="quick-btn quick-btn-primary">
         Go to OIT vs. AMT Dashboard →
       </a>
     </div>
@@ -37,7 +37,7 @@ This overview page consolidates the **cumulative states of research** across the
       </div>
     </div>
     <div>
-      <a href="/en/stand-der-forschung/ivc" class="quick-btn quick-btn-primary">
+      <a href="./ivc" class="quick-btn quick-btn-primary">
         Go to IVC Dashboard →
       </a>
     </div>
@@ -53,7 +53,7 @@ This overview page consolidates the **cumulative states of research** across the
       </div>
     </div>
     <div>
-      <a href="/en/stand-der-forschung/yavanas" class="quick-btn quick-btn-primary">
+      <a href="./yavanas" class="quick-btn quick-btn-primary">
         Go to Yavanas Dashboard →
       </a>
     </div>

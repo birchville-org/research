@@ -21,7 +21,7 @@ Diese Übersichtsseite bündelt die **kumulativen Wissensstände** der im Birchv
       </div>
     </div>
     <div>
-      <a href="/stand-der-forschung/oit-vs-amt" class="quick-btn quick-btn-primary">
+      <a href="./oit-vs-amt" class="quick-btn quick-btn-primary">
         Zum OIT vs. AMT Dashboard →
       </a>
     </div>
@@ -37,7 +37,7 @@ Diese Übersichtsseite bündelt die **kumulativen Wissensstände** der im Birchv
       </div>
     </div>
     <div>
-      <a href="/stand-der-forschung/ivc" class="quick-btn quick-btn-primary">
+      <a href="./ivc" class="quick-btn quick-btn-primary">
         Zum IVC Dashboard →
       </a>
     </div>
@@ -53,7 +53,7 @@ Diese Übersichtsseite bündelt die **kumulativen Wissensstände** der im Birchv
       </div>
     </div>
     <div>
-      <a href="/stand-der-forschung/yavanas" class="quick-btn quick-btn-primary">
+      <a href="./yavanas" class="quick-btn quick-btn-primary">
         Zum Yavanas Dashboard →
       </a>
     </div>

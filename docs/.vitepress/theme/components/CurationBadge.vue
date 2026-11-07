@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 
 const props = defineProps({
   title: { type: String, default: '' },
@@ -21,7 +21,7 @@ const displaySubtitle = computed(() => {
 
 <template>
   <div class="curation-badge">
-    <img src="/birchville_logo.png" alt="Birchville Wappen" />
+    <img :src="withBase('/birchville_logo.png')" alt="Birchville Wappen" />
     <div>
       <div class="curation-badge-kicker">{{ kicker }}</div>
       <div class="curation-badge-title">{{ title || displaySubtitle }}</div>

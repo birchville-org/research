@@ -21,7 +21,7 @@ aside: false
       </div>
     </div>
     <div>
-      <a href="/hi/stand-der-forschung/oit-vs-amt" class="quick-btn quick-btn-primary">
+      <a href="./oit-vs-amt" class="quick-btn quick-btn-primary">
         OIT बनाम AMT डैशबोर्ड देखें →
       </a>
     </div>
@@ -37,7 +37,7 @@ aside: false
       </div>
     </div>
     <div>
-      <a href="/hi/stand-der-forschung/ivc" class="quick-btn quick-btn-primary">
+      <a href="./ivc" class="quick-btn quick-btn-primary">
         IVC डैशबोर्ड देखें →
       </a>
     </div>
@@ -53,7 +53,7 @@ aside: false
       </div>
     </div>
     <div>
-      <a href="/hi/stand-der-forschung/yavanas" class="quick-btn quick-btn-primary">
+      <a href="./yavanas" class="quick-btn quick-btn-primary">
         यवन डैशबोर्ड देखें →
       </a>
     </div>
