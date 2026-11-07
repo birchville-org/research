@@ -2,6 +2,7 @@ import { defineConfig, createContentLoader } from 'vitepress'
 import { createRequire } from 'module'
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import { Feed } from 'feed'
 const require = createRequire(import.meta.url)
 const attrs = require('markdown-it-attrs')
@@ -47,6 +48,19 @@ export default defineConfig({
   base: '/research/',
   cleanUrls: true,
   lastUpdated: true,
+
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPNavBarTitle\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/CustomNavBarTitle.vue', import.meta.url)
+          ),
+        },
+      ],
+    },
+  },
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/research/favicon-32x32.png' }],
