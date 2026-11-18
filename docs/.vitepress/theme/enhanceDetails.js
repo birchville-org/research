@@ -69,7 +69,7 @@ function getPopupLabels() {
   const path = window.location.pathname
   const lang = (document.documentElement.lang || 'de').toLowerCase()
 
-  if (path.startsWith('/en/') || lang.startsWith('en')) {
+  if (/(^|\/)en(\/|$)/.test(path) || lang.startsWith('en')) {
     return {
       openMatrix: '⤢ Open Evidence Matrix in Popup',
       openTable: '⤢ Open Table in Popup',
@@ -77,7 +77,7 @@ function getPopupLabels() {
       defaultTitle: 'Evidence Matrix',
     }
   }
-  if (path.startsWith('/hi/') || lang.startsWith('hi')) {
+  if (/(^|\/)hi(\/|$)/.test(path) || lang.startsWith('hi')) {
     return {
       openMatrix: '⤢ साक्ष्य-मैट्रिक्स बड़े पॉपअप में खोलें',
       openTable: '⤢ तालिका बड़े पॉपअप में खोलें',
@@ -85,7 +85,7 @@ function getPopupLabels() {
       defaultTitle: 'साक्ष्य-मैट्रिक्स (Evidence Matrix)',
     }
   }
-  if (path.startsWith('/sa/') || lang.startsWith('sa')) {
+  if (/(^|\/)sa(\/|$)/.test(path) || lang.startsWith('sa')) {
     return {
       openMatrix: '⤢ प्रमाण-व्यूहं बृहद्-दर्शने उद्घाटयतु',
       openTable: '⤢ सारणीं बृहद्-दर्शने उद्घाटयतु',

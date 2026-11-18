@@ -1,6 +1,6 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import { withBase } from 'vitepress'
+import { ref, computed, watch } from 'vue'
+import { useData, withBase } from 'vitepress'
 
 const props = defineProps({
   series: {
@@ -9,12 +9,102 @@ const props = defineProps({
   },
   buttonText: {
     type: String,
-    default: 'Chronologische Zeitleiste & Forschungsbefunde',
+    default: '',
   },
   title: {
     type: String,
     default: '',
   },
+})
+
+const { localeIndex } = useData()
+
+const currentLang = computed(() => {
+  const loc = localeIndex.value
+  if (loc === 'en' || loc === 'hi' || loc === 'sa') return loc
+  return 'de'
+})
+
+const ui = computed(() => {
+  const map = {
+    de: {
+      defaultButton: 'Chronologische Zeitleiste & Forschungsbefunde',
+      titleSuffix: 'Chronologische Zeitleiste',
+      defaultTitle: 'Chronologische Zeitleiste & Forschungsbefunde',
+      periodLabel: 'Zeitraum:',
+      close: '✕ Schließen',
+      closeAria: 'Schließen',
+      allDisciplines: 'Alle Disziplinen',
+      sortAsc: '↓ Chronologisch (Früheste zuerst)',
+      sortDesc: '↑ Chronologisch (Späteste zuerst)',
+      sortAscTitle: 'Chronologisch: Älteste zuerst',
+      sortDescTitle: 'Chronologisch: Neueste zuerst',
+      loading: 'Lade Zeitleistendaten...',
+      loadError: 'Zeitleistendaten konnten nicht geladen werden.',
+      empty: 'Keine Ereignisse für die gewählte Kategorie gefunden.',
+      reportStatus: 'Berichtsstand',
+      confidenceLabel: 'Evidenzgrad:',
+      sourcesLabel: 'Quellen/Belege:',
+    },
+    en: {
+      defaultButton: 'Chronological Timeline & Research Findings',
+      titleSuffix: 'Chronological Timeline',
+      defaultTitle: 'Chronological Timeline & Research Findings',
+      periodLabel: 'Period:',
+      close: '✕ Close',
+      closeAria: 'Close',
+      allDisciplines: 'All Disciplines',
+      sortAsc: '↓ Chronological (Earliest first)',
+      sortDesc: '↑ Chronological (Latest first)',
+      sortAscTitle: 'Chronological: Earliest first',
+      sortDescTitle: 'Chronological: Latest first',
+      loading: 'Loading timeline data...',
+      loadError: 'Timeline data could not be loaded.',
+      empty: 'No events found for the selected category.',
+      reportStatus: 'Report status',
+      confidenceLabel: 'Evidence Grade:',
+      sourcesLabel: 'Sources/Evidence:',
+    },
+    hi: {
+      defaultButton: 'कालक्रमानुसार समयरेखा एवं शोध निष्कर्ष',
+      titleSuffix: 'कालक्रमानुसार समयरेखा',
+      defaultTitle: 'कालक्रमानुसार समयरेखा एवं शोध निष्कर्ष',
+      periodLabel: 'कालखण्ड:',
+      close: '✕ बंद करें',
+      closeAria: 'बंद करें',
+      allDisciplines: 'सभी विषय',
+      sortAsc: '↓ कालक्रमानुसार (प्राचीनतम पहले)',
+      sortDesc: '↑ कालक्रमानुसार (नवीनतम पहले)',
+      sortAscTitle: 'कालक्रमानुसार: प्राचीनतम पहले',
+      sortDescTitle: 'कालक्रमानुसार: नवीनतम पहले',
+      loading: 'समयरेखा डेटा लोड हो रहा है...',
+      loadError: 'समयरेखा डेटा लोड नहीं किया जा सका।',
+      empty: 'चयनित श्रेणी के लिए कोई घटना नहीं मिली।',
+      reportStatus: 'रिपोर्ट स्थिति',
+      confidenceLabel: 'साक्ष्य स्तर:',
+      sourcesLabel: 'स्रोत / साक्ष्य:',
+    },
+    sa: {
+      defaultButton: 'कालक्रमानुसारं कालरेखा अनुसन्धान-प्राप्तयश्च',
+      titleSuffix: 'कालक्रमानुसारं कालरेखा',
+      defaultTitle: 'कालक्रमानुसारं कालरेखा अनुसन्धान-प्राप्तयश्च',
+      periodLabel: 'कालखण्डः:',
+      close: '✕ पिधत्ताम्',
+      closeAria: 'पिधत्ताम्',
+      allDisciplines: 'सर्वे विषयाः',
+      sortAsc: '↓ कालक्रमानुसारम् (प्राचीनतमं प्रथमम्)',
+      sortDesc: '↑ कालक्रमानुसारम् (नवीनतमं प्रथमम्)',
+      sortAscTitle: 'कालक्रमानुसारम्: प्राचीनतमं प्रथमम्',
+      sortDescTitle: 'कालक्रमानुसारम्: नवीनतमं प्रथमम्',
+      loading: 'कालरेखा-दत्तांशाः लोड् क्रियन्ते...',
+      loadError: 'कालरेखा-दत्तांशाः लोड् कर्तुं न शक्यन्ते।',
+      empty: 'चितायाः श्रेण्याः कृते कापि घटना न प्राप्ता।',
+      reportStatus: 'प्रतिवेदन-स्थितिः',
+      confidenceLabel: 'प्रमाण-कोटिः:',
+      sourcesLabel: 'स्रोतांसि / प्रमाणानि:',
+    },
+  }
+  return map[currentLang.value] || map.de
 })
 
 const dialogRef = ref(null)
@@ -26,7 +116,20 @@ const isLoading = ref(false)
 const loadError = ref(null)
 
 const dataUrl = computed(() => {
+  const langSuffix = currentLang.value === 'de' ? '' : `.${currentLang.value}`
+  return withBase(`/data/${props.series}-timeline${langSuffix}.json`)
+})
+
+const fallbackDataUrl = computed(() => {
   return withBase(`/data/${props.series}-timeline.json`)
+})
+
+watch(dataUrl, () => {
+  timelineData.value = null
+  selectedCategory.value = 'all'
+  if (isOpen.value) {
+    loadData()
+  }
 })
 
 async function loadData() {
@@ -34,7 +137,10 @@ async function loadData() {
   isLoading.value = true
   loadError.value = null
   try {
-    const res = await fetch(dataUrl.value)
+    let res = await fetch(dataUrl.value)
+    if (!res.ok && dataUrl.value !== fallbackDataUrl.value) {
+      res = await fetch(fallbackDataUrl.value)
+    }
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}: ${res.statusText}`)
     }
@@ -42,7 +148,7 @@ async function loadData() {
     timelineData.value = json
   } catch (err) {
     console.error('Fehler beim Laden der Zeitleiste:', err)
-    loadError.value = 'Zeitleistendaten konnten nicht geladen werden.'
+    loadError.value = ui.value.loadError
   } finally {
     isLoading.value = false
   }
@@ -61,22 +167,24 @@ function openModal() {
   }
 }
 
-function closeModal() {
-  if (dialogRef.value) {
-    if (typeof dialogRef.value.close === 'function') {
-      dialogRef.value.close()
-    } else {
-      dialogRef.value.removeAttribute('open')
-    }
-    isOpen.value = false
-    document.body.style.overflow = ''
-  }
+function onDialogClose() {
+  isOpen.value = false
+  document.body.style.overflow = ''
 }
 
 function onBackdropClick(event) {
-  if (event.target === dialogRef.value) {
-    closeModal()
+  if (typeof HTMLDialogElement !== 'undefined' && 'closedBy' in HTMLDialogElement.prototype) {
+    return
   }
+  if (!dialogRef.value || event.target !== dialogRef.value) return
+  const rect = dialogRef.value.getBoundingClientRect()
+  const isDialogContent =
+    rect.top <= event.clientY &&
+    event.clientY <= rect.top + rect.height &&
+    rect.left <= event.clientX &&
+    event.clientX <= rect.left + rect.width
+  if (isDialogContent) return
+  dialogRef.value.close()
 }
 
 const categories = computed(() => {
@@ -96,12 +204,14 @@ const filteredEvents = computed(() => {
   })
 })
 
+const resolvedButtonText = computed(() => props.buttonText || ui.value.defaultButton)
+
 const modalTitle = computed(() => {
   if (props.title) return props.title
   if (timelineData.value && timelineData.value.series_title) {
-    return `${timelineData.value.series_title} – Chronologische Zeitleiste`
+    return `${timelineData.value.series_title} – ${ui.value.titleSuffix}`
   }
-  return 'Chronologische Zeitleiste & Forschungsbefunde'
+  return ui.value.defaultTitle
 })
 </script>
 
@@ -115,7 +225,7 @@ const modalTitle = computed(() => {
       :aria-expanded="isOpen"
     >
       <span class="btn-icon">⏱️</span>
-      <span class="btn-text">{{ buttonText }}</span>
+      <span class="btn-text">{{ resolvedButtonText }}</span>
       <span v-if="timelineData && timelineData.events" class="event-count-badge">
         {{ timelineData.events.length }}
       </span>
@@ -124,8 +234,9 @@ const modalTitle = computed(() => {
     <dialog
       ref="dialogRef"
       class="matrix-dialog timeline-dialog vp-doc"
+      closedby="any"
       @click="onBackdropClick"
-      @close="closeModal"
+      @close="onDialogClose"
       aria-labelledby="timeline-dialog-title"
     >
       <div class="matrix-dialog-inner timeline-dialog-inner">
@@ -136,17 +247,18 @@ const modalTitle = computed(() => {
               {{ modalTitle }}
             </h2>
             <div v-if="timelineData && timelineData.period_coverage" class="timeline-period-badge">
-              Zeitraum: {{ timelineData.period_coverage }}
+              {{ ui.periodLabel }} {{ timelineData.period_coverage }}
             </div>
           </div>
-          <button
-            type="button"
-            class="quick-btn quick-btn-outline matrix-dialog-close timeline-close-btn"
-            @click="closeModal"
-            aria-label="Schließen"
-          >
-            ✕ Schließen
-          </button>
+          <form method="dialog" class="timeline-close-form">
+            <button
+              type="submit"
+              class="quick-btn quick-btn-outline matrix-dialog-close timeline-close-btn"
+              :aria-label="ui.closeAria"
+            >
+              {{ ui.close }}
+            </button>
+          </form>
         </header>
 
         <!-- Subtitle & Filter Toolbar -->
@@ -158,7 +270,7 @@ const modalTitle = computed(() => {
               :class="{ active: selectedCategory === 'all' }"
               @click="selectedCategory = 'all'"
             >
-              Alle Disziplinen
+              {{ ui.allDisciplines }}
             </button>
             <button
               v-for="cat in categories"
@@ -177,9 +289,9 @@ const modalTitle = computed(() => {
               type="button"
               class="sort-btn"
               @click="sortAscending = !sortAscending"
-              :title="sortAscending ? 'Chronologisch: Älteste zuerst' : 'Chronologisch: Neueste zuerst'"
+              :title="sortAscending ? ui.sortAscTitle : ui.sortDescTitle"
             >
-              {{ sortAscending ? '↓ Chronologisch (Früheste zuerst)' : '↑ Chronologisch (Späteste zuerst)' }}
+              {{ sortAscending ? ui.sortAsc : ui.sortDesc }}
             </button>
           </div>
         </div>
@@ -187,13 +299,13 @@ const modalTitle = computed(() => {
         <!-- Body -->
         <div class="matrix-dialog-body timeline-body">
           <div v-if="isLoading" class="timeline-loading">
-            Lade Zeitleistendaten...
+            {{ ui.loading }}
           </div>
           <div v-else-if="loadError" class="timeline-error">
             {{ loadError }}
           </div>
           <div v-else-if="filteredEvents.length === 0" class="timeline-empty">
-            Keine Ereignisse für die gewählte Kategorie gefunden.
+            {{ ui.empty }}
           </div>
           <div v-else class="timeline-track">
             <article
@@ -208,7 +320,7 @@ const modalTitle = computed(() => {
                 <span v-if="evt.site" class="timeline-site-pill">📍 {{ evt.site }}</span>
                 <span v-if="evt.discipline" class="timeline-discipline-pill">{{ evt.discipline }}</span>
                 <span v-if="evt.added_in_period" class="timeline-period-tag">
-                  Berichtsstand {{ evt.added_in_period }}
+                  {{ ui.reportStatus }} {{ evt.added_in_period }}
                 </span>
               </div>
 
@@ -219,10 +331,10 @@ const modalTitle = computed(() => {
               <!-- Additional attributes -->
               <div class="timeline-footer-row">
                 <div v-if="evt.confidence" class="timeline-footer-item">
-                  <strong>Evidenzgrad:</strong> {{ evt.confidence }}
+                  <strong>{{ ui.confidenceLabel }}</strong> {{ evt.confidence }}
                 </div>
                 <div v-if="evt.sources && evt.sources.length" class="timeline-footer-item">
-                  <strong>Quellen/Belege:</strong> {{ evt.sources.join(', ') }}
+                  <strong>{{ ui.sourcesLabel }}</strong> {{ evt.sources.join(', ') }}
                 </div>
               </div>
             </article>
@@ -350,6 +462,10 @@ dialog.timeline-dialog {
   font-size: 0.85rem;
   color: var(--vp-c-text-3);
   font-weight: 500;
+}
+
+.timeline-close-form {
+  margin: 0;
 }
 
 .timeline-close-btn {

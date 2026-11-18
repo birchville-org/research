@@ -1,6 +1,6 @@
 <script setup>
-import { ref, computed } from 'vue'
-import { useRoute, withBase } from 'vitepress'
+import { ref, computed, watch } from 'vue'
+import { useData, withBase } from 'vitepress'
 import { data as allPosts } from '../../../posts.data.mjs'
 
 const props = defineProps({
@@ -9,17 +9,15 @@ const props = defineProps({
   selectedSeries: { type: String, default: '' },
 })
 
-const route = useRoute()
+const { localeIndex } = useData()
+
 const currentLang = computed(() => {
-  if (route.path.startsWith('/sa/')) return 'sa'
-  if (route.path.startsWith('/hi/')) return 'hi'
-  if (route.path.startsWith('/en/')) return 'en'
+  const loc = localeIndex.value
+  if (loc === 'sa' || loc === 'hi' || loc === 'en') return loc
   return 'de'
 })
 
-const isEn = computed(() => currentLang.value === 'en')
-
-// Filter by current language based on URL prefix
+// Filter by current language based on canonical URL prefix (without VitePress base)
 const langPosts = computed(() => {
   return allPosts.filter((p) => {
     if (currentLang.value === 'sa') return p.url.startsWith('/sa/')
@@ -58,7 +56,31 @@ const labels = computed(() => {
   }
 })
 
+const seriesLabels = {
+  hi: {
+    'OIT vs AMT': 'OIT बनाम AMT',
+    IVC: 'IVC (सिंधु सभ्यता)',
+    Yavanas: 'यवन (Yavanas)',
+  },
+  sa: {
+    'OIT vs AMT': 'OIT विरुद्धं AMT',
+    IVC: 'IVC (सिन्धु-सभ्यता)',
+    Yavanas: 'यवनाः (Yavanas)',
+  },
+}
+
+const displaySeries = (s) => {
+  const map = seriesLabels[currentLang.value]
+  return (map && map[s]) || s
+}
+
 const activeSeries = ref(props.selectedSeries || 'ALL')
+
+watch(currentLang, () => {
+  if (!props.selectedSeries) {
+    activeSeries.value = 'ALL'
+  }
+})
 
 // Collect distinct series available in this language
 const availableSeries = computed(() => {
@@ -77,9 +99,32 @@ const filtered = computed(() => {
   return props.limit ? list.slice(0, props.limit) : list
 })
 
+const saMonths = [
+  'जनवरी',
+  'फरवरी',
+  'मार्च',
+  'अप्रैल',
+  'मई',
+  'जून',
+  'जुलाई',
+  'अगस्त',
+  'सितम्बर',
+  'अक्टूबर',
+  'नवम्बर',
+  'दिसम्बर',
+]
+
 const fmt = (d) => {
-  const localeMap = { sa: 'sa-IN', hi: 'hi-IN', en: 'en-US', de: 'de-DE' }
-  return new Date(d).toLocaleDateString(localeMap[currentLang.value] || 'de-DE', { year: 'numeric', month: 'long', day: 'numeric' })
+  const dateObj = new Date(d)
+  if (currentLang.value === 'sa') {
+    return `${dateObj.getDate()} ${saMonths[dateObj.getMonth()]} ${dateObj.getFullYear()}`
+  }
+  const localeMap = { hi: 'hi-IN', en: 'en-US', de: 'de-DE' }
+  return dateObj.toLocaleDateString(localeMap[currentLang.value] || 'de-DE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
 }
 
 const groups = computed(() => {
@@ -98,6 +143,7 @@ const groups = computed(() => {
   <div v-if="!selectedSeries && availableSeries.length > 0" class="filter-bar">
     <span style="font-weight: 600; color: var(--text-2);">{{ labels.series }}</span>
     <button
+      type="button"
       class="filter-btn"
       :class="{ active: activeSeries === 'ALL' }"
       @click="activeSeries = 'ALL'"
@@ -107,11 +153,12 @@ const groups = computed(() => {
     <button
       v-for="s in availableSeries"
       :key="s"
+      type="button"
       class="filter-btn"
       :class="{ active: activeSeries === s }"
       @click="activeSeries = s"
     >
-      {{ s }}
+      {{ displaySeries(s) }}
     </button>
   </div>
 
@@ -121,7 +168,7 @@ const groups = computed(() => {
       <ul class="post-list">
         <li v-for="p in g.items" :key="p.url" class="post-card">
           <div class="post-card-meta">
-            <span v-if="p.series" class="post-card-series">{{ p.series }}</span>
+            <span v-if="p.series" class="post-card-series">{{ displaySeries(p.series) }}</span>
             <span v-if="p.period" class="post-card-period">{{ p.period }}</span>
             <span class="post-card-date">{{ fmt(p.date) }}</span>
           </div>
@@ -149,7 +196,7 @@ const groups = computed(() => {
   <ul v-else class="post-list">
     <li v-for="p in filtered" :key="p.url" class="post-card">
       <div class="post-card-meta">
-        <span v-if="p.series" class="post-card-series">{{ p.series }}</span>
+        <span v-if="p.series" class="post-card-series">{{ displaySeries(p.series) }}</span>
         <span v-if="p.period" class="post-card-period">{{ p.period }}</span>
         <span class="post-card-date">{{ fmt(p.date) }}</span>
       </div>

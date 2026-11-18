@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: सङ्ग्रहः (Archiv)
+title: सङ्ग्रहः
 aside: false
 ---
 

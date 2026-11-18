@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { useRoute, withBase } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 
 const props = defineProps({
   title: { type: String, default: '' },
@@ -8,14 +8,20 @@ const props = defineProps({
   kicker: { type: String, default: 'Birchville Scholarly Synthesis' },
 })
 
-const route = useRoute()
-const isEn = computed(() => route.path.startsWith('/en/'))
+const { localeIndex } = useData()
 
 const displaySubtitle = computed(() => {
   if (props.subtitle) return props.subtitle
-  return isEn.value
-    ? 'Automated Research Syntheses & Scholarly Digests'
-    : 'Automatisierte Forschungs-Synthesen & Wissenschaftliche Digests'
+  if (localeIndex.value === 'en') {
+    return 'Automated Research Syntheses & Scholarly Digests'
+  }
+  if (localeIndex.value === 'hi') {
+    return 'स्वचालित शोध संश्लेषण एवं अकादमिक संकलन'
+  }
+  if (localeIndex.value === 'sa') {
+    return 'स्वचालित-अनुसन्धान-संश्लेषणं शास्त्रीय-सङ्ग्रहाश्च'
+  }
+  return 'Automatisierte Forschungs-Synthesen & Wissenschaftliche Digests'
 })
 </script>
 
