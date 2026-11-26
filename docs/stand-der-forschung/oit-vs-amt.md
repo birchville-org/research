@@ -67,5 +67,8 @@ Punkte, die derzeit in der Fachwelt noch intensiv debattiert werden oder methodi
 
 ## 4. Historie der Monats-Updates
 
-- **Oktober 2026**: Re-Modellierung von `qpAdm`-Rotationsmodellen (Sarazm vs. Indus Periphery). Übergabe von 3 Skeletten aus Rakhigarhi Mound 7 an das BSIP/AnSI.
+- **Oktober 2026**: Laktasepersistenz-Allel `-13.910:C>T` korreliert in Südasien streng mit `Steppe_MLBA` (`qpAdm`) und fehlt im reifen IVC; Probenübergabe von 8 Skeletten aus Rakhigarhi Mound 7 an AnSI/BSIP; Sinauli-Scheibenräder (Rinderanspannung) widerlegen Streitwagen-These; Dharamjali-Speleotheme (vier zentennale Megadürren > 85 Jahre); Zurückweisung früher Rigveda-Astronomiedatierungen.
 - **September 2026**: Zenodo-Preprint zur Genetik der Punjabis; Mitogenome aus Burzahom (Kashmir); vier Zähne aus Terqa/Syrien mit M-Haplogruppen.
+- **August 2026**: Ladakh-Genome in *Science Advances* (Old Lady Spider Cave); aDNA-Initiative in Tamil Nadu (Keeladi/Adichanallur); Skelettprobennahme in Rajghat (Varanasi).
+- **Juli 2026**: Populationsgenetische Studie zur Sindhi-Bevölkerung in *Human Genetics*; Übergabe von Bestattungsskeletten aus Rakhigarhi Mound 7 an den AnSI; Diskussion um `qpAdm`-Modellannahmen.
+- **Juni 2026**: Bergung von 8 neuen Harappa-Skeletten durch den ASI in Rakhigarhi und Probenübergabe an das BSIP Lucknow.

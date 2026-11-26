@@ -67,5 +67,8 @@ Methodological bottlenecks and contested domains currently debated in the litera
 
 ## 4. Monthly Synthesis Log
 
-- **October 2026**: Sensitivity refinements in `qpAdm` rotation models; handover of 3 Rakhigarhi Mound 7 skeletons for multi-isotope and aDNA assays.
+- **October 2026**: Lactase persistence allele `-13.910:C>T` strictly correlates with `Steppe_MLBA` (`qpAdm`) in South Asia and is absent in mature IVC; handover of 8 skeletons from Rakhigarhi Mound 7 to AnSI/BSIP; Sinauli solid-disk wheels (cattle draught) refute chariot claims; Dharamjali speleothems (four centennial megadroughts > 85 years); rejection of early astronomical Rigveda datings.
 - **September 2026**: Zenodo preprint on Punjabi genetic history; Kashmir/Burzahom mitogenome series; 4 Indus-related teeth from Tell Ashara/Syria.
+- **August 2026**: Ladakh genomes in *Science Advances* (Old Lady Spider Cave); Tamil Nadu aDNA initiative (Keeladi/Adichanallur); skeletal sampling at Rajghat (Varanasi).
+- **July 2026**: Sindhi population genetics study in *Human Genetics*; transfer of Rakhigarhi Mound 7 burials to AnSI; debate on `qpAdm` modeling assumptions.
+- **June 2026**: ASI recovery of 8 Harappan-era skeletons at Rakhigarhi and sample transfer to BSIP Lucknow.

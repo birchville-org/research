@@ -65,4 +65,5 @@ Crucial questions remaining unresolved in international research:
 
 ## 4. History of Monthly Updates
 
-- **October 2026**: Reclassification of the Wheeler perimeter wall at Mohenjo-Daro (Kot Diji phase, 3300–2600 BCE); transfer of 3 skeletons from Rakhigarhi Mound 7 to AnSI/BSIP; Dharamjali speleothem data confirms 113-year megadrought driving deurbanization.
+- **November 2026**: Multi-isotope study (C, O, Sr) on cattle/buffalo enamel from Dholavira and Pre-Early Harappan ceramic chronology in Gujarat (c. 3700–2900 BCE); 115 WGS from northern Pakistan (East Asian agricultural wave c. 4,800 BP) and osteometry from Rupar, Kalibangan, and Lothal; methodological corpus audit (12.9% edition discrepancies) and 83% novel sign pairs in Gulf/Mesopotamian inscriptions; OSL dating placing tectonic Paleo-Sutlej avulsion in the Late Pleistocene (> 60–15 ka).
+- **October 2026**: Reclassification of the Wheeler perimeter wall at Mohenjo-Daro (Kot Diji phase, 3300–2600 BCE); transfer of skeletons from Rakhigarhi Mound 7 to AnSI/BSIP; Dharamjali speleothem data confirms 113-year megadrought driving deurbanization.

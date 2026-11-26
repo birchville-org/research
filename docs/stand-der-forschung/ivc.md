@@ -65,4 +65,5 @@ Zentrale Fragestellungen, die in der internationalen Forschung derzeit im Fokus 
 
 ## 4. Historie der Monats-Updates
 
-- **Oktober 2026**: Re-Klassifikation der Wheeler-Stadtmauer in Mohenjo-Daro (Kot-Diji-Phase, 3300–2600 v. Chr.); Probenübergabe von 3 Skeletten aus Rakhigarhi Mound 7 an AnSI/BSIP; Dharamjali-Speleothemdaten belegen 113-jährige Megadürre als Motor der De-Urbanisierung.
+- **November 2026**: Multi-Isotopenstudie (C, O, Sr) an Rinder-/Büffelzähnen aus Dholavira und prä-frühharappische Keramikchronologie in Gujarat (ab ca. 3700–2900 v. Chr.); 115 WGS aus Nordpakistan (ostasiatische Agrar-Welle um ~4.800 BP) und Osteometrie aus Rupar, Kalibangan und Lothal; methodische Korpuskritik (12,9 % Editionsabweichungen) sowie 83 % neue Zeichenpaare in Golf-/Mesopotamien-Inschriften; OSL-Nachweis der spätpleistozänen Paläo-Sutlej-Verlagerung (> 60–15 ka).
+- **Oktober 2026**: Re-Klassifikation der Wheeler-Stadtmauer in Mohenjo-Daro (Kot-Diji-Phase, 3300–2600 v. Chr.); Probenübergabe von Skeletten aus Rakhigarhi Mound 7 an AnSI/BSIP; Dharamjali-Speleothemdaten belegen 113-jährige Megadürre als Motor der De-Urbanisierung.
