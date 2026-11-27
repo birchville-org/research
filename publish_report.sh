@@ -177,7 +177,7 @@ SYNOLOGY_OUT_DIR="docs/.vitepress/dist-synology"
 rm -rf "$SYNOLOGY_OUT_DIR"
 VITEPRESS_BASE=/ SITE_URL="https://blog.birchville.org" npx vitepress build docs --outDir "$SYNOLOGY_OUT_DIR"
 echo "Synchronisiere HTML-Build in-place (Inode-erhaltend) in Traefik-Webroot auf Synology (/volume1/docker/blog/dist)..."
-rsync -az --delete --exclude='._*' "$SYNOLOGY_OUT_DIR/" marco@synology.local:/volume1/docker/blog/dist/
+COPYFILE_DISABLE=1 tar -czf - -C "$SYNOLOGY_OUT_DIR" . | ssh marco@synology.local "set -e; rm -rf /volume1/docker/blog/dist.new && mkdir -p /volume1/docker/blog/dist.new /volume1/docker/blog/dist && tar -xzf - -C /volume1/docker/blog/dist.new && rsync -a --delete /volume1/docker/blog/dist.new/ /volume1/docker/blog/dist/ && rm -rf /volume1/docker/blog/dist.new"
 rm -rf "$SYNOLOGY_OUT_DIR"
 echo "✓ Traefik-Webroot erfolgreich aktualisiert."
 
