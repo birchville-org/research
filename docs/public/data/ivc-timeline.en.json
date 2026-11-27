@@ -2,7 +2,7 @@
   "series": "ivc",
   "series_title": "Indus Valley Culture (IVC)",
   "subtitle": "Archaeology, Archaeogenetics, Epigraphy & Paleoclimate of the Harappan Civilization",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-26",
   "period_coverage": "c. 3300 BCE – c. 1300 BCE",
   "categories": [
     { "id": "archaeology", "label": "Archaeology & Urbanism", "color": "#16a34a" },
@@ -130,6 +130,66 @@
       "evidence_type": "Settlement patterns & archaeobotany",
       "sources": ["Madella & Fuller (2006)", "Petrie et al. (2017)"],
       "added_in_period": "2026-10"
+    },
+    {
+      "id": "paleo-sutlej-avulsion-pleistocene",
+      "title": "Late Pleistocene Paleo-Sutlej Avulsion (Ropar Surface)",
+      "period_start": -60000,
+      "period_end": -15000,
+      "date_display": "> 60–15 ka (Late Pleistocene)",
+      "category": "climate",
+      "discipline": "Paleohydrology & Geochronology",
+      "site": "Ropar Surface / Ghaggar-Hakra Basin",
+      "confidence": "Very high (OSL geochronology)",
+      "summary": "OSL datings demonstrate that the tectonically driven avulsion of the Paleo-Sutlej away from the Ghaggar-Hakra system already occurred in the Late Pleistocene. Harappan settlements along the drainage thus relied primarily on summer monsoon rainfall.",
+      "evidence_type": "OSL dating & fluvial terraces",
+      "sources": ["Singh, Tandon et al. (Comm. Earth Env. 2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "gujarat-pre-early-harappan-ceramics",
+      "title": "Pre-Early Harappan Ceramic Presence in Gujarat & Ganeshwar AMS Dates",
+      "period_start": -3700,
+      "period_end": -2900,
+      "date_display": "c. 3700–2900 BCE",
+      "category": "archaeology",
+      "discipline": "Ceramic Chronology & Archaeology",
+      "site": "Gujarat / Ganeshwar",
+      "confidence": "High (AMS 14C & stratigraphy)",
+      "summary": "New AMS 14C series and stratigraphic syntheses in South Asian Ceramics trace early Indus ceramic networks in Gujarat back to c. 3700–2900 BCE and anchor the Ganeshwar ceramic horizon.",
+      "evidence_type": "Ceramic typology & AMS 14C",
+      "sources": ["Kenoyer, Bhan, Krishnan, Chakradhari & Rossi (2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "north-pakistan-east-asian-agrarian-wave",
+      "title": "East Asian Agrarian Wave Along the Southern Himalayan Foothills",
+      "period_start": -2850,
+      "period_end": -2750,
+      "date_display": "c. 4,800 BP (c. 2850 BCE)",
+      "category": "genetics",
+      "discipline": "Population Genomics",
+      "site": "Northern Pakistan / Himalayan Foothills",
+      "confidence": "High (115 whole genomes / WGS)",
+      "summary": "Whole-genome analysis of 115 individuals from northern Pakistan identifies two East Asian dispersal waves along the southern Himalayan foothills, beginning with an agrarian rice-farming wave around 4,800 BP.",
+      "evidence_type": "Whole-genome sequencing (WGS)",
+      "sources": ["Gao et al. (Mol Biol Evol 2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "dholavira-cattle-buffalo-isotopes",
+      "title": "Multi-Isotope Study of Husbandry and Herd Mobility at Dholavira",
+      "period_start": -2600,
+      "period_end": -1900,
+      "date_display": "c. 2600–1900 BCE",
+      "category": "archaeology",
+      "discipline": "Bioarchaeology & Isotope Chemistry",
+      "site": "Dholavira (Kutch, Gujarat)",
+      "confidence": "High (Peer-reviewed isotope analysis)",
+      "summary": "Combined carbon (δ13C), oxygen (δ18O), and strontium (87Sr/86Sr) tooth enamel data from cattle (Bos) and water buffalo (Bubalus) distinguish C3/C4 foddering strategies and attest local and regional herd mobility in the Kutch basin.",
+      "evidence_type": "Tooth enamel isotopes (C, O, Sr)",
+      "sources": ["Kesarwani et al. (JAS: Reports 2026)"],
+      "added_in_period": "2026-11"
     }
   ]
 }

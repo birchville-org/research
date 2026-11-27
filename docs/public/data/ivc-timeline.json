@@ -2,7 +2,7 @@
   "series": "ivc",
   "series_title": "Indus Valley Culture (IVC)",
   "subtitle": "Archäologie, Paläogenetik, Epigraphik & Paläoklima der Harappa-Zivilisation",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-26",
   "period_coverage": "ca. 3300 v. Chr. – ca. 1300 v. Chr.",
   "categories": [
     { "id": "archaeology", "label": "Archäologie & Urbanismus", "color": "#16a34a" },
@@ -130,6 +130,66 @@
       "evidence_type": "Siedlungsmuster & Archäobotanik",
       "sources": ["Madella & Fuller (2006)", "Petrie et al. (2017)"],
       "added_in_period": "2026-10"
+    },
+    {
+      "id": "paleo-sutlej-avulsion-pleistocene",
+      "title": "Spätpleistozäne Verlagerung des Paläo-Sutlej (Ropar Surface)",
+      "period_start": -60000,
+      "period_end": -15000,
+      "date_display": "> 60–15 ka (Spätpleistozän)",
+      "category": "climate",
+      "discipline": "Paläohydrologie & Geochronologie",
+      "site": "Ropar Surface / Ghaggar-Hakra-Becken",
+      "confidence": "Sehr hoch (OSL-Geochronologie)",
+      "summary": "OSL-Datierungen zeigen, dass die tektonisch gesteuerte Abkopplung des Paläo-Sutlej vom Ghaggar-Hakra-System bereits im Spätpleistozän stattfand. Harappazeitliche Siedlungen entlang des Flusssystems hingen somit primär vom Sommermonsun ab.",
+      "evidence_type": "OSL-Datierung & Flussterrassen",
+      "sources": ["Singh, Tandon et al. (Comm. Earth Env. 2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "gujarat-pre-early-harappan-ceramics",
+      "title": "Prä-frühharappische Keramikpräsenz in Gujarat & Ganeshwar-AMS-Daten",
+      "period_start": -3700,
+      "period_end": -2900,
+      "date_display": "ca. 3700–2900 v. Chr.",
+      "category": "archaeology",
+      "discipline": "Keramikchronologie & Archäologie",
+      "site": "Gujarat / Ganeshwar",
+      "confidence": "Hoch (AMS-14C & Stratigraphie)",
+      "summary": "Neue AMS-14C-Serien und stratigraphische Synthesen im Sammelband South Asian Ceramics belegen frühe Indus-Keramiknetzwerke in Gujarat ab ca. 3700–2900 v. Chr. sowie eine frühe Einbindung der Ganeshwar-Tradition.",
+      "evidence_type": "Keramiktypologie & AMS-14C",
+      "sources": ["Kenoyer, Bhan, Krishnan, Chakradhari & Rossi (2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "north-pakistan-east-asian-agrarian-wave",
+      "title": "Ostasiatische Agrar-Welle entlang der südlichen Himalaya-Ausläufer",
+      "period_start": -2850,
+      "period_end": -2750,
+      "date_display": "ca. 4.800 BP (ca. 2850 v. Chr.)",
+      "category": "genetics",
+      "discipline": "Populationsgenomik",
+      "site": "Nordpakistan / Himalaya-Ausläufer",
+      "confidence": "Hoch (115 Gesamtgenome / WGS)",
+      "summary": "Eine Gesamtanalyse von 115 Genomen aus Nordpakistan weist zwei ostasiatische Zuwanderungswellen entlang der südlichen Himalaya-Ausläufer nach, beginnend mit einer Agrar-Welle (Reisbauern) um ca. 4.800 BP.",
+      "evidence_type": "Whole-Genome Sequencing (WGS)",
+      "sources": ["Gao et al. (Mol Biol Evol 2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "dholavira-cattle-buffalo-isotopes",
+      "title": "Multi-Isotopenstudie zu Viehwirtschaft und Herdenmobilität in Dholavira",
+      "period_start": -2600,
+      "period_end": -1900,
+      "date_display": "ca. 2600–1900 v. Chr.",
+      "category": "archaeology",
+      "discipline": "Bioarchäologie & Isotopenchemie",
+      "site": "Dholavira (Kutch, Gujarat)",
+      "confidence": "Hoch (Peer-Reviewed Isotopenanalyse)",
+      "summary": "Kombinierte Kohlenstoff- (δ13C), Sauerstoff- (δ18O) und Strontium-Isotopendaten (87Sr/86Sr) aus Zahnschmelz von Rindern (Bos) und Wasserbüffeln (Bubalus) trennen C3-/C4-Futterstrategien und belegen lokale sowie regionale Herdenmobilität im Kutch-Becken.",
+      "evidence_type": "Zahnschmelz-Isotopie (C, O, Sr)",
+      "sources": ["Kesarwani et al. (JAS: Reports 2026)"],
+      "added_in_period": "2026-11"
     }
   ]
 }

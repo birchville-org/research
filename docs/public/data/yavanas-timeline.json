@@ -2,7 +2,7 @@
   "series": "yavanas",
   "series_title": "Yavanas mit Kharoṣṭhī-Feder",
   "subtitle": "Griechischsprachige Verwaltungseliten & Gāndhārī-Manuskriptkultur in Taxila und Swat",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-27",
   "period_coverage": "ca. 260 v. Chr. – ca. 140 n. Chr.",
   "categories": [
     { "id": "epigraphy", "label": "Epigraphik & Kanzleipraxis", "color": "#b45309" },
@@ -145,6 +145,36 @@
       "evidence_type": "Monumentale Felsinschrift",
       "sources": ["Sims-Williams (1998)", "Falk (2004)"],
       "added_in_period": "2026-10"
+    },
+    {
+      "id": "bajaur-bc9r-rajaniti-scroll",
+      "title": "Bajaur-Rolle BC9r: Staatskunst (rājanīti) & Scholastik auf einem Träger",
+      "period_start": 50,
+      "period_end": 180,
+      "date_display": "1. – 2. Jh. n. Chr.",
+      "category": "philology",
+      "discipline": "Gāndhārī-Philologie & Manuskriptforschung",
+      "site": "Bajaur / Gandhāra",
+      "confidence": "Sehr hoch (Peer-Reviewed, IIJ 2026)",
+      "summary": "Andrea Schlosser (Nov. 2026) erschließt Bajaur-Fragment BC9r: Das Recto überliefert 39 Āryā-Strophen zur Königsherrschaft (rājanīti, Cakṣuka zugeschrieben) in stark sanskritisierter Gāndhārī, während das Verso einen buddhistisch-scholastischen Traktat trägt. Unmittelbarer materieller Beleg für die Verflechtung weltlich-administrativer Literatur und monastischer Kharoṣṭhī-Buchkultur.",
+      "evidence_type": "Birkenrinden-Schriftrolle (Doppelverwendung)",
+      "sources": ["Schlosser (2026, IIJ)", "Bajaur Collection BC9r"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "bactrian-era-kaniska-223",
+      "title": "Abgrenzung der Kaniṣka-Ära (127 n. Chr.) zur baktrischen Dokumenten-Ära (223/227 n. Chr.)",
+      "period_start": 127,
+      "period_end": 228,
+      "date_display": "127 – ca. 228 n. Chr.",
+      "category": "history",
+      "discipline": "Historischer Kulturkontakt & Chronologie",
+      "site": "Baktrien / Kuschan-Reich",
+      "confidence": "Hoch (Synchronismen & Inschriftenanalyse)",
+      "summary": "Neue Untersuchungen von Salayev (Nov. 2026) und Bokiyev (Nov. 2026) unter Einbezug der Almosi- und Rabatak-Inschriften trennen die Kaniṣka-Ära (127 n. Chr.) anhand interner Synchronismen und Steuerquittungen klar von der späteren baktrischen Dokumenten-Ära (223/224–227/228 n. Chr.) und schärfen die Chronologie der nachgriechischen Kanzleien.",
+      "evidence_type": "Epigraphik & baktrische Urkunden",
+      "sources": ["Salayev (2026)", "Bokiyev (2026)", "Almosi & Rabatak"],
+      "added_in_period": "2026-11"
     }
   ]
 }

@@ -60,4 +60,5 @@ Zentrale Fragestellungen im forschungsgeschichtlichen Diskurs:
 
 ## 4. Historie der Monats-Updates
 
+- **November 2026**: Bajaur-Birkenrindenrolle `BC9r` (Schlosser, *Indo-Iranian Journal*) belegt weltliche Staatskunst (*rājanīti*, 39 Āryā-Strophen) und buddhistische Scholastik auf demselben Träger; Kanzleikontinuität von ADAB über indo-griechische Münzstandards bis Kaniṣka; Senats-Inspektion in Sirkap/Taxila zu UNESCO-Auflagen (19. Nov. 2026) und Swat-Architekturvergleich; Klärung der baktrischen Ären (127 vs. 223/227 n. Chr.) sowie Vinaya-/Pāli-Vergleich.
 - **Oktober 2026**: Auftaktbericht zur Forschungsreihe. Systematisierung der Forschungsfrage, Evidenz-Matrix zu Theodoros/Theodotos (CKI 32), Shāhpur, Sirkap (KAI 273), makedonischen Monaten und Formulierung der vier Arbeitshypothesen (H1 Kontinuität, H2 Verwaltung, H3 Patronage, H4 Stadtraum).

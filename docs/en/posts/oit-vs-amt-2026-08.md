@@ -90,7 +90,7 @@ The evidence remains asymmetrical: Established research rejects a violent
 spread of Steppe-related populations after the peak of the Indus Civilization
 to be the currently best-supported explanation for the genetic and linguistic historical findings.
 
-OIT arguments for local continuity, Sarasvati, and Vedic chronology remain important
+OIT arguments for local continuity, Sarasvati, and Vedic chronology remain important
 counter-positions, but are not the majority view in international scholarly literature.
 
 New Studies & Finds
@@ -128,7 +128,7 @@ languages can be derived. The report is nevertheless relevant because South Indi
 significantly less represented in aDNA research than the Northwest. It could in the future
 refine the history of southern populations and their relationships to Indus, Deccan, and Sri Lanka contexts.
 
-3. Rajghat/BHU: New Samples from the Middle Ganges Plain
+3. Rajghat/BHU: New Samples from the Middle Ganges Plain
 The Banaras Hindu University launched in August an interdisciplinary investigation of a
 skeleton recovered during the Rajghat (Varanasi) excavations in 1957 and stored for decades.
 Reports mention a possible age of approximately 1,000 to 2,800 years; the exact
@@ -169,7 +169,7 @@ origin of later Indo-Aryan speakers. The frequent equation "older Indus city = V
 in very early times" is therefore an additional interpretative step, not a dating from the
 walls themselves.
 
-Linguistic, Philological, and Historiographical Contributions
+Linguistic, Philological, and Historiographical Contributions
 BMAC Substrate: Concrete Philological Dissent
 David B. Buyaner discusses in **“Etymology of some Indo-Iranian cultural terms and the Indo-Iranian substratum theory: I. Indo-Iranian *Hišti- / *Hišta- ‘brick’” (2026, DOI:
 10.30842/30346800.2026.2.1.7)** the assumption, advocated by Witzel and others, that part of the
@@ -203,7 +203,7 @@ Aryas or a simple identity of Harappans and Vedic composers. The public
 polarization between "colonial invasion myth" and "proven indigenous civilization"
 inadequately reflects this intermediate position.
 
-State of the Debate
+State of the Debate
 What the AMT/Migration Side Can Currently Explain Well
 1. The 2019 Science analysis of 523 ancient individuals finds a temporally and geographically
 circumscribed entry of Steppe-related ancestry into South Asia's gene pool after the
@@ -244,7 +244,7 @@ press reports do not replace a published genome.
 Admixture is not Language: Genetic influx can correlate with language change,
 but does not prove which language the carriers spoke. Conversely, a language
 
-can be spread by small elites, networks, and institutions without a
+can be spread by small elites, networks, and institutions without a
 complete population replacement.
 Chronology: Radiocarbon dates date samples or construction phases, not automatically
 texts. The dating of Ṛgveda layers must integrate philological relative chronologies,
@@ -286,7 +286,7 @@ statements about the language of the urban Indus population remain speculative.
 8. How will new aDNA findings be presented in textbooks, museum narratives, and political
 discourses so that continuity and mobility remain visible simultaneously?
 
-Reference to Malinar Lecture (UZH)
+Reference to Malinar Lecture (UZH)
 The findings fit particularly well with a critical analysis of the construction of
 "Hinduism": Neither "Hindu" nor "Arya" automatically denotes a
 biologically homogeneous nation in the Bronze Age. aDNA shows stratifications and contact zones; archaeology
@@ -326,7 +326,7 @@ project source in the reporting month). “Rakhigarhi human remains sent for adv
 dia.co.in/2026/06/rakhigarhi-human-remains-sent-for-advanced-scientific-study-to-uncover-secrets-of-i
 ndus-saraswati-civilization/
 
-9. Archaeology Magazine (July/August 2026). “New dates push back occupation of Mohenjo-Daro.” https://archaeology.org/issues/july-august-2026/world/
+9. Archaeology Magazine (July/August 2026). “New dates push back occupation of Mohenjo-Daro.” https://archaeology.org/issues/july-august-2026/world/
 10. Arab News (March 22, 2026; context for dating). “New excavations show Mohenjo-daro,
 ancient Indus Valley city, is older than previously thought.” https://www.arabnews.com/node/2
 637253/pakistan

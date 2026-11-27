@@ -2,7 +2,7 @@
   "series": "ivc",
   "series_title": "सिंधु घाटी सभ्यता (IVC)",
   "subtitle": "हड़प्पा सभ्यता का पुरातत्व, पुराजिनविज्ञान, पुरालेखशास्त्र एवं पुरा-जलवायु",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-26",
   "period_coverage": "लगभग 3300 ईसा पूर्व – लगभग 1300 ईसा पूर्व",
   "categories": [
     { "id": "archaeology", "label": "पुरातत्व एवं शहरीकरण", "color": "#16a34a" },
@@ -130,6 +130,66 @@
       "evidence_type": "बस्ती पैटर्न एवं पुरा-वनस्पति विज्ञान",
       "sources": ["Madella & Fuller (2006)", "Petrie et al. (2017)"],
       "added_in_period": "2026-10"
+    },
+    {
+      "id": "paleo-sutlej-avulsion-pleistocene",
+      "title": "पुरा-सतलुज का उत्तर-प्लीस्टोसीन विस्थापन (रोपड़ सतह)",
+      "period_start": -60000,
+      "period_end": -15000,
+      "date_display": "> 60–15 ka (उत्तर-प्लीस्टोसीन)",
+      "category": "climate",
+      "discipline": "पुरा-जलविज्ञान एवं भू-कालानुक्रम",
+      "site": "रोपड़ सतह / घग्गर-हाकरा बेसिन",
+      "confidence": "अति उच्च (OSL भू-कालानुक्रम)",
+      "summary": "OSL कालनिर्धारण प्रमाणित करता है कि घग्गर-हाकरा प्रणाली से पुरा-सतलुज का विवर्तनिक अलगाव उत्तर-प्लीस्टोसीन में ही हो चुका था। इस प्रकार हड़प्पा बस्तियां मुख्यतः ग्रीष्मकालीन मानसून पर निर्भर थीं।",
+      "evidence_type": "OSL कालनिर्धारण एवं नदी वेदिकाएं",
+      "sources": ["Singh, Tandon et al. (Comm. Earth Env. 2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "gujarat-pre-early-harappan-ceramics",
+      "title": "गुजरात में प्राक्-प्रारंभिक हड़प्पा मृदभांड एवं गणेश्वर AMS तिथियां",
+      "period_start": -3700,
+      "period_end": -2900,
+      "date_display": "लगभग 3700–2900 ईसा पूर्व",
+      "category": "archaeology",
+      "discipline": "मृदभांड कालक्रम एवं पुरातत्व",
+      "site": "गुजरात / गणेश्वर",
+      "confidence": "उच्च (AMS-14C एवं स्तर-विन्यास)",
+      "summary": "South Asian Ceramics खंड में नई AMS-14C श्रृंखलाएं और स्तर-विन्यास संश्लेषण गुजरात में लगभग 3700–2900 ईसा पूर्व तक प्रारंभिक सिंधु मृदभांड नेटवर्क और गणेश्वर परंपरा की पुष्टि करते हैं।",
+      "evidence_type": "मृदभांड वर्गीकरण एवं AMS-14C",
+      "sources": ["Kenoyer, Bhan, Krishnan, Chakradhari & Rossi (2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "north-pakistan-east-asian-agrarian-wave",
+      "title": "दक्षिणी हिमालय की तलहटी में पूर्वी एशियाई कृषि लहर",
+      "period_start": -2850,
+      "period_end": -2750,
+      "date_display": "लगभग 4,800 BP (लगभग 2850 ईसा पूर्व)",
+      "category": "genetics",
+      "discipline": "जनसंख्या जीनोमिक्स",
+      "site": "उत्तरी पाकिस्तान / हिमालय तलहटी",
+      "confidence": "उच्च (115 पूर्ण जीनोम / WGS)",
+      "summary": "उत्तरी पाकिस्तान के 115 पूर्ण जीनोम का विश्लेषण दक्षिणी हिमालय की तलहटी के साथ दो पूर्वी एशियाई प्रवासन लहरों की पहचान करता है, जिसकी शुरुआत लगभग 4,800 BP में धान-कृषि लहर से हुई।",
+      "evidence_type": "पूर्ण जीनोम अनुक्रमण (WGS)",
+      "sources": ["Gao et al. (Mol Biol Evol 2026)"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "dholavira-cattle-buffalo-isotopes",
+      "title": "धोलावीरा में पशुपालन और पशु-झुंड गतिशीलता का बहु-समस्थानिक अध्ययन",
+      "period_start": -2600,
+      "period_end": -1900,
+      "date_display": "लगभग 2600–1900 ईसा पूर्व",
+      "category": "archaeology",
+      "discipline": "जैव-पुरातत्व एवं समस्थानिक रसायन",
+      "site": "धोलावीरा (कच्छ, गुजरात)",
+      "confidence": "उच्च (समकक्ष-समीक्षित समस्थानिक विश्लेषण)",
+      "summary": "मवेशियों (Bos) और जल-भैंस (Bubalus) के दांतों के इनेमल से प्राप्त संयुक्त कार्बन (δ13C), ऑक्सीजन (δ18O) और स्ट्रोंटियम (87Sr/86Sr) डेटा C3/C4 चारा रणनीतियों और कच्छ बेसिन में स्थानीय व क्षेत्रीय गतिशीलता को दर्शाते हैं।",
+      "evidence_type": "दंत इनेमल समस्थानिक (C, O, Sr)",
+      "sources": ["Kesarwani et al. (JAS: Reports 2026)"],
+      "added_in_period": "2026-11"
     }
   ]
 }

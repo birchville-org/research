@@ -60,4 +60,5 @@ Core research questions currently under scholarly debate:
 
 ## 4. History of Monthly Updates
 
+- **November 2026**: Bajaur birch bark scroll `BC9r` (Schlosser, *Indo-Iranian Journal*) attests secular statecraft (*rājanīti*, 39 Āryā stanzas) and Buddhist scholasticism on the same medium; chancery continuity traced from ADAB through Indo-Greek coinage standards to Kaniṣka; Pakistani Senate inspection at Sirkap/Taxila on UNESCO compliance (19 Nov 2026) and comparative Swat architecture; clarification of Bactrian eras (127 vs. 223/227 CE) alongside Vinaya and Pāli textual comparisons.
 - **October 2026**: Inaugural report for the research series. Formal formulation of the research question, disciplinary evidence matrix covering Theodoros/Theodotos (CKI 32), Shāhpur, Sirkap (KAI 273), Macedonian month names, and elaboration of the four working hypotheses (H1 Continuity, H2 Administration, H3 Patronage, H4 Urban Space).

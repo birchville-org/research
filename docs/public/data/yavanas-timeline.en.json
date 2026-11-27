@@ -2,7 +2,7 @@
   "series": "yavanas",
   "series_title": "Yavanas with Kharoṣṭhī Pen",
   "subtitle": "Greek-Speaking Administrative Elites & Gāndhārī Manuscript Culture in Taxila and Swat",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-27",
   "period_coverage": "c. 260 BCE – c. 140 CE",
   "categories": [
     { "id": "epigraphy", "label": "Epigraphy & Chancery Practice", "color": "#b45309" },
@@ -145,6 +145,36 @@
       "evidence_type": "Monumental rock/stele inscription",
       "sources": ["Sims-Williams (1998)", "Falk (2004)"],
       "added_in_period": "2026-10"
+    },
+    {
+      "id": "bajaur-bc9r-rajaniti-scroll",
+      "title": "Bajaur Scroll BC9r: Secular Statecraft (rājanīti) & Scholasticism on One Medium",
+      "period_start": 50,
+      "period_end": 180,
+      "date_display": "1st – 2nd cent. CE",
+      "category": "philology",
+      "discipline": "Gāndhārī Philology & Manuscript Studies",
+      "site": "Bajaur / Gandhāra",
+      "confidence": "Very high (Peer-reviewed, IIJ 2026)",
+      "summary": "Andrea Schlosser (Nov. 2026) studies Bajaur fragment BC9r: the recto preserves 39 Āryā stanzas on kingship (rājanīti, attributed to Cakṣuka) in heavily Sanskritized Gāndhārī, while the verso carries a Buddhist scholastic treatise. Direct material evidence for the intersection of secular-administrative literature and monastic Kharoṣṭhī book culture.",
+      "evidence_type": "Birch bark scroll (dual-use)",
+      "sources": ["Schlosser (2026, IIJ)", "Bajaur Collection BC9r"],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "bactrian-era-kaniska-223",
+      "title": "Distinguishing the Kaniṣka Era (127 CE) from the Bactrian Document Era (223/227 CE)",
+      "period_start": 127,
+      "period_end": 228,
+      "date_display": "127 – c. 228 CE",
+      "category": "history",
+      "discipline": "Cultural Contact & Chronology",
+      "site": "Bactria / Kushan Empire",
+      "confidence": "High (Synchronisms & epigraphic analysis)",
+      "summary": "Studies by Salayev (Nov. 2026) and Bokiyev (Nov. 2026) incorporating the Almosi and Rabatak inscriptions distinguish the Kaniṣka era (127 CE) from the later Bactrian document era (223/224–227/228 CE) via internal synchronisms and tax receipts, sharpening the chronology of post-Greek chanceries.",
+      "evidence_type": "Epigraphy & Bactrian documents",
+      "sources": ["Salayev (2026)", "Bokiyev (2026)", "Almosi & Rabatak"],
+      "added_in_period": "2026-11"
     }
   ]
 }
