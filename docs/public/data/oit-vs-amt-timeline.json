@@ -2,13 +2,29 @@
   "series": "oit-vs-amt",
   "series_title": "OIT vs. AMT",
   "subtitle": "Archäogenetik, Archäozoologie, Historische Linguistik & Philologie im indoiranischen Raum",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-27",
   "period_coverage": "ca. 4000 v. Chr. – ca. 1000 v. Chr.",
   "categories": [
-    { "id": "genetics", "label": "Archäogenetik & aDNA", "color": "#dc2626" },
-    { "id": "archaeology", "label": "Archäologie & Streitwagen", "color": "#16a34a" },
-    { "id": "linguistics", "label": "Historische Linguistik", "color": "#0284c7" },
-    { "id": "philology", "label": "Indologie & Veda-Chronologie", "color": "#b45309" }
+    {
+      "id": "genetics",
+      "label": "Archäogenetik & aDNA",
+      "color": "#dc2626"
+    },
+    {
+      "id": "archaeology",
+      "label": "Archäologie & Streitwagen",
+      "color": "#16a34a"
+    },
+    {
+      "id": "linguistics",
+      "label": "Historische Linguistik",
+      "color": "#0284c7"
+    },
+    {
+      "id": "philology",
+      "label": "Indologie & Veda-Chronologie",
+      "color": "#b45309"
+    }
   ],
   "events": [
     {
@@ -23,7 +39,11 @@
       "confidence": "Hoch (Phylolinguistik & aDNA)",
       "summary": "Trennung der anatolischen Linie und Formierung des Kern-Indogermanischen im Kontext mobiler pastoraler Kurgankulturen der osteuropäischen Steppe.",
       "evidence_type": "Linguistische Phylogenie & aDNA",
-      "sources": ["Anthony (2007)", "Haak et al. (Nature 2015)", "Heggarty et al. (Science 2023)"],
+      "sources": [
+        "Anthony (2007)",
+        "Haak et al. (Nature 2015)",
+        "Heggarty et al. (Science 2023)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -38,7 +58,11 @@
       "confidence": "Sehr hoch (Monumentale Oasenstädte)",
       "summary": "Monumentale Festungs- und Tempelkomplexe in Zentralasien. Liefert das archäologische und linguistische Substrat für sakrale und agrarische Sonderwörter des gemeinsamen Indo-Iranischen (z. B. soma/haoma).",
       "evidence_type": "Ausgrabungen & Lehnwortanalysen",
-      "sources": ["Sarianidi (1998)", "Lubotsky (2001)", "Lamberg-Karlovsky (2002)"],
+      "sources": [
+        "Sarianidi (1998)",
+        "Lubotsky (2001)",
+        "Lamberg-Karlovsky (2002)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -53,7 +77,10 @@
       "confidence": "Sehr hoch (C14-Datierung & Pferde-Genomik)",
       "summary": "Älteste stratigraphisch und radiometrisch gesicherte Speichenrad-Kriegsstreitwagen. Echte Hauspferde (Equus caballus, DOM2-Linie) breiten sich von der Wolga-Don-Region aus und korrelieren mit dem Indo-Iranischen Zweig (R1a-Z93).",
       "evidence_type": "Wagengräber & Pferde-aDNA",
-      "sources": ["Kuzmina (2007)", "Librado, Orlando et al. (Nature 2021)"],
+      "sources": [
+        "Kuzmina (2007)",
+        "Librado, Orlando et al. (Nature 2021)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -68,7 +95,10 @@
       "confidence": "Sehr hoch (Multi-Genom-Sequenzierung)",
       "summary": "Erstes nachweisbares Erscheinen von Steppe_MLBA in Südasien. Korreliert geschlechtsspezifisch (männliche Gründerlinie R1a-Z93/L657) und belegt Genfluss aus Zentralasien, während reif-harappische Genome keinerlei Steppenanteile aufweisen.",
       "evidence_type": "Genomweite aDNA-Serien",
-      "sources": ["Narasimhan et al. (Science 2019)", "Reich (2018)"],
+      "sources": [
+        "Narasimhan et al. (Science 2019)",
+        "Reich (2018)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -83,7 +113,10 @@
       "confidence": "Hoch (Grabungsbefund, Typologie strittig)",
       "summary": "Drei Grabkammern mit kupferbeschlagenen, zweirädrigen Wagen, Kupferschwertern und Helmen. Diskussion um Speichen- vs. Scheibenräder im Zentrum der indischen Kontroverse um eine autochthone Streitwagenentwicklung.",
       "evidence_type": "Nekropole & Grabbeigaben",
-      "sources": ["Manjul et al. (ASI 2020)", "Parpola (2020)"],
+      "sources": [
+        "Manjul et al. (ASI 2020)",
+        "Parpola (2020)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -98,7 +131,11 @@
       "confidence": "Sehr hoch (Sedimentkerne & Geomorphologie)",
       "summary": "Klimatische und hydrographische Entkopplung von Schmelzwasserzuflüssen lässt den permanenten Fluss zu einem ephemeren Wadi austrocknen. Entspricht der rigvedischen Schilderung der im Sand verschwindenden Sarasvati (Vinasana).",
       "evidence_type": "Flusssedimente & Bohrkernanalysen",
-      "sources": ["Clift et al. (2012)", "Singh et al. (2017)", "BSIP (2026)"],
+      "sources": [
+        "Clift et al. (2012)",
+        "Singh et al. (2017)",
+        "BSIP (2026)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -113,7 +150,11 @@
       "confidence": "Sehr hoch (Original-Keilschrifttafeln)",
       "summary": "König Šattiwaza von Mitanni schwört bei den vedischen Gottheiten Mi-it-ra, U-ru-wa-na, In-da-ra und Na-sa-at-ti-ya. Kikkuli-Handbuch belegt Pferdebegriffe (aika-wartanna) in alt-indo-arischer Lautgestalt im Vorderen Orient.",
       "evidence_type": "Keilschrift-Staatsvertrag",
-      "sources": ["Thieme (1960)", "Mayrhofer (1974)", "Beckwith (2009)"],
+      "sources": [
+        "Thieme (1960)",
+        "Mayrhofer (1974)",
+        "Beckwith (2009)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -128,8 +169,45 @@
       "confidence": "Hoch (Historisch-kritische Textanalyse)",
       "summary": "Die älteren Familienbücher (II–VII) reflektieren die Flussgeographie des Ost-Punjab und das Steppen-Kriegerethos; die späten Bücher (I & X) dokumentieren die Sesshaftwerdung im Ganges-Doab und verstärkte dravidische/Munda-Substrateinflüsse.",
       "evidence_type": "Textuelle Schichtung & Sprachgeographie",
-      "sources": ["Witzel (1995/2005)", "Jamison & Brereton (2014)"],
+      "sources": [
+        "Witzel (1995/2005)",
+        "Jamison & Brereton (2014)"
+      ],
       "added_in_period": "2026-10"
+    },
+    {
+      "id": "palaeo-sutlej-pleistocene-avulsion",
+      "title": "Spätpleistozäne Paläo-Sutlej-Abkopplung vom Ghaggar-Hakra",
+      "period_start": -60000,
+      "period_end": -15000,
+      "date_display": "ca. 60.000–15.000 v. Chr.",
+      "category": "philology",
+      "discipline": "Paläohydrologie & Geochronologie",
+      "site": "Ropar Surface / Himalaya-Vorland (Sutlej–Ghaggar)",
+      "confidence": "Sehr hoch (OSL-Geochronologie & Stratigraphie)",
+      "summary": "Tektonische Abkopplung des gletschergespeisten Paläo-Sutlej entlang des Main Frontal Thrust bereits im Spätpleistozän (> 60–15 ka), Jahrtausende vor der reifen Harappa-Phase; der Ghaggar-Hakra war im Holozän monsungespeist.",
+      "evidence_type": "OSL-Datierung & geomorphologische Kartierung",
+      "sources": [
+        "Singh, Tandon et al. (Communications Earth & Environment 2026)"
+      ],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "northern-pakistan-east-asian-admixture",
+      "title": "Ostasiatische Agrar-Genflusswellen nach Nordpakistan",
+      "period_start": -2850,
+      "period_end": -2750,
+      "date_display": "ca. 2850–2750 v. Chr.",
+      "category": "genetics",
+      "discipline": "Populationsgenomik & Archäogenetik",
+      "site": "Nordpakistan (Burusho, Shina, Hazarewal)",
+      "confidence": "Hoch (115 Gesamtgenome)",
+      "summary": "115 Gesamtgenome trennen zwei ostasiatische Genflusswellen (~4.800 BP demisch entlang des südlichen Himalaya und ~1.600 BP aus dem Norden) präzise von der späteren bronzezeitlichen Steppe_MLBA-Komponente.",
+      "evidence_type": "Hochabgedeckte Gesamtgenome (WGS)",
+      "sources": [
+        "Gao et al. (Molecular Biology and Evolution 2026)"
+      ],
+      "added_in_period": "2026-11"
     }
   ]
 }

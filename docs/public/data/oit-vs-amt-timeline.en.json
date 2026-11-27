@@ -2,13 +2,29 @@
   "series": "oit-vs-amt",
   "series_title": "OIT vs. AMT",
   "subtitle": "Archaeogenetics, Archaeozoology, Historical Linguistics & Philology in the Indo-Iranian Sphere",
-  "last_updated": "2026-11-06",
+  "last_updated": "2026-11-27",
   "period_coverage": "c. 4000 BCE – c. 1000 BCE",
   "categories": [
-    { "id": "genetics", "label": "Archaeogenetics & aDNA", "color": "#dc2626" },
-    { "id": "archaeology", "label": "Archaeology & Chariots", "color": "#16a34a" },
-    { "id": "linguistics", "label": "Historical Linguistics", "color": "#0284c7" },
-    { "id": "philology", "label": "Indology & Vedic Chronology", "color": "#b45309" }
+    {
+      "id": "genetics",
+      "label": "Archaeogenetics & aDNA",
+      "color": "#dc2626"
+    },
+    {
+      "id": "archaeology",
+      "label": "Archaeology & Chariots",
+      "color": "#16a34a"
+    },
+    {
+      "id": "linguistics",
+      "label": "Historical Linguistics",
+      "color": "#0284c7"
+    },
+    {
+      "id": "philology",
+      "label": "Indology & Vedic Chronology",
+      "color": "#b45309"
+    }
   ],
   "events": [
     {
@@ -23,7 +39,11 @@
       "confidence": "High (Phylolinguistics & aDNA)",
       "summary": "Divergence of the Anatolian branch and formation of Core Indo-European within mobile pastoralist Kurgan cultures of the Eastern European steppe.",
       "evidence_type": "Linguistic phylogeny & aDNA",
-      "sources": ["Anthony (2007)", "Haak et al. (Nature 2015)", "Heggarty et al. (Science 2023)"],
+      "sources": [
+        "Anthony (2007)",
+        "Haak et al. (Nature 2015)",
+        "Heggarty et al. (Science 2023)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -38,7 +58,11 @@
       "confidence": "Very high (Monumental oasis cities)",
       "summary": "Monumental fortress and temple complexes in Central Asia. Provides the archaeological and linguistic substrate for ritual and agricultural loanwords in shared Indo-Iranian (e.g., soma/haoma).",
       "evidence_type": "Excavations & loanword analyses",
-      "sources": ["Sarianidi (1998)", "Lubotsky (2001)", "Lamberg-Karlovsky (2002)"],
+      "sources": [
+        "Sarianidi (1998)",
+        "Lubotsky (2001)",
+        "Lamberg-Karlovsky (2002)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -53,7 +77,10 @@
       "confidence": "Very high (14C dating & equine genomics)",
       "summary": "Oldest stratigraphically and radiometrically confirmed spoked-wheel war chariots. Modern domestic horses (Equus caballus, DOM2 lineage) expand from the Volga-Don region and correlate with the Indo-Iranian branch (R1a-Z93).",
       "evidence_type": "Chariot burials & equine aDNA",
-      "sources": ["Kuzmina (2007)", "Librado, Orlando et al. (Nature 2021)"],
+      "sources": [
+        "Kuzmina (2007)",
+        "Librado, Orlando et al. (Nature 2021)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -68,7 +95,10 @@
       "confidence": "Very high (Multi-genome sequencing)",
       "summary": "First detectable appearance of Steppe_MLBA in South Asia. Shows strong male-biased founder correlation (Y-haplogroup R1a-Z93/L657) and documents gene flow from Central Asia, whereas Mature Harappan genomes lack Steppe ancestry entirely.",
       "evidence_type": "Genome-wide aDNA series",
-      "sources": ["Narasimhan et al. (Science 2019)", "Reich (2018)"],
+      "sources": [
+        "Narasimhan et al. (Science 2019)",
+        "Reich (2018)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -83,7 +113,10 @@
       "confidence": "High (Excavation context, typology disputed)",
       "summary": "Three burial chambers containing copper-sheathed two-wheeled vehicles, copper swords, and helmets. The debate over spoked versus solid disc wheels stands at the center of the controversy regarding autochthonous chariot development.",
       "evidence_type": "Necropolis & grave goods",
-      "sources": ["Manjul et al. (ASI 2020)", "Parpola (2020)"],
+      "sources": [
+        "Manjul et al. (ASI 2020)",
+        "Parpola (2020)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -98,7 +131,11 @@
       "confidence": "Very high (Sediment cores & geomorphology)",
       "summary": "Climatic and hydrographic decoupling from glacial meltwater turns the perennial river into an ephemeral monsoon channel. Corresponds to the later Vedic depiction of the Sarasvati disappearing in the desert (Vinasana).",
       "evidence_type": "Fluvial sediments & core analyses",
-      "sources": ["Clift et al. (2012)", "Singh et al. (2017)", "BSIP (2026)"],
+      "sources": [
+        "Clift et al. (2012)",
+        "Singh et al. (2017)",
+        "BSIP (2026)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -113,7 +150,11 @@
       "confidence": "Very high (Original cuneiform tablets)",
       "summary": "King Šattiwaza of Mitanni swears by the Vedic deities Mi-it-ra, U-ru-wa-na, In-da-ra, and Na-sa-at-ti-ya. The Kikkuli horse-training manual preserves Old Indo-Aryan equestrian terminology (aika-wartanna) in the Near East.",
       "evidence_type": "Cuneiform state treaty",
-      "sources": ["Thieme (1960)", "Mayrhofer (1974)", "Beckwith (2009)"],
+      "sources": [
+        "Thieme (1960)",
+        "Mayrhofer (1974)",
+        "Beckwith (2009)"
+      ],
       "added_in_period": "2026-10"
     },
     {
@@ -128,8 +169,45 @@
       "confidence": "High (Historical-critical textual analysis)",
       "summary": "The older Family Books (II–VII) reflect the river geography of eastern Punjab and pastoral warrior traditions; the later books (I & X) document sedentarization in the Ganga Doab and increased Dravidian/Munda substrate influence.",
       "evidence_type": "Textual stratification & linguistic geography",
-      "sources": ["Witzel (1995/2005)", "Jamison & Brereton (2014)"],
+      "sources": [
+        "Witzel (1995/2005)",
+        "Jamison & Brereton (2014)"
+      ],
       "added_in_period": "2026-10"
+    },
+    {
+      "id": "palaeo-sutlej-pleistocene-avulsion",
+      "title": "Late Pleistocene Palaeo-Sutlej Decoupling from Ghaggar-Hakra",
+      "period_start": -60000,
+      "period_end": -15000,
+      "date_display": "c. 60,000–15,000 BCE",
+      "category": "philology",
+      "discipline": "Palaeohydrology & Geochronology",
+      "site": "Ropar Surface / Himalayan Foreland (Sutlej–Ghaggar)",
+      "confidence": "Very high (OSL geochronology & stratigraphy)",
+      "summary": "Tectonic decoupling of the glacier-fed Palaeo-Sutlej along the Main Frontal Thrust occurred during the Late Pleistocene (> 60–15 ka), millennia before the Mature Harappan phase; Holocene Ghaggar-Hakra flow was monsoon-fed.",
+      "evidence_type": "OSL dating & geomorphic mapping",
+      "sources": [
+        "Singh, Tandon et al. (Communications Earth & Environment 2026)"
+      ],
+      "added_in_period": "2026-11"
+    },
+    {
+      "id": "northern-pakistan-east-asian-admixture",
+      "title": "East Asian Agricultural Gene-Flow Waves into Northern Pakistan",
+      "period_start": -2850,
+      "period_end": -2750,
+      "date_display": "c. 2850–2750 BCE",
+      "category": "genetics",
+      "discipline": "Population Genomics & Archaeogenetics",
+      "site": "Northern Pakistan (Burusho, Shina, Hazarewal)",
+      "confidence": "High (115 whole genomes)",
+      "summary": "115 whole-genome sequences separate two East Asian gene-flow waves (~4,800 BP demic along the southern Himalayas and ~1,600 BP from the north) from the later Bronze Age Steppe_MLBA component.",
+      "evidence_type": "High-coverage whole genomes (WGS)",
+      "sources": [
+        "Gao et al. (Molecular Biology and Evolution 2026)"
+      ],
+      "added_in_period": "2026-11"
     }
   ]
 }

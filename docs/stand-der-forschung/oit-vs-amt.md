@@ -67,6 +67,7 @@ Punkte, die derzeit in der Fachwelt noch intensiv debattiert werden oder methodi
 
 ## 4. Historie der Monats-Updates
 
+- **November 2026**: Zwei *Nature*-Studien (McColl, Kroonen et al.) zu Germanisch/Keltisch und *Cell* (Anatolien) stützen aDNA-Steppenmodelle; 115 WGS aus Nordpakistan (*MBE*, Gao et al.) trennen ostasiatische Wellen (~4.800/~1.600 BP) von Steppe_MLBA; Zebu-Genomik (Miraszek et al., bioRxiv) zeigt Taurin-Auerochsen-Mischung; OSL-Datierungen der *Ropar Surface* (*Comm. Earth Env.*, Singh & Tandon) verlegen die Paläo-Sutlej-Abkopplung ins Spätpleistozän (> 60–15 ka); Nepali-Substrat-Proxies (Subba), Indus-Korpuskritik (Gokhale) und Soma/Haoma-BMAC-Analyse (El Ghouili).
 - **Oktober 2026**: Laktasepersistenz-Allel `-13.910:C>T` korreliert in Südasien streng mit `Steppe_MLBA` (`qpAdm`) und fehlt im reifen IVC; Probenübergabe von 8 Skeletten aus Rakhigarhi Mound 7 an AnSI/BSIP; Sinauli-Scheibenräder (Rinderanspannung) widerlegen Streitwagen-These; Dharamjali-Speleotheme (vier zentennale Megadürren > 85 Jahre); Zurückweisung früher Rigveda-Astronomiedatierungen.
 - **September 2026**: Zenodo-Preprint zur Genetik der Punjabis; Mitogenome aus Burzahom (Kashmir); vier Zähne aus Terqa/Syrien mit M-Haplogruppen.
 - **August 2026**: Ladakh-Genome in *Science Advances* (Old Lady Spider Cave); aDNA-Initiative in Tamil Nadu (Keeladi/Adichanallur); Skelettprobennahme in Rajghat (Varanasi).

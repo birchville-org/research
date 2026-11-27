@@ -67,6 +67,7 @@ Methodological bottlenecks and contested domains currently debated in the litera
 
 ## 4. Monthly Synthesis Log
 
+- **November 2026**: Two *Nature* studies (McColl, Kroonen et al.) on Germanic/Celtic and *Cell* (Anatolia) reinforce aDNA steppe models; 115 WGS from northern Pakistan (*MBE*, Gao et al.) separate East Asian waves (~4,800/~1,600 BP) from Steppe_MLBA; Zebu genomics (Miraszek et al., bioRxiv) models taurine-aurochs admixture; *Ropar Surface* OSL dating (*Comm. Earth Env.*, Singh & Tandon) places Palaeo-Sutlej decoupling in the Late Pleistocene (> 60–15 ka); Nepali substrate proxies (Subba), Indus script critique (Gokhale), and Soma/Haoma BMAC review (El Ghouili).
 - **October 2026**: Lactase persistence allele `-13.910:C>T` strictly correlates with `Steppe_MLBA` (`qpAdm`) in South Asia and is absent in mature IVC; handover of 8 skeletons from Rakhigarhi Mound 7 to AnSI/BSIP; Sinauli solid-disk wheels (cattle draught) refute chariot claims; Dharamjali speleothems (four centennial megadroughts > 85 years); rejection of early astronomical Rigveda datings.
 - **September 2026**: Zenodo preprint on Punjabi genetic history; Kashmir/Burzahom mitogenome series; 4 Indus-related teeth from Tell Ashara/Syria.
 - **August 2026**: Ladakh genomes in *Science Advances* (Old Lady Spider Cave); Tamil Nadu aDNA initiative (Keeladi/Adichanallur); skeletal sampling at Rajghat (Varanasi).
