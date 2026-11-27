@@ -171,17 +171,7 @@ git push origin "$TAG_NAME" --force
 git push synology main 2>/dev/null || true
 git push synology "$TAG_NAME" --force 2>/dev/null || true
 
-# 8. Deployment in Traefik-Webroot auf Synology (Legacy & Fallback)
-echo "Baue Root-Base-Variante (base='/') für Synology Traefik-Webroot (https://blog.birchville.org)..."
-SYNOLOGY_OUT_DIR="docs/.vitepress/dist-synology"
-rm -rf "$SYNOLOGY_OUT_DIR"
-VITEPRESS_BASE=/ SITE_URL="https://blog.birchville.org" npx vitepress build docs --outDir "$SYNOLOGY_OUT_DIR"
-echo "Synchronisiere HTML-Build in-place (Inode-erhaltend) in Traefik-Webroot auf Synology (/volume1/docker/blog/dist)..."
-COPYFILE_DISABLE=1 tar -czf - -C "$SYNOLOGY_OUT_DIR" . | ssh marco@synology.local "set -e; rm -rf /volume1/docker/blog/dist.new && mkdir -p /volume1/docker/blog/dist.new /volume1/docker/blog/dist && tar -xzf - -C /volume1/docker/blog/dist.new && rsync -a --delete /volume1/docker/blog/dist.new/ /volume1/docker/blog/dist/ && rm -rf /volume1/docker/blog/dist.new"
-rm -rf "$SYNOLOGY_OUT_DIR"
-echo "✓ Traefik-Webroot erfolgreich aktualisiert."
-
-# 9. Wiki-Repository-Prüfung (Birchville-Standard)
+# 8. Wiki-Repository-Prüfung (Birchville-Standard)
 WIKI_DIR="../birchville-blog.wiki"
 if [[ -d "$WIKI_DIR" ]]; then
   echo "Prüfe zugehöriges Wiki-Repository ($WIKI_DIR)..."
