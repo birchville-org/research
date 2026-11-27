@@ -11,8 +11,8 @@ Stand: 2026-11-27
     - Evidenz-Matrix-Popups (`dialog.matrix-dialog`)
     - Interaktiver Zeitleiste ([`TimelineModal.vue`](docs/.vitepress/theme/components/TimelineModal.vue))
     - Light Mode und Dark Mode sowie Copy-&-Paste-Test (`user-select: none` auf `<rt>`).
-- [ ] **Qualitätssicherung & Veröffentlichung der aktuellen lokalen Änderungen**
-  - Cross-Model-Review (`/code-review`) und Release (`/release`) für:
+- [x] **Qualitätssicherung & Veröffentlichung der aktuellen lokalen Änderungen**
+  - Cross-Model-Review (`/code-review` -> `APPROVED` auf `df358f9`) und Release `v0.3.0` (`/release`) für:
     - Client-seitige IAST-Modi unter [`docs/.vitepress/`](docs/.vitepress/) (`iastTransliterator.js`, `iastMode.js`, `customLangs.js`, `custom.css`, `index.mjs`, `config.mjs`)
     - Inode-erhaltenden Synology-Sync in [`publish_report.sh`](publish_report.sh).
 
