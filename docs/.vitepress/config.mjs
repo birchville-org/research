@@ -3,6 +3,7 @@ import { createRequire } from 'module'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { execSync } from 'child_process'
 import { Feed } from 'feed'
 const require = createRequire(import.meta.url)
 const attrs = require('markdown-it-attrs')
@@ -12,7 +13,47 @@ import extensiblePlugin from 'markdown-it-extensible'
 const multimd_table = require('markdown-it-multimd-table')
 
 const SITE_URL = process.env.SITE_URL || 'https://docs.birchville.org/research'
+const BASE = process.env.VITEPRESS_BASE || '/research/'
 const TITLE = 'Birchville Research'
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
+
+function getLatestPostDateMs(seriesPrefix = null) {
+  const postsDir = path.join(REPO_ROOT, 'docs', 'posts')
+  if (!fs.existsSync(postsDir)) return 0
+  let maxMs = 0
+  const rx = seriesPrefix ? new RegExp(`^${seriesPrefix}-\\d{4}-\\d{2}\\.md$`) : /^.+-\d{4}-\d{2}\.md$/
+  for (const name of fs.readdirSync(postsDir)) {
+    if (!rx.test(name)) continue
+    const content = fs.readFileSync(path.join(postsDir, name), 'utf-8')
+    const fm = content.match(/^---\n([\s\S]*?)\n---/)
+    if (!fm) continue
+    const dm = fm[1].match(/^date:\s*(\d{4}-\d{2}-\d{2})/m)
+    if (!dm) continue
+    const ms = Date.parse(`${dm[1]}T00:00:00Z`)
+    if (!Number.isNaN(ms) && ms > maxMs) maxMs = ms
+  }
+  return maxMs
+}
+
+function getLatestGitTimestampMs(relPaths) {
+  try {
+    const quoted = relPaths.map((p) => `"${p}"`).join(' ')
+    const out = execSync(`git log -1 --format=%ct -- ${quoted}`, {
+      cwd: REPO_ROOT,
+      encoding: 'utf-8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim()
+    const sec = Number.parseInt(out, 10)
+    return Number.isFinite(sec) ? sec * 1000 : 0
+  } catch {
+    return 0
+  }
+}
+
+const GLOBAL_LATEST_CONTENT_MS = Math.max(
+  getLatestPostDateMs(),
+  getLatestGitTimestampMs(['docs/posts', 'docs/stand-der-forschung'])
+)
 const DESCRIPTION_DE = 'Kompression automatisierter Forschungs- & Rechercheergebnisse'
 const DESCRIPTION_EN = 'Synthesized and compressed automated research digests'
 const DESCRIPTION_HI = 'स्वचालित शोध एवं अनुसंधान परिणामों का संपीड़न'
@@ -45,9 +86,29 @@ const blockContainers = [
 
 export default defineConfig({
   title: TITLE,
-  base: '/research/',
+  base: BASE,
   cleanUrls: true,
   lastUpdated: true,
+
+  transformPageData(pageData) {
+    const rel = (pageData.relativePath || '').replace(/\\/g, '/')
+    if (/^(?:(?:en|hi|sa)\/)?(?:index|archiv|stand-der-forschung\/index)\.md$/.test(rel)) {
+      pageData.lastUpdated = Math.max(pageData.lastUpdated || 0, GLOBAL_LATEST_CONTENT_MS)
+      return
+    }
+    const dashMatch = rel.match(/^(?:(?:en|hi|sa)\/)?stand-der-forschung\/([a-z0-9-]+)\.md$/)
+    if (dashMatch) {
+      const seriesMs = getLatestPostDateMs(dashMatch[1])
+      pageData.lastUpdated = Math.max(pageData.lastUpdated || 0, seriesMs)
+      return
+    }
+    if (/^(?:(?:en|hi|sa)\/)?posts\/.*\.md$/.test(rel) && pageData.frontmatter?.date) {
+      const postMs = new Date(pageData.frontmatter.date).getTime()
+      if (!Number.isNaN(postMs)) {
+        pageData.lastUpdated = Math.max(pageData.lastUpdated || 0, postMs)
+      }
+    }
+  },
 
   vite: {
     resolve: {
@@ -63,8 +124,8 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/research/favicon-32x32.png' }],
-    ['link', { rel: 'apple-touch-icon', href: '/research/og-icon.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: `${BASE}favicon-32x32.png` }],
+    ['link', { rel: 'apple-touch-icon', href: `${BASE}og-icon.png` }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: TITLE }],
     ['meta', { property: 'og:description', content: DESCRIPTION_DE }],

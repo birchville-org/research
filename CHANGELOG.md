@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.2.0 (2026-11-27)
+
+### Datenintegrität & Kernfunktionen
+- **Zentrale Serien-Registry & Prompt-Vertrag:** `prompts/series.json` sowie die versionierten Serien-Prompts (`prompts/ivc.md`, `prompts/oit-vs-amt.md`, `prompts/yavanas.md`) und `RECOVERY.md` ergänzt; `PROMPT_TEMPLATE_MONTHLY_REPORT.md` auf Repo-first + `npm run sync:drive` vereinheitlicht.
+- **Konsistenz- & Drive-Sync-Skripte:** `scripts/check-consistency.mjs` (inkl. Paritäts-, Quellen-, Dashboard-, Timeline-, Prompt- und `lastUpdated`-Prüfung) sowie `scripts/sync-drive.mjs` (Repo → Google Drive) eingeführt.
+
+### Performance & Rendering
+- **Dynamisches `lastUpdated`:** `transformPageData` in `docs/.vitepress/config.mjs` ermittelt für Übersichts-, Archiv- und Dashboard-Seiten automatisch das jüngste Beitrags-/Commit-Datum; `check-consistency.mjs` prüft die gerenderten HTML-`<time datetime>`-Tags über alle 24 Seiten.
+- **Konfigurierbarer Base-Pfad:** `VITEPRESS_BASE` (Standard `/research/`) und `VITEPRESS_DIST_DIR` in `docs/.vitepress/config.mjs` bzw. `scripts/check-links.mjs` ergänzt.
+
+### Plattform- & CI/CD-Stabilität
+- **Dual-Base- & Atomar-Deploy:** `publish_report.sh` baut für `https://blog.birchville.org/` eine eigene Root-Variante in `docs/.vitepress/dist-synology` und tauscht `/volume1/docker/blog/dist` auf Synology atomar über `dist.new` und `mv`.
+- **CI/CD-Pipeline:** `.github/workflows/deploy.yml` (`fetch-depth: 0`, `npm run check:consistency`) und `package.json` (`test`, `check:consistency`, `sync:drive`) vervollständigt.
+
 ## v0.1.1 (2026-11-26)
 
 ### Datenintegrität & Kernfunktionen

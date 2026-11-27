@@ -1,6 +1,6 @@
 {
   "name": "birchville-research",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "description": "Birchville Research: Living Synthesis Dashboards, Monatsberichte & Zeitleisten",
   "type": "module",
@@ -9,7 +9,9 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "check:links": "node scripts/check-links.mjs",
-    "test": "npm run check:links",
+    "check:consistency": "node scripts/check-consistency.mjs",
+    "sync:drive": "node scripts/sync-drive.mjs",
+    "test": "npm run check:links && npm run check:consistency",
     "publish:report": "./publish_report.sh"
   },
   "dependencies": {

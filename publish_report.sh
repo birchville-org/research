@@ -130,20 +130,29 @@ npm run docs:build
 
 # 4b. Link-Integrität & Base-Konsistenz prüfen
 echo "Prüfe Verlinkungen und Base-Konsistenz (check:links)..."
-npm run check:links
-if [[ $? -ne 0 ]]; then
+if ! npm run check:links; then
   echo "Fehler: Link-Integritätsprüfung fehlgeschlagen. Abbruch vor Veröffentlichung!"
   exit 1
 fi
 echo "✓ Link-Integritätsprüfung erfolgreich."
 
+# 4c. Berichts-, Dashboard- & Zeitleisten-Konsistenz prüfen
+echo "Prüfe Parität, Quellenanzahl, Reporthistorie und Zeitleisten (check:consistency)..."
+if ! npm run check:consistency; then
+  echo "Fehler: Konsistenzprüfung fehlgeschlagen. Abbruch vor Veröffentlichung!"
+  exit 1
+fi
+echo "✓ Konsistenzprüfung erfolgreich."
+
 # 5. Git-Status & Commit
-if git status --porcelain | grep -qE "docs/(posts|en/posts|hi/posts|sa/posts)/"; then
-  echo "Nicht committete Änderungen an Berichten erkannt. Erstelle Commit..."
-  git add docs/posts/ docs/en/posts/ docs/hi/posts/ docs/sa/posts/
+if git status --porcelain | grep -qE "docs/(posts|en/posts|hi/posts|sa/posts|stand-der-forschung|en/stand-der-forschung|hi/stand-der-forschung|sa/stand-der-forschung|public/data)/"; then
+  echo "Nicht committete Änderungen an Berichten, Dashboards oder Zeitleisten erkannt. Erstelle Commit..."
+  git add docs/posts/ docs/en/posts/ docs/hi/posts/ docs/sa/posts/ \
+    docs/stand-der-forschung/ docs/en/stand-der-forschung/ docs/hi/stand-der-forschung/ docs/sa/stand-der-forschung/ \
+    docs/public/data/
   git commit -m "feat(report): Freigabe Monatsbericht $PERIOD_CODE (DE/EN/HI/SA)"
 else
-  echo "Arbeitsverzeichnis für Berichte ist sauber."
+  echo "Arbeitsverzeichnis für Berichte, Dashboards und Zeitleisten ist sauber."
 fi
 
 # 6. Redaktioneller Monats-Tag setzen
@@ -163,8 +172,13 @@ git push synology main 2>/dev/null || true
 git push synology "$TAG_NAME" --force 2>/dev/null || true
 
 # 8. Deployment in Traefik-Webroot auf Synology (Legacy & Fallback)
-echo "Synchronisiere HTML-Build in Traefik-Webroot auf Synology (/volume1/docker/blog/dist)..."
-tar -czf - -C docs/.vitepress/dist . | ssh marco@synology.local "tar -xzf - -C /volume1/docker/blog/dist"
+echo "Baue Root-Base-Variante (base='/') für Synology Traefik-Webroot (https://blog.birchville.org)..."
+SYNOLOGY_OUT_DIR="docs/.vitepress/dist-synology"
+rm -rf "$SYNOLOGY_OUT_DIR"
+VITEPRESS_BASE=/ SITE_URL="https://blog.birchville.org" npx vitepress build docs --outDir "$SYNOLOGY_OUT_DIR"
+echo "Synchronisiere HTML-Build atomar in Traefik-Webroot auf Synology (/volume1/docker/blog/dist)..."
+COPYFILE_DISABLE=1 tar -czf - -C "$SYNOLOGY_OUT_DIR" . | ssh marco@synology.local "set -e; rm -rf /volume1/docker/blog/dist.new && mkdir -p /volume1/docker/blog/dist.new && tar -xzf - -C /volume1/docker/blog/dist.new && rm -rf /volume1/docker/blog/dist.old && { [ ! -d /volume1/docker/blog/dist ] || mv /volume1/docker/blog/dist /volume1/docker/blog/dist.old; } && mv /volume1/docker/blog/dist.new /volume1/docker/blog/dist && rm -rf /volume1/docker/blog/dist.old"
+rm -rf "$SYNOLOGY_OUT_DIR"
 echo "✓ Traefik-Webroot erfolgreich aktualisiert."
 
 # 9. Wiki-Repository-Prüfung (Birchville-Standard)

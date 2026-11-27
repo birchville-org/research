@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "repository": "birchville-org/research",
+  "local_repo_dir": "/Volumes/SanDisk1TB/proj/birchville-blog",
+  "mail_script": "send_digest_mail.sh",
+  "mail_recipient": "webmaster@birchville.org",
+  "publish_script": "publish_report.sh",
+  "translate_script": "translate_report.py",
+  "series": [
+    {
+      "id": "ivc",
+      "series_frontmatter": "IVC",
+      "title": "Indus-Valley-Culture (IVC) / Harappa-Zivilisation",
+      "schedule": {
+        "weekday": "Thursday",
+        "weekday_de": "Donnerstag",
+        "rule": "last_of_month",
+        "time": "02:00"
+      },
+      "prompt_file": "prompts/ivc.md",
+      "drive_dir": "/Users/marco/Library/CloudStorage/GoogleDrive-mdemarmels@gmail.com/Meine Ablage/IVC-blog",
+      "drive_prompt_mirror": "PROMPT_TEMPLATE_MONTHLY_REPORT.md",
+      "raw_file_pattern": "indus_valley_YYYY-MM.md",
+      "drive_timeline_json": "ivc_timeline.json",
+      "drive_timeline_md": "ivc_timeline.md",
+      "blog_post_prefix": "ivc",
+      "blog_timeline_prefix": "ivc",
+      "dashboard_slug": "ivc",
+      "mail_subject_prefix": "Aktuelle Erkenntnisse zur Indus-Valley-Culture (IVC)"
+    },
+    {
+      "id": "oit-vs-amt",
+      "series_frontmatter": "OIT vs AMT",
+      "title": "Out of India Theory (OIT) vs. Aryan Migration Theory (AMT)",
+      "schedule": {
+        "weekday": "Friday",
+        "weekday_de": "Freitag",
+        "rule": "last_of_month",
+        "time": "02:00"
+      },
+      "prompt_file": "prompts/oit-vs-amt.md",
+      "drive_dir": "/Users/marco/Library/CloudStorage/GoogleDrive-mdemarmels@gmail.com/Meine Ablage/OITvsAMT-blog",
+      "drive_prompt_mirror": "PROMPT_TEMPLATE_MONTHLY_REPORT.md",
+      "raw_file_pattern": "out_of_india_YYYY-MM.md",
+      "drive_timeline_json": "oit_vs_amt_timeline.json",
+      "drive_timeline_md": "oit_vs_amt_timeline.md",
+      "blog_post_prefix": "oit-vs-amt",
+      "blog_timeline_prefix": "oit-vs-amt",
+      "dashboard_slug": "oit-vs-amt",
+      "mail_subject_prefix": "Monatsbericht OIT vs. AMT"
+    },
+    {
+      "id": "yavanas",
+      "series_frontmatter": "Yavanas",
+      "title": "Yavanas mit Kharoṣṭhī-Feder",
+      "schedule": {
+        "weekday": "Friday",
+        "weekday_de": "Freitag",
+        "rule": "last_of_month",
+        "time": "02:00"
+      },
+      "prompt_file": "prompts/yavanas.md",
+      "drive_dir": "/Users/marco/Library/CloudStorage/GoogleDrive-mdemarmels@gmail.com/Meine Ablage/Yavanas-blog",
+      "drive_prompt_mirror": "PROMPT_TEMPLATE_MONTHLY_REPORT.md",
+      "raw_file_pattern": "yavanas_YYYY-MM.md",
+      "drive_timeline_json": "yavanas_timeline.json",
+      "drive_timeline_md": "yavanas_timeline.md",
+      "blog_post_prefix": "yavanas",
+      "blog_timeline_prefix": "yavanas",
+      "dashboard_slug": "yavanas",
+      "mail_subject_prefix": "Monatsbericht Yavanas mit Kharoṣṭhī-Feder"
+    }
+  ]
+}

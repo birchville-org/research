@@ -12,8 +12,8 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ROOT_DIR = path.resolve(__dirname, '..')
-const DIST_DIR = path.resolve(ROOT_DIR, 'docs/.vitepress/dist')
-const BASE_PATH = '/research/'
+const DIST_DIR = path.resolve(ROOT_DIR, process.env.VITEPRESS_DIST_DIR || 'docs/.vitepress/dist')
+const BASE_PATH = process.env.VITEPRESS_BASE || '/research/'
 
 if (!fs.existsSync(DIST_DIR)) {
   console.error(`Fehler: Build-Verzeichnis existiert nicht: ${DIST_DIR}`)

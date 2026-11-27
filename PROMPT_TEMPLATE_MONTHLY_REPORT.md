@@ -1,5 +1,7 @@
 # Universal-Prompt-Vorlage: Monatlicher Forschungsbericht mit Blog-Publikationspipeline
 
+> **Hinweis zur Single Source of Truth (SSOT):** Für die drei aktiven Forschungsreihen liegen die verbindlichen, versionierten Serien-Prompts direkt unter `prompts/ivc.md`, `prompts/oit-vs-amt.md` und `prompts/yavanas.md` sowie die Serien-Registry unter `prompts/series.json` (siehe auch `RECOVERY.md`). Diese Datei dient als generischer Blueprint für künftige neue Serien.
+
 Diese Vorlage enthält die vollständige Steuerungslogik (Datumsprüfung mit interaktiver Rückfrage, Duplikatssperre / Idempotenz, Recherche, Protokollführung, Mailversand und Blog-Vorbereitung). Sie kann für beliebige neue Themen kopiert und angepasst werden.
 
 ---
@@ -75,12 +77,11 @@ Verfasse den Bericht auf Deutsch im Umfang von ca. 1000–1500 Wörtern mit folg
      `{"period": "YYYY-MM", "processed_at": "<ISO-Timestamp>", "primary_file": "<Dateiname>", "status": "completed", "notes": "..."}`
    * In `[PFAD_PROJEKTORDNER]/PROCESSING_LOG.md` (Markdown-Tabelle).
 
-3. **Chronologische Zeitleiste & Forschungsbefunde (Timeline-Artefakt) aktualisieren:**
+3. **Chronologische Zeitleiste & Forschungsbefunde (Timeline-Artefakt & Dashboards, alle 4 Sprachen) aktualisieren:**
    * Extrahiere neu datierte Befunde, Inschriften, C14-Ergebnisse oder chronologische Verschiebungen aus der Monatsrecherche.
-   * Ergänze atomar `[PFAD_PROJEKTORDNER]/[SERIEN_KUERZEL]_timeline.json` (unter `events` mit Kennzeichnung `"added_in_period": "YYYY-MM"`).
-   * Spiegle die Datei nach `/Volumes/SanDisk1TB/proj/birchville-blog/docs/public/data/[SERIEN_KUERZEL]-timeline.json`.
-   * Aktualisiere die tabellarische Begleitdatei `[PFAD_PROJEKTORDNER]/[SERIEN_KUERZEL]_timeline.md`.
-   * Vermerke neue chronologische Fixpunkte in `docs/stand-der-forschung/[SERIEN_KUERZEL].md` unter Abschnitt *4. Historie der Monats-Updates*.
+   * Ergänze atomar im Blog-Repository `docs/public/data/[SERIEN_KUERZEL]-timeline.json` (unter `events` mit Kennzeichnung `"added_in_period": "YYYY-MM"`) sowie synchron die Sprachdateien `.en.json`, `.hi.json` und `.sa.json` mit identischen Event-`id`s und `last_updated`.
+   * Spiegle anschließend per `npm run sync:drive` ins Google-Drive-Verzeichnis (`[PFAD_PROJEKTORDNER]/[SERIEN_KUERZEL]_timeline.json`) und aktualisiere die tabellarische Begleitdatei `[PFAD_PROJEKTORDNER]/[SERIEN_KUERZEL]_timeline.md`.
+   * Ergänze den Monatsbericht in `docs/{,en/,hi/,sa/}stand-der-forschung/[SERIEN_KUERZEL].md` unter Abschnitt *4. Historie der Monats-Updates* (alle 4 Sprachfassungen) und prüfe Abschnitte 1–3 auf Aktualisierungsbedarf.
 
 ---
 
@@ -104,5 +105,5 @@ Verfasse den Bericht auf Deutsch im Umfang von ca. 1000–1500 Wörtern mit folg
      sourcesCount: [EXAKTE_ANZAHL_DER_QUELLEN]
      ---
      ```
-   * *Hinweis zur Publikation:* Die Freigabe und Veröffentlichung erfolgt anschließend über `./publish_report.sh docs/posts/[SERIEN_KUERZEL]-YYYY-MM.md`.
+   * *Hinweis zur Publikation:* Prüfe anschließend die Konsistenz (`npm run check:consistency`) und starte Freigabe/Veröffentlichung über `./publish_report.sh docs/posts/[SERIEN_KUERZEL]-YYYY-MM.md`.
 ```

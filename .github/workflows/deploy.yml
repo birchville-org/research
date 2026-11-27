@@ -43,6 +43,9 @@ jobs:
       - name: Verify link integrity & base consistency
         run: npm run check:links
 
+      - name: Verify report, dashboard & timeline consistency
+        run: npm run check:consistency
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
