@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.3.1 (2026-11-27)
+
+### Datenintegrität & Kernfunktionen
+- **Gemeinsamer IAST-Kern (`docs/.vitepress/theme/iastTransliterator.js`, `scripts/test-iast.mjs`):** Um `transliterateDevanagariText(text, lang)` für Mehrwort-Fließtext sowie NFD-Normalisierung in `transliterateDevanagariToIast()` und `tokenizeAksharas()` für präkomponierte Nukta-Codepoints (`U+0958`–`U+095F`, `U+0929`/`0931`/`0934`) erweitert; `'उप'` und `'अन'` zugunsten der Ohala-Schwa-Regeln aus `HI_PREFIXES` entfernt und 17 neue Assertions (Alexis-Hindi-Morphologie, Präkomponierte Nuktas, Mehrwort-Text) ergänzt.
+
+### Plattform & Deployment
+- **Synology-Legacy-Bereinigung (`publish_report.sh`, `RECOVERY.md`, `.gemini/rules/report-production.md`):** Veralteten Dual-Base-Build (`dist-synology`) und Synology-Webroot-Sync aus `publish_report.sh` entfernt. Web-Deployment läuft ausschließlich über GitHub Pages (`blog.birchville.org` leitet per Traefik `HTTP 308` auf `docs.birchville.org/research/`); `synology` bleibt als optionaler lokaler Git-Mirror erhalten.
+
+### Dokumentation
+- **Backlog & Recovery (`BACKLOG.md`, `RECOVERY.md`):** Gegenseitige Befruchtung `birchville-blog` <-> `Alexis` (Phasen 1, 2 und 2b) als abgeschlossen dokumentiert sowie `scripts/test-iast.mjs` und `test:iast` im Runbook ergänzt.
+
 ## v0.3.0 (2026-11-27)
 
 ### Datenintegrität & Kernfunktionen

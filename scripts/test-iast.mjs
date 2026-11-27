@@ -11,6 +11,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   transliterateDevanagariToIast,
+  transliterateDevanagariText,
   containsDevanagari,
 } from '../docs/.vitepress/theme/iastTransliterator.js'
 
@@ -46,16 +47,22 @@ const hindiCases = [
   ['कमल', 'kamal'],
   ['अपना', 'apnā'],
   ['अचानक', 'acānak'],
+  ['उपयोग', 'upyog'],
+  ['अनपढ़', 'anpaṛh'],
   ['करना', 'karnā'],
   ['समझना', 'samajhnā'],
   ['समझा', 'samjhā'],
   ['असमर्थ', 'asamarth'],
   ['अध्ययनों', 'adhyayanoṃ'],
 
-  // Nukta consonants
+  // Nukta consonants (NFD & precomposed NFC)
   ['हड़प्पा', 'haṛappā'],
   ['ग़ज़ल', 'ġazal'],
   ['क़ानून', 'qānūn'],
+  ['\u0958ानून', 'qānūn'],
+  ['ल\u095Cका', 'laṛkā'],
+  ['\u095Cका', 'ṛakā'],
+  ['\u0929\u0931\u0934', 'ṉaṟaḻ'],
   ['खोजें', 'khojeṃ'],
 
   // Productive prefix/suffix boundary safety (no split across matras/virama)
@@ -90,6 +97,19 @@ const hindiCases = [
   ['पद्धतिगत', 'paddhatigat'],
   ['पुनर्निर्माण', 'punarnirmāṇ'],
   ['निरंतरता', 'niraṃtartā'],
+
+  // Hindi morphology regression cases (shared with Alexis)
+  ['लड़का', 'laṛkā'],
+  ['लड़कों', 'laṛkoṃ'],
+  ['किताबें', 'kitābeṃ'],
+  ['किताबों', 'kitāboṃ'],
+  ['अध्यापक', 'adhyāpak'],
+  ['घर', 'ghar'],
+  ['घरों', 'gharoṃ'],
+  ['करता', 'kartā'],
+  ['जाते', 'jāte'],
+  ['आदमियों', 'ādmiyoṃ'],
+  ['लड़कियों', 'laṛkiyoṃ'],
 ]
 
 for (const [input, expected] of hindiCases) {
@@ -99,6 +119,17 @@ for (const [input, expected] of hindiCases) {
     `Hindi failed for ${input}`
   )
 }
+
+assert.equal(
+  transliterateDevanagariText('भारत में लड़कों की किताबें।', 'hi'),
+  'bhārat meṃ laṛkoṃ kī kitābeṃ।',
+  'Multi-word Hindi text transliteration failed'
+)
+assert.equal(
+  transliterateDevanagariText('धर्मः क्षेत्रे — Kurukṣetra', 'sa'),
+  'dharmaḥ kṣetre — Kurukṣetra',
+  'Multi-word Sanskrit text transliteration failed'
+)
 
 assert.equal(containsDevanagari('Steppe_MLBA'), false)
 assert.equal(containsDevanagari('सिंधु'), true)

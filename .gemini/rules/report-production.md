@@ -53,4 +53,4 @@ Für alle automatisiert oder manuell generierten Monatsberichte und Blogbeiträg
   ```bash
   ./publish_report.sh [optional_pfad_zur_datei.md]
   ```
-* Das Skript prüft Parität, H2-Quellen und `sourcesCount`, baut VitePress, committet und taggt, pusht zu Origin und synchronisiert das Traefik-Docker-Webroot.
+* Das Skript prüft Parität, H2-Quellen und `sourcesCount`, baut VitePress, prüft Links und Konsistenz, committet und taggt und pusht zu Origin (sowie zum optionalen Synology-Git-Mirror); das Web-Deployment erfolgt über GitHub Pages (`blog.birchville.org` leitet per Traefik `HTTP 308` auf `docs.birchville.org/research/`).

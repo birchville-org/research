@@ -28,11 +28,21 @@ Stand: 2026-11-27
 
 ---
 
-## 3. IAST-Ausbaustufe 2 – Build-Time-Korpus-Lexikon (Ziel: ca. 99 %+)
+## 3. Gegenseitige Befruchtung `birchville-blog` <-> `Alexis`
+
+- [x] **Phase 1 & 2: Gemeinsamer IAST-Kern, Alexis-Integration & einheitliches Anusvāra (`ṃ`)**
+  - [`iastTransliterator.js`](docs/.vitepress/theme/iastTransliterator.js) um `transliterateDevanagariText()` erweitert und mit Morphologie-Testfällen aus Alexis abgesichert ([`scripts/test-iast.mjs`](scripts/test-iast.mjs)).
+  - Gespiegelter TypeScript-Kern in `Alexis/src/services/iastCore.ts`, Nukta-Ergänzung (`क़`, `ख़`, `ग़`, `ज़`, `फ़`), Integration in `transliteration.ts`, `corpusAudit.ts` und `hindiDictionary.ts` sowie Vereinheitlichung auf `ṃ` in `hindiMorphology.ts`.
+- [x] **Phase 2b (optional): Interlineare `<ruby>`-Lesehilfe in Alexis**
+  - Optionaler „Interlinear IAST“-Umschalter in `Alexis/src/components/VocabularyExplorer.vue` (`InterlinearText.vue` + `segmentDevanagariForRuby` in `iastCore.ts`, `ruby-position: under`, `user-select: none` auf `<rt>`).
+
+---
+
+## 4. IAST-Ausbaustufe 2 – Gemeinsames Build-Time-Korpus-Lexikon (Ziel: ca. 99 %+)
 
 - [ ] **Wortextraktion im Build-Prozess**
   - Build-Skript erstellen, das sämtliche einzigartigen Devanāgarī-Wortformen aus `docs/hi/` und `docs/public/data/*.hi.json` einsammelt.
-- [ ] **Offline-Auflösung gegen Morphologie-Quelle**
-  - Abgleich der extrahierten Wortformen gegen ein Offline-Lexikon bzw. eine Morphologie-Datenbasis (z. B. Wiktionary-Dump oder IIIT-Hyderabad-Morph-Daten) und Export als kompakte Lookup-JSON (ca. 30–60 KB).
+- [ ] **Offline-Auflösung gegen Morphologie-/Wiktionary-Quelle (`birchville-blog` & `Alexis`)**
+  - Abgleich der extrahierten Wortformen gegen ein Offline-Lexikon bzw. einen Wiktionary-Dump (`kaikki.org`) und Export eines kompakten Delta-Lexikons (nur Regel-Abweichungen) für beide Repos.
 - [ ] **Nahtlose Integration in den Client-Transliterator**
-  - Einbindung der generierten JSON-Tabelle in den Direkt-Lookup von [`iastTransliterator.js`](docs/.vitepress/theme/iastTransliterator.js), ohne Änderungen am `<ruby>`-Renderer ([`iastMode.js`](docs/.vitepress/theme/iastMode.js)) oder am Sprachmenü ([`customLangs.js`](docs/.vitepress/theme/composables/customLangs.js)).
+  - Einbindung der generierten JSON-Tabelle in den Direkt-Lookup von [`iastTransliterator.js`](docs/.vitepress/theme/iastTransliterator.js) und `Alexis/src/services/iastCore.ts`, ohne Änderungen am `<ruby>`-Renderer ([`iastMode.js`](docs/.vitepress/theme/iastMode.js)) oder am Sprachmenü ([`customLangs.js`](docs/.vitepress/theme/composables/customLangs.js)).

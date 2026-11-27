@@ -80,18 +80,6 @@ const CONSONANTS = {
   स: 's',
   ह: 'h',
   ळ: 'ḷ',
-  // Precomposed Nukta & extended Devanāgarī consonants
-  क़: 'q',
-  ख़: 'ḵh',
-  ग़: 'ġ',
-  ज़: 'z',
-  ड़: 'ṛ',
-  ढ़: 'ṛh',
-  फ़: 'f',
-  य़: 'ẏ',
-  ऩ: 'ṉ',
-  ऱ: 'ṟ',
-  ऴ: 'ḻ',
 }
 
 const NUKTA_COMBINE = {
@@ -166,10 +154,8 @@ const HI_PREFIXES = [
   'अति',
   'अधि',
   'अभि',
-  'उप',
   'बहु',
   'स्व',
-  'अन',
 ]
 
 const HI_SUFFIXES = [
@@ -206,7 +192,7 @@ function readConsonant(chars, idx) {
  * Tokenize a Devanāgarī word into phonological akshara / syllable units.
  */
 function tokenizeAksharas(word) {
-  const chars = Array.from(word)
+  const chars = Array.from(word.normalize('NFD'))
   const units = []
   let i = 0
 
@@ -454,10 +440,28 @@ function transliterateHindiWord(word) {
  */
 export function transliterateDevanagariToIast(word, lang = 'sa') {
   if (!word) return ''
+  const normalized = word.normalize('NFD')
   if (lang === 'hi') {
-    return transliterateHindiWord(word)
+    return transliterateHindiWord(normalized)
   }
-  return renderUnits(tokenizeAksharas(word))
+  return renderUnits(tokenizeAksharas(normalized))
+}
+
+const DEVANAGARI_WORD_RE =
+  /[\u0900-\u0963\u0966-\u097F]+(?:[\u200C\u200D][\u0900-\u0963\u0966-\u097F]+)*/g
+
+/**
+ * Transliterate all Devanāgarī words inside arbitrary text to IAST,
+ * preserving whitespace, punctuation, Latin text, and daṇḍas.
+ * @param {string} text Input text
+ * @param {'sa' | 'hi'} lang Target language mode ('sa' = 1:1 Sanskrit, 'hi' = Hindi Client-Hybrid)
+ * @returns {string} Transliterated text
+ */
+export function transliterateDevanagariText(text, lang = 'sa') {
+  if (!text) return ''
+  return text.replace(DEVANAGARI_WORD_RE, (word) =>
+    transliterateDevanagariToIast(word, lang)
+  )
 }
 
 const DEVANAGARI_TEST_RE = /[\u0900-\u0963\u0966-\u097F]/

@@ -22,11 +22,12 @@ Alle verbindlichen Steuerungsartefakte werden versioniert in diesem Git-Reposito
 | `PROMPT_TEMPLATE_MONTHLY_REPORT.md` | Generischer Blueprint für künftige neue Forschungsreihen |
 | `send_digest_mail.sh` | Mailversand per Apple Mail an `webmaster@birchville.org` (Absender: `mdemarmels@gmail.com`) |
 | `translate_report.py` | Automatische Übersetzung neuer DE-Berichte nach EN, HI (Devanāgarī) und SA (Devanāgarī) via Gemini API |
-| `publish_report.sh` | Validierung, Build, Konsistenzprüfung, Git-Commit/-Tag, Push (`origin` & `synology`) und Synology-Webroot-Sync |
+| `publish_report.sh` | Validierung, Build, Konsistenzprüfung, Git-Commit/-Tag und Push (`origin` sowie optionaler lokaler Git-Mirror `synology`); Web-Deployment ausschließlich über GitHub Pages (`blog.birchville.org` leitet per Traefik `HTTP 308` auf `docs.birchville.org/research/`) |
+| `scripts/test-iast.mjs` | Automatisierte Regressionstests für Sanskrit 1:1 & Hindi Stufe-1-Hybrid-IAST inkl. Korpus-Prüfung über alle Hindi-Tokens (gespiegelter Kern mit `Alexis/src/services/iastCore.ts`) |
 | `scripts/check-links.mjs` | Prüfung aller internen Links, Base-Pfade (`/research/`) und Anker in `docs/.vitepress/dist` |
 | `scripts/check-consistency.mjs` | Prüfung von i18n-Parität, `sourcesCount` vs. Bibliographie, Abschnitt-4-Historien, 4-Sprachen-Zeitleisten, Prompt-Vertrag und Drive-Spiegel |
 | `scripts/sync-drive.mjs` | Synchronisiert `prompts/<id>.md` -> `PROMPT_TEMPLATE_MONTHLY_REPORT.md` und `<id>-timeline.json` -> Drive |
-| `.github/workflows/deploy.yml` | GitHub Actions Pipeline (`docs:build`, `check:links`, `check:consistency`, Deploy auf GitHub Pages) |
+| `.github/workflows/deploy.yml` | GitHub Actions Pipeline (`test:iast`, `docs:build`, `check:links`, `check:consistency`, Deploy auf GitHub Pages) |
 
 ---
 
