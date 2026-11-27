@@ -44,10 +44,13 @@ const hindiCases = [
   // Basic schwa deletion & verb stems
   ['भारत', 'bhārat'],
   ['कमल', 'kamal'],
+  ['अपना', 'apnā'],
+  ['अचानक', 'acānak'],
   ['करना', 'karnā'],
   ['समझना', 'samajhnā'],
   ['समझा', 'samjhā'],
   ['असमर्थ', 'asamarth'],
+  ['अध्ययनों', 'adhyayanoṃ'],
 
   // Nukta consonants
   ['हड़प्पा', 'haṛappā'],

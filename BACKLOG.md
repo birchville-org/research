@@ -4,7 +4,7 @@ Stand: 2026-11-27
 
 ## 1. Kurzfristig / Offene Freigabe
 
-- [x] **Visuelle Browser-Prüfung der IAST-Darstellungsmodi (`हिन्दी + IAST`, `संस्कृतम् + IAST`)**
+- [x] **Visuelle Browser-Prüfung der IAST-Darstellungsmodi (`हिन्दी + IAST`, `संस्कृतम् + IAST`)** *(vom Nutzer am lokalen Preview-Server abgenommen, 2026-11-27)*
   - Prüfung auf Desktop, Tablet und Mobile inkl. Zeilenumbruch-Verhalten von `<ruby>` (`ruby-position: under`) in:
     - Übersichtsseiten und [`PostList.vue`](docs/.vitepress/theme/components/PostList.vue)
     - Aufgeklappten `<details>`-Langberichten

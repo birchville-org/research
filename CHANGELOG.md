@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+### i18n & Typografie
+- **Interlineare IAST-Modi (`हिन्दी + IAST`, `संस्कृतम् + IAST`):** Client-seitiger `<ruby>`-Renderer (`ruby-position: under`) in `docs/.vitepress/theme/iastMode.js` mit Sprachmenü-Alias (`customLangs.js`) und exakt abgebildetem Sanskrit-1:1- sowie Hindi-Stufe-1-Hybrid-Transliterator (`iastTransliterator.js`: Ausnahme-Lexikon, Morphemgrenzen-Segmentierung, Ohala-Schwa-Tilgung, Nukta).
+- **Regressionstests:** Automatisierte Test-Suite `scripts/test-iast.mjs` (`npm run test:iast` / `npm test`) sowie Integration in `.github/workflows/deploy.yml`.
+
+### Plattform & Deployment
+- **Synology-Sync In-Place (`publish_report.sh`):** Statt des bisherigen Verzeichnis-Tausches über `dist.new` + `mv` (der die Bind-Mount-Inode wechselte) synchronisiert das Skript nun via `rsync -az --delete` In-Place in `/volume1/docker/blog/dist/`.
+
 ## v0.2.0 (2026-11-27)
 
 ### Datenintegrität & Kernfunktionen

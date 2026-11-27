@@ -131,129 +131,28 @@ const VIRAMA = '्'
 const NUKTA = '\u093C'
 
 /**
- * Curated Hindi exception & Birchville domain lexicon.
- * Ensures accurate schwa retention/deletion at morpheme boundaries and learned compounds.
+ * Curated Hindi exception lexicon (only entries where standard morpheme + Ohala rules diverge).
  */
 export const HINDI_LEXICON = new Map([
-  // Common morphological/verb exceptions
   ['असमर्थ', 'asamarth'],
-  ['समर्थ', 'samarth'],
-  ['समझना', 'samajhnā'],
-  ['समझने', 'samajhne'],
-  ['समझनी', 'samajhnī'],
-  ['समझा', 'samjhā'],
-  ['समझी', 'samjhī'],
-  ['समझे', 'samjhe'],
-  ['करना', 'karnā'],
-  ['करने', 'karne'],
-  ['करनी', 'karnī'],
-  ['प्रथम', 'pratham'],
-  ['अंतिम', 'aṃtim'],
-  ['नियम', 'niyam'],
-  ['प्रिय', 'priya'],
-  ['स्वयं', 'svayaṃ'],
-  ['अतः', 'ataḥ'],
-  ['पुनः', 'punaḥ'],
-  ['परंतु', 'paraṃtu'],
-  ['परन्तु', 'parantu'],
-  ['अथवा', 'athavā'],
-  ['अनुसार', 'anusār'],
-  ['लगभग', 'lagbhag'],
-  ['कमल', 'kamal'],
-  ['भारत', 'bhārat'],
+  ['अध्ययनों', 'adhyayanoṃ'],
+  ['अवलोकन', 'avlokan'],
+  ['उत्खनन', 'utkhanan'],
+  ['उपमहाद्वीप', 'upmahādvīp'],
+  ['कालक्रम', 'kālkram'],
+  ['पांडुलिपि', 'pāṇḍulipi'],
+  ['पांडुलिपियों', 'pāṇḍulipiyoṃ'],
+  ['पांडुलिपियां', 'pāṇḍulipiyāṃ'],
+  ['पुराजिनविज्ञान', 'purājinavijñān'],
   ['भारतीय', 'bhāratīya'],
-  ['केवल', 'keval'],
-  ['समय', 'samay'],
-  ['अलग', 'alag'],
-  ['अगर', 'agar'],
-  ['मगर', 'magar'],
-  ['नहीं', 'nahīṃ'],
+  ['मोहनजोदड़ो', 'mohanjodaṛo'],
+  ['यवनों', 'yavanoṃ'],
   ['यहाँ', 'yahāṃ'],
   ['वहाँ', 'vahāṃ'],
   ['जहाँ', 'jahāṃ'],
   ['कहाँ', 'kahāṃ'],
-
-  // Birchville Research & South Asian historical domain terms
-  ['पुरातत्व', 'purātatva'],
-  ['पुराजिनविज्ञान', 'purājinavijñān'],
-  ['पुरालेखशास्त्र', 'purālekhśāstra'],
-  ['अभिलेखशास्त्र', 'abhilekhśāstra'],
-  ['भाषाविज्ञान', 'bhāṣāvijñān'],
-  ['पुराप्राणिविज्ञान', 'purāprāṇivijñān'],
-  ['पुरावनस्पतिविज्ञान', 'purāvanaspativijñān'],
-  ['शिलालेख', 'śilālekh'],
-  ['शिलालेखों', 'śilālekhoṃ'],
-  ['शिलालेखीय', 'śilālekhīya'],
-  ['अभिलेख', 'abhilekh'],
-  ['अभिलेखों', 'abhilekhoṃ'],
-  ['अभिलेखीय', 'abhilekhīya'],
-  ['महाद्वीप', 'mahādvīp'],
-  ['उपमहाद्वीप', 'upmahādvīp'],
-  ['विश्वविद्यालय', 'viśvavidyālay'],
-  ['प्रशासन', 'praśāsan'],
-  ['प्रशासनिक', 'praśāsnik'],
-  ['अनुसंधान', 'anusaṃdhān'],
-  ['उत्खनन', 'utkhanan'],
-  ['सभ्यता', 'sabhyatā'],
-  ['संस्कृति', 'saṃskṛti'],
-  ['परंपरा', 'paraṃparā'],
-  ['परम्परा', 'paramparā'],
-  ['समयरेखा', 'samayrekhā'],
-  ['साक्ष्य', 'sākṣya'],
-  ['परिपक्व', 'paripakva'],
-  ['जनसंख्या', 'jansaṃkhyā'],
-  ['कालक्रम', 'kālkram'],
-  ['कालानुक्रमिक', 'kālānukramik'],
-  ['भोजपत्र', 'bhojpatra'],
-  ['पांडुलिपि', 'pāṇḍulipi'],
-  ['पांडुलिपियों', 'pāṇḍulipiyoṃ'],
-  ['पांडुलिपियां', 'pāṇḍulipiyāṃ'],
-  ['पाण्डुलिपि', 'pāṇḍulipi'],
-  ['अध्ययन', 'adhyayan'],
-  ['अध्ययनों', 'adhyaynõ'],
-  ['अवलोकन', 'avlokan'],
-  ['संकलन', 'saṃkalan'],
-  ['संश्लेषण', 'saṃśleṣaṇ'],
-  ['मूल्यांकन', 'mūlyāṃkan'],
-  ['विश्लेषण', 'viśleṣaṇ'],
-  ['निष्कर्ष', 'niṣkarṣ'],
-  ['अभिलेखागार', 'abhilekhāgār'],
-  ['प्रवासन', 'pravāsan'],
-  ['सिद्धांत', 'siddhāṃt'],
-  ['सिद्धान्त', 'siddhānt'],
-  ['परिकल्पना', 'parikalpanā'],
-  ['शहरीकरण', 'śahrīkaraṇ'],
-  ['नगरीकरण', 'nagrīkaraṇ'],
-  ['वि-नगरीकरण', 'vi-nagrīkaraṇ'],
-  ['गांधारी', 'gāṃdhārī'],
-  ['गान्धारी', 'gāndhārī'],
-  ['खरोष्ठी', 'kharoṣṭhī'],
-  ['तक्षशिला', 'takṣaśilā'],
-  ['हड़प्पा', 'haṛappā'],
-  ['मोहनजोदड़ो', 'mohanjodaṛo'],
   ['राखीगढ़ी', 'rākhīgaṛhī'],
-  ['धोलावीरा', 'dholāvīrā'],
-  ['कनिष्क', 'kaniṣka'],
-  ['यवन', 'yavan'],
-  ['यवनों', 'yavanoṃ'],
-  ['महत्वपूर्ण', 'mahatvapūrṇ'],
-  ['पद्धतिगत', 'paddhatigat'],
-  ['पुनर्निर्माण', 'punarnirmāṇ'],
-  ['निरंतरता', 'niraṃtartā'],
-  ['गुजरात', 'gujrāt'],
-  ['अरामाईक', 'arāmāīk'],
-  ['सिरकप', 'sirkap'],
-  ['सतलुज', 'satluj'],
-  ['घग्गर', 'ghaggar'],
-  ['स्वात', 'svāt'],
-  ['रिपोर्ट', 'riporṭ'],
-  ['संदर्भ', 'saṃdarbh'],
-  ['संपर्क', 'saṃpark'],
-  ['संपूर्ण', 'saṃpūrṇ'],
-  ['अंतराल', 'aṃtarāl'],
-  ['उपाधि', 'upādhi'],
-  ['अनातोलिया', 'anātoliyā'],
-  ['अवशेष', 'avaśeṣ'],
+  ['सिद्धान्त', 'siddhānt'],
 ])
 
 const HI_PREFIXES = [
@@ -271,7 +170,6 @@ const HI_PREFIXES = [
   'बहु',
   'स्व',
   'अन',
-  'अ',
 ]
 
 const HI_SUFFIXES = [
@@ -525,7 +423,6 @@ function transliterateHindiWord(word) {
       }
       if (tokenizeAksharas(rest).length >= 2) {
         prefixOut = renderUnits(tokenizeAksharas(pre))
-        // Strip trailing virāma vowel already absent in पुनर् -> punar
         stem = rest
         break
       }
@@ -545,7 +442,6 @@ function transliterateHindiWord(word) {
     }
   }
 
-  // Special case: infinitive '-ना/-ने/-नी' keeps vowel on stem consonant only if stem is 1 akshara
   const stemOut = transliterateHindiMorpheme(stem)
   return prefixOut + stemOut + suffixOut
 }

@@ -2,6 +2,8 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 import { iastEnabled } from '../iastMode.js'
 
+const IAST_LOCALES = new Set(['hi', 'sa'])
+
 function ensureStartingSlash(path) {
   return /^\//.test(path) ? path : `/${path}`
 }
@@ -23,12 +25,10 @@ export function useLangs({ correspondingLink = false } = {}) {
   const currentLang = computed(() => {
     const loc = localeIndex.value
     const baseLabel = site.value.locales[loc]?.label
-    let label = baseLabel
-    if (loc === 'hi' && iastEnabled.value) {
-      label = 'हिन्दी + IAST'
-    } else if (loc === 'sa' && iastEnabled.value) {
-      label = 'संस्कृतम् + IAST'
-    }
+    const label =
+      IAST_LOCALES.has(loc) && iastEnabled.value
+        ? `${baseLabel} + IAST`
+        : baseLabel
 
     return {
       label,
@@ -53,32 +53,15 @@ export function useLangs({ correspondingLink = false } = {}) {
         !site.value.cleanUrls
       )
 
-      if (key === 'hi') {
+      if (IAST_LOCALES.has(key)) {
         const items = []
-        if (!(currentLoc === 'hi' && !iastEnabled.value)) {
+        if (!(currentLoc === key && !iastEnabled.value)) {
           items.push({
             text: value.label,
             link: `${targetBase}?iast=0${hash.value}`,
           })
         }
-        if (!(currentLoc === 'hi' && iastEnabled.value)) {
-          items.push({
-            text: `${value.label} + IAST`,
-            link: `${targetBase}?iast=1${hash.value}`,
-          })
-        }
-        return items
-      }
-
-      if (key === 'sa') {
-        const items = []
-        if (!(currentLoc === 'sa' && !iastEnabled.value)) {
-          items.push({
-            text: value.label,
-            link: `${targetBase}?iast=0${hash.value}`,
-          })
-        }
-        if (!(currentLoc === 'sa' && iastEnabled.value)) {
+        if (!(currentLoc === key && iastEnabled.value)) {
           items.push({
             text: `${value.label} + IAST`,
             link: `${targetBase}?iast=1${hash.value}`,

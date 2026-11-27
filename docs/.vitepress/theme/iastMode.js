@@ -16,7 +16,7 @@ const SKIP_TAGS = new Set([
 ])
 
 const SKIP_SELECTOR =
-  '.VPNavBarTranslations, .VPNavScreenTranslations, .VPNavBarExtra, .VPNavBarTitle'
+  '.VPNav, .VPDocAsideOutline, .VPLocalNavOutlineDropdown'
 
 // Match Devanāgarī words excluding Danda (। U+0964) and Double Danda (॥ U+0965)
 const DEV_WORD_RE =
@@ -168,7 +168,7 @@ function removeIastFromSubtree(root) {
   }
 }
 
-function refreshIastView() {
+export function refreshIastView() {
   if (typeof document === 'undefined' || isMutatingDom) return
   const indicLang = getActiveIndicLang()
   const active = Boolean(indicLang && iastEnabled.value)
@@ -182,45 +182,38 @@ function refreshIastView() {
       removeIastFromSubtree(document.body)
     }
   } finally {
+    // Discard mutations caused by our own <ruby> DOM edits so the observer doesn't rescan body
+    if (observer) observer.takeRecords()
     isMutatingDom = false
   }
 }
 
+let initialized = false
+
 export function setupIastRenderer() {
-  if (typeof window === 'undefined') return
+  if (typeof window === 'undefined' || initialized) return
+  initialized = true
 
-  const initAfterHydration = () => {
-    syncIastFromUrl()
-    requestAnimationFrame(() => refreshIastView())
-  }
+  syncIastFromUrl()
+  // Defer DOM annotation one frame so VitePress post-mount/outline extraction completes cleanly first
+  requestAnimationFrame(() => refreshIastView())
 
-  const scheduleRefresh = () => {
-    requestAnimationFrame(() => refreshIastView())
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAfterHydration)
-  } else {
-    setTimeout(initAfterHydration, 40)
-  }
-
-  // Handle direct switches between e.g. 'हिन्दी' (?iast=0) and 'हिन्दी + IAST' (?iast=1)
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href]')
     if (!link) return
     const href = link.getAttribute('href') || ''
     if (href.includes('iast=1')) {
       setIastMode(true)
-      setTimeout(scheduleRefresh, 60)
+      requestAnimationFrame(() => refreshIastView())
     } else if (href.includes('iast=0')) {
       setIastMode(false)
-      setTimeout(scheduleRefresh, 60)
+      requestAnimationFrame(() => refreshIastView())
     }
   })
 
   window.addEventListener('popstate', () => {
     syncIastFromUrl()
-    setTimeout(scheduleRefresh, 60)
+    requestAnimationFrame(() => refreshIastView())
   })
 
   observer = new MutationObserver((mutations) => {
@@ -228,43 +221,42 @@ export function setupIastRenderer() {
     const indicLang = getActiveIndicLang()
     if (!indicLang || !iastEnabled.value) {
       if (document.documentElement.classList.contains('bv-iast-active')) {
-        scheduleRefresh()
+        requestAnimationFrame(() => refreshIastView())
       }
       return
     }
 
-    let hasRelevantAddition = false
     for (const m of mutations) {
       if (m.type === 'childList' && m.addedNodes.length > 0) {
-        hasRelevantAddition = true
-        break
+        for (const node of m.addedNodes) {
+          if (node.nodeType === Node.TEXT_NODE && containsDevanagari(node.nodeValue || '')) {
+            requestAnimationFrame(() => refreshIastView())
+            return
+          }
+          if (
+            node.nodeType === Node.ELEMENT_NODE &&
+            !node.closest?.(SKIP_SELECTOR) &&
+            node.dataset?.bvIast !== '1' &&
+            containsDevanagari(node.textContent || '')
+          ) {
+            requestAnimationFrame(() => refreshIastView())
+            return
+          }
+        }
       }
-      if (m.type === 'attributes' && m.target === document.documentElement) {
-        hasRelevantAddition = true
-        break
-      }
-    }
-
-    if (hasRelevantAddition) {
-      scheduleRefresh()
     }
   })
 
-  const startObserver = () => {
-    if (!document.body) return
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['lang'],
-    })
+  if (document.body) {
     observer.observe(document.body, {
       childList: true,
       subtree: true,
     })
   }
+}
 
-  if (document.body) {
-    startObserver()
-  } else {
-    document.addEventListener('DOMContentLoaded', startObserver)
-  }
+export function onIastRouteChange() {
+  if (typeof window === 'undefined') return
+  syncIastFromUrl()
+  requestAnimationFrame(() => refreshIastView())
 }
