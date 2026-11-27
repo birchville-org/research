@@ -10,8 +10,9 @@
     "docs:preview": "vitepress preview docs",
     "check:links": "node scripts/check-links.mjs",
     "check:consistency": "node scripts/check-consistency.mjs",
+    "test:iast": "node scripts/test-iast.mjs",
     "sync:drive": "node scripts/sync-drive.mjs",
-    "test": "npm run check:links && npm run check:consistency",
+    "test": "npm run test:iast && npm run check:links && npm run check:consistency",
     "publish:report": "./publish_report.sh"
   },
   "dependencies": {

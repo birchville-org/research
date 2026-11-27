@@ -119,6 +119,12 @@ export default defineConfig({
             new URL('./theme/components/CustomNavBarTitle.vue', import.meta.url)
           ),
         },
+        {
+          find: /^.*\/composables\/langs(\.js)?$/,
+          replacement: fileURLToPath(
+            new URL('./theme/composables/customLangs.js', import.meta.url)
+          ),
+        },
       ],
     },
   },
